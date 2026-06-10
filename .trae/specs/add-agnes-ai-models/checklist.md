@@ -1,0 +1,25 @@
+# Checklist
+
+- [x] Agnes-AI 供应商适配文件 `data/vendor/agnesai.ts` 已创建
+- [x] 供应商配置正确（id: agnesai, name: AgnesAI, 输入项包含 API Key 和 Base URL）
+- [x] 图片模型配置正确：
+  - [x] Agnes Image 2.0 Flash 支持 text, singleImage, multiReference 模式
+  - [x] Agnes Image 2.1 Flash 支持 text 模式
+- [x] 视频模型配置正确：
+  - [x] Agnes Video V2.0 支持 text, singleImage, endFrameOptional 模式
+  - [x] 时长分辨率映射包含 5s/1080p, 5s/720p, 10s/1080p, 10s/720p
+  - [x] 音频设置为 optional
+- [x] imageRequest 函数实现正确：
+  - [x] 文生图模式可正常调用
+  - [x] 图生图模式带 tags: ["img2img"] 和参考图片
+  - [x] 多图合成模式支持多张参考图片
+  - [x] 返回有头 base64 图片字符串
+- [x] videoRequest 函数实现正确：
+  - [x] 使用异步提交+轮询模式
+  - [x] 支持文生视频模式
+  - [x] 支持单图参考模式
+  - [x] 支持首尾帧模式（尾帧可选）
+  - [x] 返回有头 base64 视频字符串
+- [x] 在 initDB.ts 中添加了 Agnes-AI 供应商初始化记录
+- [x] 供应商文件通过 TypeScript 语法检查
+- [x] 模型配置格式通过 Zod 校验
