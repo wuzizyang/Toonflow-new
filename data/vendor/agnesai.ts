@@ -1,6 +1,6 @@
 /**
  * Toonflow AI供应商模板 - AgnesAI
- * @version 1.0
+ * @version 2.0
  */
 
 // ============================================================
@@ -134,7 +134,7 @@ declare const exports: {
 
 const vendor: VendorConfig = {
   id: "agnesai",
-  version: "1.0",
+  version: "2.0",
   author: "Toonflow",
   name: "AgnesAI",
   description:
@@ -198,8 +198,9 @@ const getImageSize = (size: string, aspectRatio: string): string => {
   const sizeMap: Record<string, Record<string, string>> = {
     "16:9": { "1K": "1920x1080", "2K": "2560x1440", "4K": "3840x2160" },
     "9:16": { "1K": "1080x1920", "2K": "1440x2560", "4K": "2160x3840" },
+    "1:1": { "1K": "1024x1024", "2K": "2048x2048", "4K": "4096x4096" },
   };
-  return (sizeMap as any)[aspectRatio]?.[size] || "1024x768";
+  return (sizeMap as any)[aspectRatio]?.[size] || (sizeMap as any)[aspectRatio]?.["1K"] || "1024x1024";
 };
 
 /**
@@ -212,6 +213,41 @@ const getVideoResolution = (resolution: string, aspectRatio: string): { width: n
   };
   const entry: { w: number; h: number } = (resMap as any)[resolution]?.[aspectRatio] || { w: 1152, h: 768 };
   return { width: entry.w, height: entry.h };
+};
+
+/**
+ * 将 ReferenceList 中的 base64 转为带 Data URI 头的字符串。
+ * Agnes Image API 文档显式支持 data:image/...;base64,... 形式（示例 5），
+ * 不带头时部分网关会解码失败导致 PIL "cannot identify image file"。
+ */
+const toDataUri = (base64: string): string => {
+  if (!base64) return base64;
+  return base64.startsWith("data:") ? base64 : `data:image/jpeg;base64,${base64}`;
+};
+
+/**
+ * 视频接口仅文档化了 URL 输入；当传入 base64 时，多数兼容实现会
+ * 将整段字符串（含 data:image/...;base64, 前缀）作为 base64 解码，
+ * 解码后字节并非有效图片，导致服务端 PIL 报 "cannot identify image file"。
+ * 因此对视频接口去掉 Data URI 前缀，只发送纯 base64。
+ */
+const toRawBase64 = (base64: string): string => {
+  if (!base64) return base64;
+  return base64.replace(/^data:[^;]+;base64,/, "");
+};
+
+/**
+ * 将 duration（秒）和帧率换算为满足约束（≤441 且 8n+1）的 num_frames。
+ * 文档：num_frames ≤ 441 且 num_frames = 8n + 1（如 81, 121, 161, 241, 441）。
+ */
+const calcNumFrames = (durationSec: number, frameRate: number): number => {
+  const target = Math.max(1, Math.round(durationSec * frameRate));
+  // 向上对齐到 8n+1
+  const n = Math.ceil((target - 1) / 8);
+  let frames = 8 * n + 1;
+  if (frames < 9) frames = 9; // 最小 8*1+1 = 9
+  if (frames > 441) frames = 441;
+  return frames;
 };
 
 // ============================================================
@@ -231,17 +267,29 @@ const imageRequest = async (config: ImageConfig, model: ImageModel): Promise<str
   const requestBody: any = {
     model: model.modelName,
     prompt: config.prompt,
+    size: getImageSize(config.size, config.aspectRatio),
+    extra_body: {
+      response_format: "b64_json",
+    },
   };
 
-  // 图生图模式（单图或多图参考），tags 和 image 需要放在顶层而非 extra_body
+  // 图生图 / 多图合成：图片放在 extra_body.image，且无需传 tags（文档明确说明）
+  // 输入支持 Data URI Base64（data:image/...;base64,...）
   if (imageRefs.length > 0) {
-    requestBody.tags = ["img2img"];
-    requestBody.image = imageRefs.map((ref) => ref.base64);
+    requestBody.extra_body.image = imageRefs.map((ref) => toDataUri(ref.base64));
     logger(`图生图模式，参考图片数: ${imageRefs.length}`);
   }
 
   logger(`开始生成图片，模型: ${model.modelName}`);
-  logger(`请求体: ${JSON.stringify({ ...requestBody, image: requestBody.image ? `[${requestBody.image.length}张图片]` : undefined })}`);
+  logger(
+    `请求体: ${JSON.stringify({
+      ...requestBody,
+      extra_body: {
+        ...requestBody.extra_body,
+        image: requestBody.extra_body.image ? `[${requestBody.extra_body.image.length}张图片]` : undefined,
+      },
+    })}`,
+  );
 
   const response = await axios.post(`${baseUrl}/images/generations`, requestBody, {
     headers: getHeaders(),
@@ -251,14 +299,13 @@ const imageRequest = async (config: ImageConfig, model: ImageModel): Promise<str
   const responseData = response.data;
   if (responseData.data && responseData.data.length > 0) {
     const imageData = responseData.data[0];
-    // 返回 URL 或 base64
-    if (imageData.url) {
-      logger("图片生成完成，正在转换URL为Base64...");
-      return await urlToBase64(imageData.url);
-    }
     if (imageData.b64_json) {
       logger("图片生成完成");
       return `data:image/png;base64,${imageData.b64_json}`;
+    }
+    if (imageData.url) {
+      logger("图片生成完成，正在转换URL为Base64...");
+      return await urlToBase64(imageData.url);
     }
     throw new Error("图片生成响应中未找到有效数据");
   }
@@ -282,104 +329,132 @@ const videoRequest = async (config: VideoConfig, model: VideoModel): Promise<str
   const { width, height } = getVideoResolution(config.resolution, config.aspectRatio);
   const imageRefs = (config.referenceList || []).filter((r) => r.type === "image");
 
-  const currentMode = config.mode;
-  const isText = currentMode.includes("text");
+  const currentMode = config.mode || [];
   const isSingleImage = currentMode.includes("singleImage");
   const isEndFrameOptional = currentMode.includes("endFrameOptional");
   const isStartEndRequired = currentMode.includes("startEndRequired");
 
-  // 计算帧数（基于时长和帧率 24fps）
+  // 文档约束：num_frames ≤ 441 且为 8n + 1（如 81, 121, 161, 241, 441），frame_rate 1-60
   const frameRate = 24;
-  const numFrames = config.duration * frameRate;
+  const numFrames = calcNumFrames(config.duration, frameRate);
 
   const requestBody: any = {
     model: model.modelName,
     prompt: config.prompt || "根据参考图片生成视频",
-    width: width,
-    height: height,
+    width,
+    height,
     num_frames: numFrames,
     frame_rate: frameRate,
   };
 
-  // 处理图生视频模式（单图 / 首尾帧）
+  // 处理图生视频 / 多图模式
+  // 文档说明：
+  // - 单图：顶层 image 为单个 URL/Data URI 字符串（示例 2）
+  // - 多图 / 首尾帧：extra_body.image 为数组（示例 3）
+  // - 关键帧动画：extra_body.image + extra_body.mode = "keyframes"（示例 4）
+  // 注意：服务端只接受公网 URL 或纯 base64 字节流；带 data: 前缀的 Data URI
+  // 在视频接口上会被作为 base64 整体解码导致服务端 PIL 解析失败。
   if (isSingleImage && imageRefs.length > 0) {
-    requestBody.image = imageRefs[0].base64;
+    requestBody.image = toRawBase64(imageRefs[0].base64);
     logger("单图参考模式");
   } else if (isStartEndRequired && imageRefs.length >= 2) {
-    requestBody.image = imageRefs[0].base64;
-    requestBody.last_frame = imageRefs[1].base64;
-    logger("首尾帧模式");
+    requestBody.extra_body = {
+      ...(requestBody.extra_body || {}),
+      image: imageRefs.slice(0, 2).map((r) => toRawBase64(r.base64)),
+      mode: "keyframes",
+    };
+    logger("首尾帧（关键帧）模式");
   } else if (isEndFrameOptional && imageRefs.length >= 1) {
-    requestBody.image = imageRefs[0].base64;
     if (imageRefs.length >= 2) {
-      requestBody.last_frame = imageRefs[1].base64;
+      requestBody.extra_body = {
+        ...(requestBody.extra_body || {}),
+        image: imageRefs.slice(0, 2).map((r) => toRawBase64(r.base64)),
+        mode: "keyframes",
+      };
+      logger("首尾帧（关键帧）模式（尾帧已提供）");
+    } else {
+      requestBody.image = toRawBase64(imageRefs[0].base64);
+      logger("首帧参考模式（尾帧未提供）");
     }
-    logger(`首帧参考模式（尾帧${imageRefs.length >= 2 ? "已" : "未"}提供）`);
   }
 
-  // 音频配置
-  if (config.audio === true) {
-    requestBody.audio = true;
-  }
-
-  logger(`开始提交视频生成任务，模型: ${model.modelName}, 时长: ${config.duration}s, 分辨率: ${config.resolution}`);
+  logger(`开始提交视频生成任务，模型: ${model.modelName}, 时长: ${config.duration}s, 帧数: ${numFrames}, 分辨率: ${width}x${height}`);
 
   // 提交任务：跨任务串行 + 最多重试 10 次
   const MAX_SUBMIT_ATTEMPTS = 10;
-  const taskId: string = await withGlobalLock<string>("agnesai:video:submit", async () => {
-    let lastError: any = null;
-    for (let attempt = 1; attempt <= MAX_SUBMIT_ATTEMPTS; attempt++) {
-      try {
-        const submitResp = await axios.post(`${baseUrl}/videos`, requestBody, {
-          headers: getHeaders(),
-        });
-        const id = submitResp.data?.id;
-        if (!id) {
-          throw new Error(`提交视频任务失败: ${JSON.stringify(submitResp.data)}`);
-        }
-        if (attempt > 1) logger(`第${attempt}次重试提交成功`);
-        return id as string;
-      } catch (e: any) {
-        lastError = e;
-        const msg = e?.response?.data ? JSON.stringify(e.response.data) : e?.message || String(e);
-        logger(`提交视频任务失败（第${attempt}/${MAX_SUBMIT_ATTEMPTS}次）：${msg}`);
-        if (attempt < MAX_SUBMIT_ATTEMPTS) {
-          // 指数退避：2s, 4s, 8s, ... 上限 30s
-          const delay = Math.min(2000 * Math.pow(2, attempt - 1), 30000);
-          await new Promise((r) => setTimeout(r, delay));
+  const taskInfo: { id: string; videoId?: string } = await withGlobalLock<{ id: string; videoId?: string }>(
+    "agnesai:video:submit",
+    async () => {
+      let lastError: any = null;
+      for (let attempt = 1; attempt <= MAX_SUBMIT_ATTEMPTS; attempt++) {
+        try {
+          const submitResp = await axios.post(`${baseUrl}/videos`, requestBody, {
+            headers: getHeaders(),
+          });
+          const data = submitResp.data || {};
+          const id = data.id || data.task_id;
+          const videoId = data.video_id;
+          if (!id && !videoId) {
+            throw new Error(`提交视频任务失败: ${JSON.stringify(data)}`);
+          }
+          if (attempt > 1) logger(`第${attempt}次重试提交成功`);
+          return { id: id || videoId, videoId };
+        } catch (e: any) {
+          lastError = e;
+          const msg = e?.response?.data ? JSON.stringify(e.response.data) : e?.message || String(e);
+          logger(`提交视频任务失败（第${attempt}/${MAX_SUBMIT_ATTEMPTS}次）：${msg}`);
+          if (attempt < MAX_SUBMIT_ATTEMPTS) {
+            // 指数退避：2s, 4s, 8s, ... 上限 30s
+            const delay = Math.min(2000 * Math.pow(2, attempt - 1), 30000);
+            await new Promise((r) => setTimeout(r, delay));
+          }
         }
       }
-    }
-    throw new Error(
-      `提交视频任务失败，已重试${MAX_SUBMIT_ATTEMPTS}次：${lastError?.response?.data ? JSON.stringify(lastError.response.data) : lastError?.message || String(lastError)}`,
-    );
-  });
+      throw new Error(
+        `提交视频任务失败，已重试${MAX_SUBMIT_ATTEMPTS}次：${lastError?.response?.data ? JSON.stringify(lastError.response.data) : lastError?.message || String(lastError)}`,
+      );
+    },
+  );
 
-  logger(`任务已提交，任务ID: ${taskId}`);
+  const taskId = taskInfo.id;
+  const videoId = taskInfo.videoId;
+  logger(`任务已提交，task_id: ${taskId}${videoId ? `, video_id: ${videoId}` : ""}`);
 
   // 轮询等待结果（通过队列串行执行，多任务时不并发轮询）
+  // 优先使用 video_id 走推荐查询路径，回退到旧版 /v1/videos/{task_id}
   const result = await enqueuePoll(
     async () => {
       try {
-        const queryResp = await axios.get(`${baseUrl}/videos/${taskId}`, {
-          headers: getHeaders(),
-        });
+        const queryResp = videoId
+          ? await axios.get(`${baseUrl.replace(/\/v1$/, "")}/agnesapi`, {
+              params: { video_id: videoId, model_name: model.modelName },
+              headers: getHeaders(),
+            })
+          : await axios.get(`${baseUrl}/videos/${taskId}`, {
+              headers: getHeaders(),
+            });
 
-        const taskData = queryResp.data;
-        const status = taskData.status;
-        logger(`轮询中... 任务状态: ${status}`);
+        const taskData = queryResp.data || {};
+        const status = String(taskData.status || "").toLowerCase();
+        logger(`轮询中... 任务状态: ${status}, 进度: ${taskData.progress ?? 0}%`);
 
-        if (status === "SUCCESS" || status === "completed") {
-          const videoUrl = taskData.url || taskData.data?.url || taskData.result?.url;
-          if (!videoUrl) {
-            return { completed: true, error: "任务完成但未获取到视频URL" };
+        if (status === "completed" || status === "success" || status === "succeeded") {
+          // 文档：completed 时最终视频 URL 放在 remixed_from_video_id 字段
+          const videoUrl =
+            taskData.remixed_from_video_id ||
+            taskData.video_url ||
+            taskData.url ||
+            taskData.data?.url ||
+            taskData.result?.url;
+          if (!videoUrl || typeof videoUrl !== "string" || !/^https?:\/\//i.test(videoUrl)) {
+            return { completed: true, error: `任务完成但未获取到视频URL: ${JSON.stringify(taskData)}` };
           }
           return { completed: true, data: videoUrl };
         }
 
-        if (status === "FAILED" || status === "failed") {
-          // taskData.message / taskData.error 可能是对象，需拍平为字符串避免 [object Object]
-          const raw = taskData.message ?? taskData.error ?? taskData.failure_reason;
+        if (status === "failed") {
+          // taskData.error 可能是对象，需拍平为字符串避免 [object Object]
+          const raw = taskData.error ?? taskData.message ?? taskData.failure_reason;
           let errorMsg: string;
           if (raw == null) {
             errorMsg = `视频生成失败: ${JSON.stringify(taskData)}`;
@@ -393,11 +468,20 @@ const videoRequest = async (config: VideoConfig, model: VideoModel): Promise<str
           return { completed: true, error: errorMsg };
         }
 
+        // queued / in_progress 等中间状态继续轮询
         return { completed: false };
       } catch (e: any) {
-        // axios 网络错误时把响应体也带上，避免吞掉服务端真实错误
-        const detail = e?.response?.data ? (typeof e.response.data === "string" ? e.response.data : JSON.stringify(e.response.data)) : "";
+        // 4xx 应当终止轮询，避免一直耗时间后才暴露真实错误
+        const httpStatus = e?.response?.status;
+        const detail = e?.response?.data
+          ? typeof e.response.data === "string"
+            ? e.response.data
+            : JSON.stringify(e.response.data)
+          : "";
         const msg = e?.message || String(e);
+        if (httpStatus && httpStatus >= 400 && httpStatus < 500 && httpStatus !== 429) {
+          return { completed: true, error: detail ? `${msg} | ${detail}` : msg };
+        }
         return { completed: false, error: detail ? `${msg} | ${detail}` : msg };
       }
     },
