@@ -127,7 +127,7 @@ async function createSubAgent(parentCtx: AgentContext) {
     const fullResponse = await consumeFullStream(fullStream, subMsg);
 
     if (fullResponse.trim()) {
-      await memory.add(memoryKey, removeAllXmlTags(fullResponse), {
+      await memory.add(memoryKey, stripXmlTagsKeepContent(fullResponse), {
         name,
         createTime: new Date(subMsg.datetime).getTime(),
       });
@@ -247,7 +247,7 @@ async function createSubAgent(parentCtx: AgentContext) {
 
       const addPrompt = "\n你必须使用如下XML格式写入工作区：\n```\n<scriptPlan>内容</scriptPlan>\n```";
 
-      return runAgent({
+      const fullResponse = await runAgent({
         key: "productionAgent:directorPlanAgent",
         prompt,
         system: systemPrompt + addPrompt,
@@ -259,6 +259,14 @@ async function createSubAgent(parentCtx: AgentContext) {
         ],
         tools: { activate_skill: artSkills.tools.activate_skill },
       });
+
+      // 解析 <scriptPlan> 并持久化到数据库 + 同步前端
+      const scriptPlanContent = extractXmlContent(fullResponse, "scriptPlan");
+      if (scriptPlanContent) {
+        await saveFlowDataField(resTool, "scriptPlan", scriptPlanContent);
+      }
+
+      return fullResponse;
     },
   });
 
@@ -332,7 +340,7 @@ async function createSubAgent(parentCtx: AgentContext) {
 
       const addPrompt = "\n你必须使用如下XML格式写入工作区：\n```\n<storyboardTable>内容</storyboardTable>\n```";
 
-      return runAgent({
+      const fullResponse = await runAgent({
         key: "productionAgent:storyboardTableAgent",
         prompt,
         system: systemPrompt + addPrompt,
@@ -344,6 +352,14 @@ async function createSubAgent(parentCtx: AgentContext) {
         ],
         tools: { activate_skill: productionSkills.tools.activate_skill },
       });
+
+      // 解析 <storyboardTable> 并持久化到数据库 + 同步前端
+      const storyboardTableContent = extractXmlContent(fullResponse, "storyboardTable");
+      if (storyboardTableContent) {
+        await saveFlowDataField(resTool, "storyboardTable", storyboardTableContent);
+      }
+
+      return fullResponse;
     },
   });
 
@@ -451,6 +467,63 @@ function removeAllXmlTags(text: string): string {
   text = text.replace(/<([a-zA-Z][\w-]*)(\s+[^>]*)?\/>/g, "");
   text = text.replace(/<\/?[a-zA-Z][\w-]*(\s+[^>]*)?>/g, "");
   return text.trim();
+}
+
+/**
+ * 去掉 XML 标签但保留标签内的文本内容（用于记忆存储，避免丢失结构化产出物的文本）
+ */
+function stripXmlTagsKeepContent(text: string): string {
+  // 去掉配对标签，保留内部内容
+  text = text.replace(/<([a-zA-Z][\w-]*)(\s+[^>]*)?>([\s\S]*?)<\/\1>/g, "$3");
+  // 去掉自闭合标签
+  text = text.replace(/<([a-zA-Z][\w-]*)(\s+[^>]*)?\/>/g, "");
+  // 去掉残余的开/闭标签
+  text = text.replace(/<\/?[a-zA-Z][\w-]*(\s+[^>]*)?>/g, "");
+  return text.trim();
+}
+
+/**
+ * 从文本中提取指定 XML 标签的内容
+ */
+function extractXmlContent(text: string, tagName: string): string | null {
+  const regex = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "i");
+  const match = text.match(regex);
+  return match ? match[1].trim() : null;
+}
+
+/**
+ * 将解析出的字段持久化到 o_agentWorkData 并通过 socket 同步前端
+ */
+async function saveFlowDataField(resTool: ResTool, field: string, value: string) {
+  const { projectId, scriptId: episodesId } = resTool.data;
+  const row = await u
+    .db("o_agentWorkData")
+    .where("projectId", String(projectId))
+    .andWhere("episodesId", String(episodesId))
+    .andWhere("key", "productionAgent")
+    .first();
+
+  if (row) {
+    const data = JSON.parse(row.data ?? "{}");
+    data[field] = value;
+    await u
+      .db("o_agentWorkData")
+      .where("projectId", String(projectId))
+      .where("key", "productionAgent")
+      .andWhere("episodesId", String(episodesId))
+      .update({ data: JSON.stringify(data) });
+  } else {
+    const data: Record<string, any> = { [field]: value };
+    await u.db("o_agentWorkData").insert({
+      projectId,
+      episodesId,
+      key: "productionAgent",
+      data: JSON.stringify(data),
+    });
+  }
+
+  // 通过 socket 通知前端更新对应字段
+  resTool.socket.emit("flowDataUpdate", { field, value });
 }
 
 export function buildSkillPrompt(skills: { name: string; description: string }[]): string {
