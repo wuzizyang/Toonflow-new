@@ -245,7 +245,22 @@ async function createSubAgent(parentCtx: AgentContext) {
       const skill = path.join(u.getPath("skills"), "production_execution_director_plan.md");
       const systemPrompt = await fs.promises.readFile(skill, "utf-8");
 
-      const addPrompt = "\n你必须使用如下XML格式写入工作区：\n```\n<scriptPlan>内容</scriptPlan>\n```";
+      const addPrompt = [
+        "",
+        "## 输出包装格式（强制）",
+        "你必须把按 skill 「输出结构」要求产出的**完整结构化分场契约**包裹在如下 XML 标签之间：",
+        "```",
+        "<scriptPlan>",
+        "（此处放置：分场汇总表 + 逐场台词统计 + 逐场情绪分析 + 逐场注意事项 + 场间过渡，按 skill 规定的字段与格式逐场完整列出）",
+        "</scriptPlan>",
+        "```",
+        "**严禁**：",
+        "- 在 `<scriptPlan>` 内只写一句状态声明（如「已完成」「7场分场已结构化输出」「可供下游 Agent 使用」等）",
+        "- 在 `<scriptPlan>` 内做任务汇报、产出概述、任何元描述",
+        "- 输出多个 `<scriptPlan>` 块",
+        "- 拆分多次输出（必须一次性完整写完）",
+        "`<scriptPlan>` 内的内容长度通常不少于 800 字（按剧本场次复杂度可更长），必须覆盖剧本全部场次。",
+      ].join("\n");
 
       const fullResponse = await runAgent({
         key: "productionAgent:directorPlanAgent",
@@ -260,11 +275,14 @@ async function createSubAgent(parentCtx: AgentContext) {
         tools: { activate_skill: artSkills.tools.activate_skill },
       });
 
-      // 解析 <scriptPlan> 并持久化到数据库 + 同步前端
+      // 解析 <scriptPlan> 并校验产出物是否为有效结构化内容
       const scriptPlanContent = extractXmlContent(fullResponse, "scriptPlan");
-      if (scriptPlanContent) {
-        await saveFlowDataField(resTool, "scriptPlan", scriptPlanContent);
+      const validation = validateStructuredOutput(scriptPlanContent, "scriptPlan");
+      if (!validation.ok) {
+        // 不持久化非法产出，并把错误信号返回给决策层 Agent 触发重试
+        return `${fullResponse}\n\n[系统反馈] 导演规划产出非法：${validation.reason}。请重新派发本阶段任务，要求执行层在 <scriptPlan> 内输出完整结构化的分场契约（分场汇总表+逐场台词统计+逐场情绪分析+逐场注意事项+场间过渡），禁止只写状态声明。`;
       }
+      await saveFlowDataField(resTool, "scriptPlan", scriptPlanContent!);
 
       return fullResponse;
     },
@@ -338,7 +356,21 @@ async function createSubAgent(parentCtx: AgentContext) {
       const skill = path.join(u.getPath("skills"), "production_execution_storyboard_table.md");
       const systemPrompt = await fs.promises.readFile(skill, "utf-8");
 
-      const addPrompt = "\n你必须使用如下XML格式写入工作区：\n```\n<storyboardTable>内容</storyboardTable>\n```";
+      const addPrompt = [
+        "",
+        "## 输出包装格式（强制）",
+        "你必须把按 skill 要求产出的**完整结构化分镜表**包裹在如下 XML 标签之间：",
+        "```",
+        "<storyboardTable>",
+        "（此处放置：覆盖剧本全部场次的逐镜分镜表，包含 skill 规定的所有字段）",
+        "</storyboardTable>",
+        "```",
+        "**严禁**：",
+        "- 在 `<storyboardTable>` 内只写一句状态声明（如「已完成」「分镜表已生成」等）",
+        "- 在 `<storyboardTable>` 内做任务汇报、产出概述、任何元描述",
+        "- 输出多个 `<storyboardTable>` 块",
+        "- 拆分多次输出（必须一次性完整写完）",
+      ].join("\n");
 
       const fullResponse = await runAgent({
         key: "productionAgent:storyboardTableAgent",
@@ -353,11 +385,13 @@ async function createSubAgent(parentCtx: AgentContext) {
         tools: { activate_skill: productionSkills.tools.activate_skill },
       });
 
-      // 解析 <storyboardTable> 并持久化到数据库 + 同步前端
+      // 解析 <storyboardTable> 并校验产出物是否为有效结构化内容
       const storyboardTableContent = extractXmlContent(fullResponse, "storyboardTable");
-      if (storyboardTableContent) {
-        await saveFlowDataField(resTool, "storyboardTable", storyboardTableContent);
+      const validation = validateStructuredOutput(storyboardTableContent, "storyboardTable");
+      if (!validation.ok) {
+        return `${fullResponse}\n\n[系统反馈] 分镜表产出非法：${validation.reason}。请重新派发本阶段任务，要求执行层在 <storyboardTable> 内输出完整逐镜分镜表，禁止只写状态声明。`;
       }
+      await saveFlowDataField(resTool, "storyboardTable", storyboardTableContent!);
 
       return fullResponse;
     },
@@ -483,12 +517,51 @@ function stripXmlTagsKeepContent(text: string): string {
 }
 
 /**
- * 从文本中提取指定 XML 标签的内容
+ * 从文本中提取指定 XML 标签的内容。
+ * 若 Agent 错误地输出多个同名标签段落（如先一个状态声明再一个真正内容），
+ * 选取内容最长的匹配作为实际产出物。
  */
 function extractXmlContent(text: string, tagName: string): string | null {
-  const regex = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "i");
-  const match = text.match(regex);
-  return match ? match[1].trim() : null;
+  const regex = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "gi");
+  const matches = [...text.matchAll(regex)];
+  if (matches.length === 0) return null;
+  const longest = matches.reduce((a, b) => (b[1].length > a[1].length ? b : a));
+  return longest[1].trim();
+}
+
+/**
+ * 校验从 XML 标签中提取出的结构化产出物是否合法。
+ * 防御 Agent 偷懒只写一句状态声明（如「已完成」「7场分场已结构化输出」）的情况。
+ */
+function validateStructuredOutput(
+  content: string | null,
+  tagName: string,
+): { ok: true } | { ok: false; reason: string } {
+  if (!content) return { ok: false, reason: `未在响应中找到 <${tagName}> 标签` };
+  const trimmed = content.trim();
+  if (trimmed.length < 200) {
+    return { ok: false, reason: `<${tagName}> 内容过短（${trimmed.length} 字），疑似仅为状态声明而非完整结构化产出` };
+  }
+  // 状态声明类关键词命中 + 内容偏短 → 视为非法
+  const statusKeywords = [
+    "已完成",
+    "已结构化输出",
+    "可直接供下游",
+    "可供下游",
+    "已就绪",
+    "已生成",
+    "已完成输出",
+    "请下游",
+    "完成输出",
+  ];
+  const hasStatusKeyword = statusKeywords.some((k) => trimmed.includes(k));
+  if (hasStatusKeyword && trimmed.length < 600) {
+    return {
+      ok: false,
+      reason: `<${tagName}> 内容疑似为状态声明（命中关键词且内容过短），缺乏实际结构化数据`,
+    };
+  }
+  return { ok: true };
 }
 
 /**
