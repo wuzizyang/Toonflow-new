@@ -134,7 +134,7 @@ declare const exports: {
 
 const vendor: VendorConfig = {
   id: "agnesai",
-  version: "2.1",
+  version: "2.3",
   author: "Toonflow",
   name: "AgnesAI",
   description:
@@ -193,14 +193,18 @@ const getHeaders = (): Record<string, string> => {
 
 /**
  * 根据 size 和 aspectRatio 计算图片尺寸字符串
+ * Agnes Image API 当前稳定支持的分辨率仅有 1024x1024、1024x768、768x1024 三档（其他尺寸
+ * 经常超时或返回 InternalServerError）。因此忽略 size 档位，仅按 aspectRatio 选择最接近的
+ * 横/竖/方形规格。
  */
-const getImageSize = (size: string, aspectRatio: string): string => {
-  const sizeMap: Record<string, Record<string, string>> = {
-    "16:9": { "1K": "1920x1080", "2K": "2560x1440", "4K": "3840x2160" },
-    "9:16": { "1K": "1080x1920", "2K": "1440x2560", "4K": "2160x3840" },
-    "1:1": { "1K": "1024x1024", "2K": "2048x2048", "4K": "4096x4096" },
-  };
-  return (sizeMap as any)[aspectRatio]?.[size] || (sizeMap as any)[aspectRatio]?.["1K"] || "1024x1024";
+const getImageSize = (_size: string, aspectRatio: string): string => {
+  const match = /^(\d+):(\d+)$/.exec(aspectRatio || "");
+  if (!match) return "1024x1024";
+  const w = Number(match[1]);
+  const h = Number(match[2]);
+  if (!w || !h) return "1024x1024";
+  if (w === h) return "1024x1024";
+  return w > h ? "1024x768" : "768x1024";
 };
 
 /**

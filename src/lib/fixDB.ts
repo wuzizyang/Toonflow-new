@@ -192,7 +192,7 @@ export default async (knex: Knex): Promise<void> => {
   }
   const agnesaiVendor = u.vendor.getVendor("agnesai");
   const agnesaiVer = agnesaiVendor && agnesaiVendor.version;
-  if (Number(agnesaiVer) < 2.1) {
+  if (Number(agnesaiVer) < 2.3) {
     u.vendor.writeCode("agnesai", vendorData["agnesai.ts"]);
   }
 };
