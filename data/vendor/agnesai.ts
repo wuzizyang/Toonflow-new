@@ -134,7 +134,7 @@ declare const exports: {
 
 const vendor: VendorConfig = {
   id: "agnesai",
-  version: "2.0",
+  version: "2.1",
   author: "Toonflow",
   name: "AgnesAI",
   description:
@@ -268,26 +268,36 @@ const imageRequest = async (config: ImageConfig, model: ImageModel): Promise<str
     model: model.modelName,
     prompt: config.prompt,
     size: getImageSize(config.size, config.aspectRatio),
-    extra_body: {
-      response_format: "b64_json",
-    },
   };
 
-  // 图生图 / 多图合成：图片放在 extra_body.image，且无需传 tags（文档明确说明）
-  // 输入支持 Data URI Base64（data:image/...;base64,...）
+  // 文档约定（agnes-image-2.0-flash / agnes-image-2.1-flash 共用）：
+  // - 文生图返回 Base64：使用顶层 return_base64: true；
+  //   将 response_format=b64_json 放进 extra_body 在文生图场景会触发网关 InternalServerError。
+  // - 图生图返回 Base64：将 image 数组与 response_format=b64_json 同时放在 extra_body 内；
+  //   image 支持公网 URL 或 Data URI Base64（data:image/...;base64,...），无需传 tags。
   if (imageRefs.length > 0) {
-    requestBody.extra_body.image = imageRefs.map((ref) => toDataUri(ref.base64));
+    requestBody.extra_body = {
+      image: imageRefs.map((ref) => toDataUri(ref.base64)),
+      response_format: "b64_json",
+    };
     logger(`图生图模式，参考图片数: ${imageRefs.length}`);
+  } else {
+    requestBody.return_base64 = true;
+    logger("文生图模式");
   }
 
   logger(`开始生成图片，模型: ${model.modelName}`);
   logger(
     `请求体: ${JSON.stringify({
       ...requestBody,
-      extra_body: {
-        ...requestBody.extra_body,
-        image: requestBody.extra_body.image ? `[${requestBody.extra_body.image.length}张图片]` : undefined,
-      },
+      extra_body: requestBody.extra_body
+        ? {
+            ...requestBody.extra_body,
+            image: requestBody.extra_body.image
+              ? `[${requestBody.extra_body.image.length}张图片]`
+              : undefined,
+          }
+        : undefined,
     })}`,
   );
 
