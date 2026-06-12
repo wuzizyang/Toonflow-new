@@ -4,7 +4,8 @@ import { z } from "zod";
 import { error, success } from "@/lib/responseFormat";
 import { validateFields } from "@/middleware/middleware";
 import { useSkill } from "@/utils/agent/skillsTools";
-import { tool, jsonSchema } from "ai";
+import { tool } from "ai";
+import { toToolSchema } from "@/utils/toolSchema";
 import { o_script } from "@/types/database";
 
 const router = express.Router();
@@ -185,7 +186,7 @@ export default router.post(
         try {
           const resultTool = tool({
             description: "返回结果时必须调用这个工具",
-            inputSchema: jsonSchema<{ newAssets: NewAsset[]; existingAssetRefs: ExistingAssetRef[] }>(
+            inputSchema: toToolSchema<{ newAssets: NewAsset[]; existingAssetRefs: ExistingAssetRef[] }>(
               z
                 .object({
                   newAssets: z
@@ -194,8 +195,7 @@ export default router.post(
                   existingAssetRefs: z
                     .array(ExistingAssetRefSchema)
                     .describe("已有资产的引用列表（在已有资产列表中已存在的），只需给出资产名称和使用该资产的 scriptIds"),
-                })
-                .toJSONSchema(),
+                }),
             ),
             execute: async ({ newAssets, existingAssetRefs }) => {
               if (newAssets?.length) collectedNew = newAssets;
