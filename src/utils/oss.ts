@@ -3,6 +3,27 @@ import getPath, { isEletron } from "@/utils/getPath";
 import fs from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
+import { MAX_THUMB_EDGE, isVideoFile } from "@/utils/image";
+
+/**
+ * 列表缩略图默认百分比（保留历史 `?size=20` 语义：原图 20% 等比缩放，并受
+ * image.ts 的 MAX_THUMB_EDGE 封顶约束）。
+ */
+const DEFAULT_THUMB_PERCENT = 20;
+
+/**
+ * URL / 标记约定（与 `src/app.ts` 的 `/oss` 中间件、任务 3.4 共享，务必保持一致）：
+ *
+ * - 图片缩略图：沿用 `?size=<pct>`（百分比，如 `?size=20`）或 `?size=<W>x<H>`（维度，如
+ *   `?size=200x300`）。中间件解析该参数并调用 `ensureThumbnail` 生成/返回受封顶约束的缩略图。
+ * - 视频轻量预览：使用 `?preview=1` 预览标记。中间件识别到视频路径 + 该标记时，路由到
+ *   `ensureVideoThumbnail`（任务 3.2 的入口）返回首帧/封面占位预览，而非让视频走 `?size=`
+ *   图片缩略图通道（缺陷 1.3）。**不带 `?preview=1` 的视频 URL 仍由 `express.static` 返回
+ *   完整原文件（保留 3.3 的视频下载链路）。**
+ * - 缩略图缓存命名：`smallImage/<dir>/<base>_<pct>p<ext>`（百分比模式 sizeSubDir = `<pct>p`），
+ *   与中间件写入缓存的路径完全一致，从而 `getSmallImageUrl` 命中热缓存时可直接返回缓存 URL。
+ */
+const VIDEO_PREVIEW_QUERY = "preview=1";
 
 // 规范化路径：去除前导斜杠，并将路径分隔符统一转换为系统分隔符
 function normalizeUserPath(userPath: string): string {
@@ -170,40 +191,97 @@ class OSS {
   }
 
   /**
-   * 获取图片的缩略图 URL（最长边不超过 512px，等比缩放）。
-   * 缩略图保存在原路径同目录下的 smallImage 子文件夹中。
-   * 若缩略图已存在则直接返回其 URL；若不存在则同步生成并保存后返回缩略图 URL，
-   * 生成失败时返回原图 URL。
+   * 计算某个相对路径在指定百分比缩略图模式下的 smallImage 缓存相对路径。
+   * 命名规则与 `/oss` 中间件写入缓存的规则完全一致：
+   *   `smallImage/<dir>/<base>_<pct>p<ext>`
+   * @param userRelPath 原图相对路径
+   * @param pct 百分比（如 20）
+   * @returns smallImage 缓存相对路径（使用 / 分隔符）
+   */
+  private buildThumbCacheRelPath(userRelPath: string, pct: number): string {
+    const cleaned = userRelPath.replace(/^[/\\]+/, "");
+    const ext = path.extname(cleaned);
+    const base = path.basename(cleaned, ext);
+    const dir = path.dirname(cleaned);
+    // 与中间件保持一致：百分比模式 sizeSubDir = `${pct}p`
+    const fileName = `${base}_${pct}p${ext}`;
+    // dir 为 "." 时（原图在根目录）不拼接目录段
+    const dirSegment = dir === "." ? "" : `${dir}/`;
+    return `smallImage/${dirSegment}${fileName}`;
+  }
+
+  /**
+   * 获取列表展示用的轻量资源 URL。
+   *
+   * 行为分支（约定见文件顶部 URL / 标记约定注释）：
+   * - **视频**（`.mp4` 等，经 {@link isVideoFile} 识别）：返回带 `?preview=1` 预览标记的 URL，
+   *   由 `/oss` 中间件路由到 `ensureVideoThumbnail` 返回轻量首帧/封面占位预览，而非追加
+   *   `?size=20` 让视频走图片缩略图通道（缺陷 1.3）。不带预览标记的视频下载链路仍返回完整
+   *   原文件（保留 3.3）。
+   * - **图片热缓存命中**：若对应的 smallImage 缩略图已存在（默认 20% 模式），直接返回该缓存
+   *   缩略图的 URL，强化热缓存快速路径（保留 3.1）。
+   * - **图片冷缓存**：缓存不存在时，返回带 `?size=20` 的原图 URL，由中间件走受 MAX_THUMB_EDGE
+   *   封顶约束的同步生成（缺陷 1.1 / 1.2 的 URL 入口）。
+   *
+   * 所有路径计算均经 {@link normalizeUserPath} / {@link resolveSafeLocalPath} 做 OSS 根目录
+   * 安全约束（保留 3.5）。
+   *
    * @param userRelPath 用户传入的相对文件路径（使用 / 作为分隔符）
-   * @returns 缩略图 URL（已存在或生成成功）或原图 URL（生成失败时）
+   * @returns 列表展示用的轻量资源 URL
    */
   async getSmallImageUrl(userRelPath: string): Promise<string> {
-    // 构造缩略图相对路径：在原路径的目录层级前插入 smallImage 目录
-    // 例如：123/abc.jpg => smallImage/123/abc.jpg
-    // const smallImageRelPath = `smallImage/${userRelPath.replace(/^[/\\]+/, "")}`;
+    await this.ensureInit();
+    // 路径安全校验（保留 3.5）：越权路径在此抛出，与原图访问链路一致。
+    resolveSafeLocalPath(userRelPath, this.rootDir);
 
-    // if (await this.fileExists(smallImageRelPath)) {
-    //   return this.getFileUrl(smallImageRelPath);
-    // }
+    // 视频分支：返回带预览标记的轻量预览 URL（缺陷 1.3）。
+    if (isVideoFile(userRelPath)) {
+      const baseUrl = await this.getFileUrl(userRelPath);
+      return `${baseUrl}?${VIDEO_PREVIEW_QUERY}`;
+    }
 
-    // // 缩略图不存在：同步生成，生成失败则返回原图 URL
-    // const originalUrl = await this.getFileUrl(userRelPath);
+    // 图片热缓存命中：缩略图已存在则直接返回缓存 URL（保留 / 强化 3.1）。
+    const thumbRelPath = this.buildThumbCacheRelPath(userRelPath, DEFAULT_THUMB_PERCENT);
+    if (await this.fileExists(thumbRelPath)) {
+      return this.getFileUrl(thumbRelPath);
+    }
 
-    // try {
-    //   await this.ensureInit();
-    //   const srcAbsPath = resolveSafeLocalPath(userRelPath, this.rootDir);
-    //   const dstAbsPath = resolveSafeLocalPath(smallImageRelPath, this.rootDir);
-    //   await fs.mkdir(path.dirname(dstAbsPath), { recursive: true });
-    //   await sharp(srcAbsPath)
-    //     .resize(512, 512, { fit: "inside", withoutEnlargement: true })
-    //     .toFile(dstAbsPath);
-    //   console.info(`[${dstAbsPath}]小图写入成功`);
-    return (await this.getFileUrl(userRelPath)) + "?size=20";
-    // } catch (e) {
-    //   // 生成失败返回原图
-    //   console.warn("[OSS] 生成缩略图失败:", e);
-    //   return originalUrl;
-    // }
+    // 图片冷缓存：返回带 ?size= 的原图 URL，驱动中间件走受封顶约束的生成（缺陷 1.1 / 1.2）。
+    return (await this.getFileUrl(userRelPath)) + `?size=${DEFAULT_THUMB_PERCENT}`;
+  }
+
+  /**
+   * 获取列表展示用的「轻量」base64 Data URL（受最大边界约束）。
+   *
+   * 与 {@link getImageBase64} 的区别：
+   * - {@link getImageBase64} 返回**全尺寸**原图 base64，逐字节等于原文件（供生成视频/图像等
+   *   确需原图的链路使用，语义保持不变，保留 3.3）。
+   * - 本方法用 `sharp` 将图片等比缩放到最长边 ≤ `maxEdge` 后再编码为 base64，体积远小于全尺寸，
+   *   适合列表展示（缺陷 1.4）。
+   *
+   * 路径经 {@link resolveSafeLocalPath} 做 OSS 根目录安全约束（保留 3.5）。
+   *
+   * @param userRelPath 用户传入的相对文件路径（使用 / 作为分隔符）
+   * @param maxEdge 缩略图最长边上限（像素），默认 {@link MAX_THUMB_EDGE}
+   * @returns 受限尺寸的 base64 Data URL（JPEG 编码）
+   * @throws 路径不在 OSS 根目录内、文件不存在等错误
+   */
+  async getImageThumbBase64(userRelPath: string, maxEdge: number = MAX_THUMB_EDGE): Promise<string> {
+    await this.ensureInit();
+    const absPath = resolveSafeLocalPath(userRelPath, this.rootDir);
+
+    const stat = await fs.stat(absPath);
+    if (!stat.isFile()) {
+      throw new Error(`${userRelPath} 不是文件`);
+    }
+
+    // 等比缩放到最长边 ≤ maxEdge（不放大），统一编码为 JPEG 以保证轻量。
+    const buffer = await sharp(absPath)
+      .resize(maxEdge, maxEdge, { fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 70 })
+      .toBuffer();
+    const base64 = buffer.toString("base64");
+    return `data:image/jpeg;base64,${base64}`;
   }
 }
 
