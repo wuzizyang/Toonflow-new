@@ -271,26 +271,26 @@ export default (toolCpnfig: ToolConfig) => {
           associateAssetsIds: raw.associateAssetsIds ?? [],
           shouldGenerateImage: raw.shouldGenerateImage,
         };
-        socketQueue(
-          () =>
-            new Promise((resolve, reject) =>
-              socket.emit("addStoryboard", { ...data }, (res: any) => {
-                if (res?.error) return reject(new Error(res.error));
-                resolve(res);
-              }),
-            ),
-        )
-          .then((res) => {
-            thinking.appendText("新增的分镜数据:\n" + JSON.stringify(data, null, 2));
-            thinking.updateTitle("新增分镜成功");
-            thinking.complete();
-          })
-          .catch((e) => {
-            thinking.appendText("新增的分镜数据:\n" + JSON.stringify(data, null, 2));
-            thinking.updateTitle("新增分镜失败");
-            thinking.complete();
-          });
-        return true;
+        try {
+          const res = await socketQueue(
+            () =>
+              new Promise((resolve, reject) =>
+                socket.emit("addStoryboard", { ...data }, (res: any) => {
+                  if (res?.error) return reject(new Error(res.error));
+                  resolve(res);
+                }),
+              ),
+          );
+          thinking.appendText("新增的分镜数据:\n" + JSON.stringify(data, null, 2));
+          thinking.updateTitle("新增分镜成功");
+          thinking.complete();
+          return true;
+        } catch (e) {
+          thinking.appendText("新增的分镜数据:\n" + JSON.stringify(data, null, 2));
+          thinking.updateTitle("新增分镜失败");
+          thinking.complete();
+          throw new Error("新增分镜失败：" + u.error(e).message);
+        }
       },
     }),
   };
