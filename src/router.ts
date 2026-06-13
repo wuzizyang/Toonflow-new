@@ -74,6 +74,7 @@ import route70 from "./routes/production/storyboard/editStoryboardInfo";
 import route71 from "./routes/production/storyboard/getStoryboardData";
 import route72 from "./routes/production/storyboard/pollingImage";
 import route73 from "./routes/production/storyboard/previewImage";
+import routeRegeneratePrompt from "./routes/production/storyboard/regeneratePrompt";
 import route74 from "./routes/production/storyboard/removeFrame";
 import route75 from "./routes/production/storyboard/updateStoryboardUrl";
 import route76 from "./routes/production/workbench/addTrack";
@@ -245,6 +246,7 @@ export default async (app: Express) => {
   app.use("/api/production/storyboard/getStoryboardData", route71);
   app.use("/api/production/storyboard/pollingImage", route72);
   app.use("/api/production/storyboard/previewImage", route73);
+  app.use("/api/production/storyboard/regeneratePrompt", routeRegeneratePrompt);
   app.use("/api/production/storyboard/removeFrame", route74);
   app.use("/api/production/storyboard/updateStoryboardUrl", route75);
   app.use("/api/production/workbench/addTrack", route76);
