@@ -6,9 +6,20 @@ import { validateFields } from "@/middleware/middleware";
 import axios from "axios";
 const router = express.Router();
 
+/**
+ * 将缩略图相对路径还原为原图相对路径。
+ * 缩略图缓存命名为 `smallImage/<dir>/<base>_<pct>p<ext>`，
+ * 需同时剥除 `/smallImage` 前缀（已由 replaceUrl 处理）与文件名末尾的 `_<pct>p` 尺寸后缀。
+ */
+function thumbToOriginalRelPath(imageUrl: string): string {
+  const rel = u.replaceUrl(imageUrl).replace(/^smallImage\//, "");
+  // 去掉缩略图尺寸后缀：xxx_20p.jpg / xxx_200x300.jpg -> xxx.jpg
+  return rel.replace(/_(\d+(?:\.\d+)?p|\d+x\d+)(\.[^./]+)$/i, "$2");
+}
+
 async function urlToBase64(imageUrl: string): Promise<string> {
   if (imageUrl.startsWith("/oss/")) {
-    return await u.oss.getImageBase64(u.replaceUrl(imageUrl).replace("/smallImage", ""));
+    return await u.oss.getImageBase64(thumbToOriginalRelPath(imageUrl));
   }
   imageUrl = await u.oss.getFileUrl(u.replaceUrl(imageUrl));
   const response = await axios.get(imageUrl, { responseType: "arraybuffer" });
