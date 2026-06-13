@@ -7,6 +7,7 @@ import http from "node:http";
 import expressWs from "express-ws";
 import logger from "morgan";
 import cors from "cors";
+import compression from "compression";
 import buildRoute from "@/core";
 import path from "path";
 import fs from "fs";
@@ -79,6 +80,9 @@ export default async function startServe(randomPort: Boolean = false) {
 
   app.use(logger("dev"));
   app.use(cors({ origin: "*" }));
+  // gzip 压缩：对 JS/CSS/JSON/HTML 等文本响应压缩传输，前端拆包后首屏体积可降约 70%。
+  // 默认按 content-type 过滤、对 >1KB 的响应生效；图片/视频等已压缩资源会被自动跳过。
+  app.use(compression());
   app.use(express.json({ limit: "100mb" }));
   app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
