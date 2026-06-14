@@ -114,11 +114,11 @@ export default async function startServe(randomPort: Boolean = false) {
               res.sendFile(thumbnailPath);
             } else {
               // 预览生成失败，降级返回原文件（仍由 express.static 处理）。
-              express.static(ossDir, { acceptRanges: false })(req, res, next);
+              express.static(ossDir)(req, res, next);
             }
           })
           .catch(() => {
-            express.static(ossDir, { acceptRanges: false })(req, res, next);
+            express.static(ossDir)(req, res, next);
           });
         return;
       }
@@ -149,7 +149,7 @@ export default async function startServe(randomPort: Boolean = false) {
           sizeOpts = { type: "percentage", value: pct };
         } else {
           // 无效的 size 参数，降级返回原图
-          express.static(ossDir, { acceptRanges: false })(req, res, next);
+          express.static(ossDir)(req, res, next);
           return;
         }
 
@@ -167,18 +167,18 @@ export default async function startServe(randomPort: Boolean = false) {
               res.sendFile(thumbnailPath);
             } else {
               // 缩略图生成失败，降级返回原图
-              express.static(ossDir, { acceptRanges: false })(req, res, next);
+              express.static(ossDir)(req, res, next);
             }
           })
           .catch(() => {
             // 生成过程异常，降级返回原图
-            express.static(ossDir, { acceptRanges: false })(req, res, next);
+            express.static(ossDir)(req, res, next);
           });
         return;
       }
       next();
     },
-    express.static(ossDir, { acceptRanges: false }),
+    express.static(ossDir),
   );
   // skills 静态资源
   const skillsDir = u.getPath("skills");
