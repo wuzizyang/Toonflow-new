@@ -201,7 +201,7 @@ export default async function startServe(randomPort: Boolean = false) {
     fs.mkdirSync(assetsDir, { recursive: true });
   }
   console.log("文件目录:", assetsDir);
-  app.use("/assets", express.static(assetsDir, { acceptRanges: false }));
+  app.use("/assets", express.static(assetsDir));
 
   // data/web 静态网站
   const webDir = u.getPath("web");
