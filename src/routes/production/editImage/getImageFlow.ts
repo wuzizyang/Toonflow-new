@@ -26,7 +26,7 @@ export default router.post(
           } else if (node.type === "generated") {
             node.data.generatedImage = node.data.generatedImage ? await u.oss.getSmallImageUrl(toOriginalRelPath(node.data.generatedImage)) : "";
 
-            node.data.references = await Promise.all(node.data.references.map(async (item: { image: string }) => {
+            node.data.references = await Promise.all((node.data.references ?? []).map(async (item: { image: string }) => {
               return {
                 image: item.image ? await u.oss.getSmallImageUrl(toOriginalRelPath(item.image)) : ""
               }
