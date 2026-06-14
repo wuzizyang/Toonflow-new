@@ -1,0 +1,49 @@
+# Toonflow HTTPS 反向代理配置（裸机版 / 非 Docker）
+#
+# 适用场景：服务器上以 `npx tsx src/app.ts` 等方式直接跑后端（监听 10588 纯 HTTP），
+#           在其前面单独跑一个 Caddy 进程做 HTTPS 终止，反代到本机 10588。
+#
+# 与 deploy/Caddyfile 的唯一区别：上游是 localhost:10588（本机端口），
+# 而非 Docker 网络里的服务名 app:10588。
+#
+# ── 用法（在服务器 /root/Toonflow-new 上执行）────────────────────
+#
+# 1. 安装 Caddy（Debian/Ubuntu）：
+#      apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
+#      curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' \
+#        | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+#      curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' \
+#        | tee /etc/apt/sources.list.d/caddy-stable.list
+#      apt update && apt install -y caddy
+#
+# 2. 用本配置启动 Caddy（前台测试）：
+#      caddy run --config /root/Toonflow-new/deploy/Caddyfile.baremetal
+#    后台常驻：
+#      caddy start --config /root/Toonflow-new/deploy/Caddyfile.baremetal
+#    （或写成 systemd 服务，见 README-https.md）
+#
+# 3. 放通防火墙/安全组 443 端口，浏览器访问 https://85.137.247.69
+#    自签证书会有一次性「不是私密连接」警告，点「高级 → 继续前往」即可。
+#    关键：自签下 window.isSecureContext 仍为 true，WebCodecs/OPFS 可正常工作。
+#
+# ── 有域名时（无证书警告，推荐）──────────────────────────────────
+# 把下面的 `https://85.137.247.69` 换成域名，并删除 `tls internal` 行，
+# Caddy 会自动向 Let's Encrypt 申请受信任证书（需域名解析到本机 + 放通 80/443）。
+# ───────────────────────────────────────────────────────────────
+
+{
+	auto_https disable_redirects
+}
+
+https://85.137.247.69 {
+	# 自签证书：Caddy 内部 CA 为该 IP 生成证书。换成域名时请删除本行。
+	tls internal
+
+	# 反代到本机后端（裸进程监听 10588）。Caddy 默认自动处理 WebSocket 升级。
+	reverse_proxy localhost:10588
+
+	# 放宽上传体积，与后端 express 的 100mb 上限保持一致。
+	request_body {
+		max_size 100MB
+	}
+}
