@@ -171,6 +171,7 @@ import route166 from "./routes/task/getTaskApi";
 import route167 from "./routes/task/getTaskCategories";
 import route168 from "./routes/task/taskDetails";
 import route169 from "./routes/test/test";
+import route170 from "./routes/production/workbench/batchDeleteTrack";
 
 export default async (app: Express) => {
   app.use("/api/agents/clearMemory", route1);
@@ -343,4 +344,5 @@ export default async (app: Express) => {
   app.use("/api/task/getTaskCategories", route167);
   app.use("/api/task/taskDetails", route168);
   app.use("/api/test/test", route169);
+  app.use("/api/production/workbench/batchDeleteTrack", route170);
 }
