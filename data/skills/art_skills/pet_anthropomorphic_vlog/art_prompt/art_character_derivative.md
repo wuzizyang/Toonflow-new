@@ -64,10 +64,10 @@
 
 | 项目 | 约束 | 提示词 |
 |---|---|---|
-| 质感 | 蓬松柔软、有体积 | 蓬松绒毛、fluffy soft fur |
+| 质感 | 逐根真实毛发、有层次 | 真实毛发、realistic detailed fur |
 | 光泽 | 柔和自然光泽 | 柔和光泽、soft sheen |
 | 种属特征 | 保持底模耳形/口鼻/胡须 | 保留种属特征、consistent animal features |
-| 禁止 | 写实化/塑料感/失去绒毛 | — |
+| 禁止 | 卡通化/插画/塑料感/玩具感 | — |
 
 ---
 
@@ -174,7 +174,7 @@
 | 背景 | 纯净中性灰 #E8E8E8 |
 | 站姿 | 拟人直立、双脚平行微分、双臂自然下垂或微展（**禁止任何姿态变化**） |
 | 表情 | 符合面部状态的微表情（如自然萌态→亲切、活力态→明亮），仅限面部微表情，不涉及肢体动作 |
-| 光线 | 柔和均匀光，毛绒体积感清晰 |
+| 光线 | 自然写实光，真实毛发细节清晰 |
 | 一致性 | 四视图的种属/毛色/造型/服饰/配饰/尾巴完全一致 |
 | 画面比例 | 建议 4:1 或 3:1 |
 
@@ -198,17 +198,17 @@
 ```
 以角色基础形象图为底图，img2img叠加服化造型，
 宠物拟人化Vlog{种属}角色四视图设定图，
-anthropomorphic pet character，2.5D semi-3D illustration，
-fluffy fur，soft volumetric fur，pixar-like cute，warm soft lighting，
+photorealistic anthropomorphic pet character，hyperrealistic 3D render，cinematic，
+realistic detailed fur，individual fur strands，subsurface scattering，
 保持基础形象种属特征与轮廓不变，保留{种属}耳形/口鼻/胡须/毛色，{整体气质}，
 【L1·面部状态】根据用户线索决策：{自然态/精神态/特殊态}；使用 {状态}，圆润大眼有神，{耳朵状态}，{气色描述}，
 【L2·头部造型】{造型类型}，{头饰描述}，为耳朵预留位，
 【L3+L4·服饰】{主色}{款式}，{材质}，自然布料，为动物身躯适配预留尾巴位，柔和褶皱，
 【L5·配饰】{颈饰}，{眼镜}，{背包/手袋}，
-保留{种属}尾巴，fluffy tail，
+保留{种属}尾巴，realistic furry tail，
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
-拟人自然站立，纯净中性灰背景，柔和均匀光，毛绒体积感清晰，
-四视图一致性，绒毛质感统一，
+拟人自然站立，纯净中性灰背景，自然写实柔和光，真实毛发细节清晰，
+四视图一致性，真实毛发质感统一，photorealistic, no cartoon, no illustration,
 图中不要有任何文字
 ```
 
@@ -251,5 +251,5 @@ fluffy fur，soft volumetric fur，pixar-like cute，warm soft lighting，
 | X11 | 加入表情与姿态联动的叙事性描写 |
 | X12 | 未分析用户线索就直接套用固定状态 |
 | X13 | 四足兽形/趴卧爬行姿态 |
-| X14 | 写实动物质感/塑料感/失去绒毛体积 |
+| X14 | 卡通/插画/黏土/塑料感/玩具感等非写实质感 |
 | X15 | 恐怖/怪诞/扭曲拟人造型 |

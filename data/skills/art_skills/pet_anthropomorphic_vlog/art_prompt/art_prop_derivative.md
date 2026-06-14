@@ -49,7 +49,7 @@
 | 项目 | 约束 |
 |---|---|
 | 背景 | 纯净中性灰 #E8E8E8（与设定图一致） |
-| 光线 | 柔和均匀光，半立体体积感 |
+| 光线 | 自然写实光，真实材质质感 |
 | 角度 | 与原设定图正面图一致 |
 | 比例 | 道具占画面主体 70%+ |
 
@@ -82,15 +82,15 @@
 
 ```
 基于{道具名}设定图，
-anthropomorphic pet vlog prop，2.5D semi-3D illustration，
-cute rounded design，soft texture，warm soft lighting，pixar-like，
+photorealistic prop，hyperrealistic 3D render，cinematic，
+realistic materials，photorealistic texture，cinematic lighting，
 {道具类型}，{材质描述}，
 当前状态：{状态名}，{状态视觉描述}，
 {材质表面变化描述}，
 纯道具静物展示，道具独立陈列，无角色持有，无角色佩戴，
 同一画面四宫格（2×2）：左上正面图(front view)+右上侧面图(side view)+左下背面图(back view)+右下细节特写(detail closeup)，
-纯净中性灰背景，柔和均匀光，半立体体积感，
-圆润造型，柔和质感，状态细节可辨
+纯净中性灰背景，自然写实光，真实材质质感，
+真实造型，真实质感，状态细节可辨，photorealistic, no cartoon,
 图中不要有任何文字，
 画面中不能出现任何角色、爪手、手指、肢体，道具不可处于被握持或佩戴状态
 ```
@@ -118,6 +118,6 @@ cute rounded design，soft texture，warm soft lighting，pixar-like，
 | X4 | 出现任何角色形象，包括全身、半身、局部（爪手、手指、肢体等） |
 | X5 | 道具处于被持有、握持、佩戴、使用中的状态 |
 | X6 | 出现暗示角色存在的元素（如握持痕迹、佩戴视角、使用姿态） |
-| X7 | 写实照片质感/冷硬工业感 |
+| X7 | 卡通/插画/黏土/玩具感等非写实质感 |
 | X8 | 状态变化过于复杂、风格突变 |
 | X9 | 高饱和荧光色/赛博霓虹色 |

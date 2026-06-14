@@ -8,7 +8,7 @@
 2. **景别驱动** — 同一场景通过不同景别展示不同Vlog叙事功能
 3. **时段切换** — 同一空间在不同时间段呈现不同光线色调
 4. **天候变化** — 同一空间在不同天气下呈现不同色彩氛围
-5. **半立体为锚** — 所有变体必须保持半立体2.5D插画质感，柔和光照、温暖色调，拒绝写实照片与冷硬工业感
+5. **写实为锚** — 所有变体必须保持照片级写实3D渲染质感，真实光照、真实材质，拒绝卡通/插画/2.5D扁平
 
 ---
 
@@ -113,15 +113,15 @@
 
 ```
 宠物拟人化Vlog衍生场景图，基于参考图，
-anthropomorphic pet vlog scene derivative，2.5D semi-3D illustration，
-cozy lighting，warm color palette，soft volumetric，pixar-like，
+photorealistic anthropomorphic pet vlog scene derivative，hyperrealistic 3D render，cinematic，
+cinematic lighting，natural realistic colors，realistic materials，photorealistic，
 empty scene，no characters，no people，no animals，
 保持场景空间结构与家具一致，
 {目标角度（如有）}，{景别视角（如有）}，{时段描述（如有）}，{天候描述（如有）}，
 {前景元素}，{中景元素}，{后景元素}，
 {色调描述}，{光线变化（如有）}，{氛围调整（如有）}，
 {天候视觉特征（如有）}，{材质变化（如有）}，{植被适配描述（如有）}，
-柔和自然光，暖色调，温馨光晕，半立体体积感，生活细节，
+自然写实光照，真实光影，真实材质质感，生活细节，photorealistic, no cartoon,
 单画面构图，与参考图保持建筑结构/材质/色调一致，仅按目标角度切换视点，
 画面中无任何角色
 图中不要有任何文字
@@ -144,9 +144,9 @@ empty scene，no characters，no people，no animals，
 | R5 | 衍生图必须与参考图保持建筑结构/材质/色调一致，仅按指定角度切换视点 |
 | R6 | 场景图中**严禁出现任何角色** |
 | R7 | 根据用户提供的信息自行判断变化维度（角度/景别/时段/天候），未提及维度留空省略 |
-| R8 | 必须指定「半立体2.5D插画风格」关键词 |
-| R9 | 必须指定「柔和自然光 + 暖色调」 |
-| R10 | 材质须为半立体体积感，温馨自然 |
+| R8 | 必须指定「照片级写实3D渲染」关键词 |
+| R9 | 必须指定「自然写实光照」 |
+| R10 | 材质须为真实质感，自然可信 |
 
 ### 严禁
 
@@ -157,6 +157,6 @@ empty scene，no characters，no people，no animals，
 | X3 | 变体间材质/风格突变 |
 | X4 | 出现任何角色、人形、动物拟人剪影或轮廓 |
 | X5 | 画面被拼接成多视图/网格/分屏布局 |
-| X6 | 写实照片质感/冷硬工业感/CG游戏引擎冷调质感 |
+| X6 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感 |
 | X7 | 高饱和荧光色/赛博霓虹色 |
 | X8 | 恐怖/阴森/破败压抑的非治愈氛围（除非剧情需要） |

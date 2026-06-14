@@ -4,6 +4,6 @@
 
 | 模式 | 风格标签 |
 |------|----------|
-| **通用多参模式（英文）** | `anthropomorphic pet vlog, 2.5D semi-3D illustration, fluffy fur, soft volumetric, pixar-like cute, cozy warm lighting, lifestyle vlog mood` |
-| **通用首尾帧模式（英文）** | `anthropomorphic pet vlog, 2.5D semi-3D illustration, fluffy fur, soft volumetric, pixar-like cute, cozy warm lighting, lifestyle vlog mood, shallow depth of field` |
-| **Seedance 2.0（中文）** | `宠物拟人化Vlog，半立体2.5D插画，蓬松绒毛，柔和体积感，皮克斯式可爱，温暖治愈光线，生活Vlog氛围` |
+| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, hyperrealistic 3D render, realistic detailed fur, subsurface scattering, cinematic lighting, lifestyle vlog mood` |
+| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, hyperrealistic 3D render, realistic detailed fur, subsurface scattering, cinematic lighting, lifestyle vlog mood, shallow depth of field` |
+| **Seedance 2.0（中文）** | `宠物拟人化，照片级写实3D渲染，逐根真实毛发，次表面散射，电影级光照，真实生活Vlog氛围` |

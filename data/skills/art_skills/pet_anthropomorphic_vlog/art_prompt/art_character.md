@@ -4,10 +4,10 @@
 
 ## 一、基础形象原则
 
-1. **种属即灵魂** — 动物种属特征（耳形/口鼻/绒毛/尾巴）是角色唯一锚点，跨视图必须高度统一
-2. **拟人为本** — 角色为直立人形身躯 + 完整动物头部；基础着装由角色设定（种属/性格/身份/场景）决定其常规着装，后续特定服化为叠加层
-3. **四视图一致** — 种属/毛色/体型/发饰/基础服装跨视图高度统一
-4. **毛绒体积** — 半立体2.5D插画质感，绒毛蓬松柔软，圆润有体积感，柔和光泽
+1. **种属即灵魂** — 真实动物种属特征（耳形/口鼻/胡须/真实毛发/尾巴）是角色唯一锚点，跨视图必须高度统一
+2. **拟人为本** — 角色为直立人形身躯 + 完整真实动物头部；基础着装由角色设定（种属/性格/身份/场景）决定其常规着装，后续特定服化为叠加层
+3. **四视图一致** — 种属/毛色/体型/服装跨视图高度统一
+4. **照片级写实** — 照片级写实3D渲染质感（photorealistic 3D render），逐根真实毛发、皮毛层次、次表面散射光泽、真实解剖结构，绝非卡通/插画/黏土
 
 ---
 
@@ -19,11 +19,11 @@
 
 | 项目 | 约束 |
 |---|---|
-| 种属特征 | 由角色设定确定（猫/狗/兔/仓鼠/狐狸等），必须保留对应耳形、口鼻、胡须、绒毛 |
-| 五官 | 由种属与性格自然推导，圆润大眼有神、有高光，不预设固定脸型 |
-| 风格底色 | 半立体2.5D插画、毛绒质感、柔和光泽、皮克斯式可爱体积感 |
-| 气质 | 必须从角色设定提炼整体气质关键词（萌趣/慵懒/活泼/优雅），并写入提示词 |
-| 表情 | 中性微表情，符合角色气质，亲切自然 |
+| 种属特征 | 由角色设定确定（猫/狗/兔/仓鼠/狐狸等），必须保留对应耳形、口鼻、胡须、真实毛发纹理 |
+| 五官 | 由种属与性格自然推导，真实有神的眼睛（真实瞳孔/虹膜/湿润高光），真实鼻头与胡须，不预设固定脸型 |
+| 风格底色 | 照片级写实3D渲染、真实毛发、自然光照、次表面散射、电影级质感（photorealistic, hyperrealistic, cinematic） |
+| 气质 | 必须从角色设定提炼整体气质关键词（萌趣/慵懒/活泼/优雅），通过真实神态体现，并写入提示词 |
+| 表情 | 中性微表情，符合角色气质，亲切自然且真实可信 |
 
 ---
 
@@ -33,11 +33,11 @@
 
 | 项目 | 约束 | 提示词 |
 |---|---|---|
-| 毛色 | 按种属设定、柔和均匀 | {毛色}绒毛、soft fur color、fluffy coat |
-| 质感 | 蓬松柔软、有体积 | 蓬松绒毛、fluffy soft fur、volumetric fur |
-| 光泽 | 柔和自然光泽、无塑料感 | 柔和光泽、soft sheen、no plastic look |
-| 头部 | 完整动物头部、耳朵竖立或垂落 | 动物头部、{耳形}、animal head、furry face |
-| 露肤 | 仅手掌/脚掌肉垫等局部，其余被毛覆盖 | 肉垫、paw pads、覆毛肢体 |
+| 毛色 | 按种属设定、真实自然、有色泽渐变 | {毛色}真实毛发、realistic fur color、natural coat |
+| 质感 | 逐根毛发、真实皮毛层次、蓬松有立体感 | 逐根毛发、detailed individual fur strands、realistic fluffy fur、fur grooming |
+| 光泽 | 真实自然光泽、次表面散射、无塑料无橡胶感 | 真实光泽、subsurface scattering、no plastic, no rubber look |
+| 头部 | 完整真实动物头部、耳朵竖立或垂落、耳内细毛 | 真实动物头部、{耳形}、photorealistic animal head、realistic furry face |
+| 露肤 | 仅手掌/脚掌肉垫等局部，真实肉垫质感，其余被毛覆盖 | 真实肉垫、realistic paw pads、覆毛肢体 |
 
 ---
 
@@ -48,7 +48,7 @@
 | 项目 | 约束 | 提示词 |
 |---|---|---|
 | 身高 | 由角色设定指定，默认范围 150-180cm，通过头身比体现 | {身高}cm tall、anthropomorphic standing |
-| 头身比 | 五头身至六头身（萌系大头），严格约束全身比例 | 5-6 heads tall proportion、chibi-friendly proportion |
+| 头身比 | 六头身至七头身，自然真实比例（避免卡通大头） | 6-7 heads tall proportion、natural realistic proportion |
 | 姿态 | 直立人形、双足站立，禁止四足兽形 | 拟人直立、bipedal standing、upright posture |
 | 肩颈 | 柔和圆润、绒毛覆盖 | 圆润肩颈、furry shoulders |
 | 手部 | 拟人化爪手/肉垫，五指可握物 | 拟人爪手、paw hands、肉垫手掌 |
@@ -102,7 +102,7 @@
 
 | 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
 |---|---|---|---|---|---|
-| 左一 | 头部特写 | 正面平视 | 头顶至肩部 | 完整展示动物头部、耳朵、五官、绒毛，不裁切 | head closeup、face detail、ears complete、no crop |
+| 左一 | 头部特写 | 正面平视 | 头顶至肩部 | 完整展示动物头部、耳朵、五官、真实毛发，不裁切 | head closeup、face detail、ears complete、no crop |
 | 左二 | 正视图 | 正面 0° | 全身立像 | 面对镜头、双臂自然、从头顶到脚底完整展示，含尾巴 | front view、full body head to toe、tail visible |
 | 右二 | 侧视图 | 右侧 90° | 全身立像 | 纯侧面轮廓清晰、尾巴与口鼻轮廓清晰、完整展示 | side view、profile、full body、tail visible |
 | 右一 | 后视图 | 后方 180° | 全身立像 | 后脑/背部/尾巴/脚部清晰、完整展示 | back view、rear view、full body、tail visible |
@@ -115,9 +115,9 @@
 | 背景 | 纯净中性灰 #E8E8E8 |
 | 站姿 | 拟人直立、双脚平行微分、双臂自然下垂或微展 |
 | 全身展示 | 全身立像必须从头顶到脚底完整入画，尾巴完整，严禁裁切头顶或脚部 |
-| 特写展示 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖，绒毛、口鼻、下巴均需完整 |
+| 特写展示 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖，真实毛发、口鼻、下巴均需完整 |
 | 表情 | 中性微表情，符合角色气质 |
-| 光线 | 柔和均匀光，毛绒体积感清晰，无强烈阴影 |
+| 光线 | 自然写实柔和光，真实毛发层次与高光清晰，真实柔和阴影 |
 | 一致性 | 四视图的种属/毛色/体型/耳形/尾巴/基础服装完全一致 |
 | 画面比例 | 建议 4:1 或 3:1 |
 
@@ -127,18 +127,19 @@
 
 ```
 {种属}拟人角色四视图设定图，
-anthropomorphic pet character，2.5D semi-3D illustration，
-fluffy fur，soft volumetric fur，pixar-like cute，warm soft lighting，
-{种属特征：耳形/口鼻/胡须/绒毛 - 由角色设定推导}，{整体气质}，圆润大眼有神，
-{毛色}绒毛，蓬松柔软，soft fur color，fluffy coat，
-{身高描述，如：165cm tall、anthropomorphic standing}，{头身比，如：5.5 heads tall proportion}，拟人直立人形身躯，bipedal upright，
-保留{种属}尾巴，fluffy tail，拟人爪手肉垫，
-{角色身份对应的常规着装，如：卫衣休闲裤/针织衫/校园风}，柔和色调，自然布料，为动物身躯适配预留尾巴位，
+photorealistic anthropomorphic pet character，hyperrealistic 3D render，cinematic，octane render quality，
+realistic detailed fur，individual fur strands，subsurface scattering，natural fur grooming，
+{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质}，真实有神的眼睛，realistic eyes，
+{毛色}真实毛发，realistic fur color，natural coat，
+{身高描述，如：165cm tall、anthropomorphic standing}，{头身比，如：6.5 heads tall proportion}，拟人直立人形身躯，bipedal upright，natural realistic proportion，
+保留{种属}尾巴，realistic furry tail，拟人爪手肉垫，realistic paw hands，
+{角色身份对应的常规着装，如：卫衣休闲裤/针织衫/校园风}，自然布料质感，真实面料褶皱，为动物身躯适配预留尾巴位，
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
 头部特写完整展示耳朵到肩部，不裁切耳尖，ears and face complete，
 全身立像从头顶到脚底完整展示，full body head to toe，尾巴完整，不裁切头顶和脚部，
-拟人自然站立，纯净中性灰背景，柔和均匀光，毛绒体积感清晰，
-四视图一致性，绒毛质感统一，
+拟人自然站立，纯净中性灰背景，自然写实柔和光，真实毛发细节清晰，
+photorealistic, hyper-detailed, no cartoon, no illustration, no claymation,
+四视图一致性，真实毛发质感统一，
 图中不要有任何文字
 ```
 
@@ -150,25 +151,27 @@ fluffy fur，soft volumetric fur，pixar-like cute，warm soft lighting，
 
 | 编号 | 规则 |
 |---|---|
-| R1 | 必须保留完整动物头部特征（耳形/口鼻/胡须/绒毛） |
+| R1 | 必须保留完整真实动物头部特征（耳形/口鼻/胡须/真实毛发） |
 | R2 | 必须为「拟人直立人形身躯」，禁止四足兽形 |
 | R3 | 必须根据角色设定声明合适的常规着装作为基础服装；禁止暴露/性化打底 |
 | R4 | 必须保留种属尾巴并在各视图中体现 |
 | R5 | 必须指定「纯净中性灰背景」 |
 | R6 | 必须指定「四视图一致性」 |
 | R7 | 全身立像必须从头顶到脚底完整展示，尾巴完整，严禁裁切 |
-| R8 | 必须指定角色身高并通过头身比换算约束全身比例（默认150-180cm/5-6头身萌系比例） |
+| R8 | 必须指定角色身高并通过头身比换算约束全身比例（默认150-180cm/6-7头身自然真实比例） |
 | R9 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖 |
+| R10 | 必须指定「照片级写实3D渲染 + 逐根真实毛发 + 次表面散射」质感锚定词 |
 
 ### 严禁
 
 | 编号 | 严禁 |
 |---|---|
 | X1 | 暴露/性化打底；与角色设定明显不符的着装 |
-| X2 | 写实动物纪录片质感/照片级真实动物 |
+| X2 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感（cartoon, illustration, claymation, toy-like） |
 | X3 | 失去动物头部特征变成纯人类 |
 | X4 | 四足兽形姿态/趴卧爬行姿态 |
 | X5 | 恐怖/怪诞/扭曲/畸形拟人造型 |
 | X6 | 全身立像裁切头顶、耳尖或脚底 |
 | X7 | 头部特写裁切耳尖，必须完整入画 |
 | X8 | 忽略身高和头身比约束 |
+| X9 | 塑料感/橡胶感/无细节纯色绒毛，毛发必须真实有层次 |
