@@ -1,0 +1,57 @@
+# Toonflow 部署编排：后端 app + Caddy HTTPS 反向代理
+#
+# 用法：
+#   cd Toonflow-app
+#   docker compose -f deploy/docker-compose.yml up -d --build
+#
+# 访问：https://85.137.247.69   （自签证书会有一次性安全警告，点继续即可）
+#
+# 说明：
+# - app 不再对外暴露 10588（仅在内部网络供 Caddy 访问），统一从 443 走 HTTPS。
+# - 如需保留 10588 的 HTTP 直连用于调试，取消 app.ports 的注释。
+
+services:
+  app:
+    build:
+      # 构建上下文为仓库根目录（deploy/ 的上一级），复用现有 Dockerfile。
+      context: ..
+      dockerfile: Dockerfile
+    container_name: toonflow-app
+    restart: unless-stopped
+    environment:
+      NODE_ENV: dev
+      PORT: "10588"
+    volumes:
+      # 持久化数据目录（数据库、OSS 文件、前端产物等），按需调整宿主机路径。
+      - ../data:/app/data
+    # ports:
+    #   - "10588:10588"   # 仅调试时开启 HTTP 直连
+    expose:
+      - "10588"
+    networks:
+      - toonflow
+
+  caddy:
+    image: caddy:2
+    container_name: toonflow-caddy
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      # 持久化 Caddy 证书/CA，避免每次重启重新签发（自签 CA 指纹也会保持稳定）。
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - toonflow
+
+networks:
+  toonflow:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

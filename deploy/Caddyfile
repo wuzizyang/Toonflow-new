@@ -1,0 +1,39 @@
+# Toonflow HTTPS 反向代理配置（Caddy v2）
+#
+# 作用：在后端 Express(10588) 前挂一层 HTTPS，使浏览器进入「安全上下文」，
+#       从而启用 WebCodecs(VideoDecoder)，修复视频预览/缩略图无法解码的问题。
+#
+# 前端 API / Socket / OSS 文件 URL 均为同源相对路径，反代后会自动跟随 HTTPS，
+# 无需改动任何前端代码。
+#
+# ── 两种使用方式 ────────────────────────────────────────────────
+#
+# A. 仅有 IP、没有域名（当前情况：85.137.247.69）
+#    使用 Caddy 内置 CA 签发的自签证书（tls internal），支持给 IP 签 SAN。
+#    浏览器首次访问会提示「证书不受信任」，点击「继续前往」即可。
+#    注意：自签证书下 window.isSecureContext 仍为 true，WebCodecs 可正常工作。
+#
+# B. 有域名（推荐，无证书警告）
+#    把下面的 `https://85.137.247.69` 换成你的域名（如 toonflow.example.com），
+#    并删除 `tls internal` 这一行，Caddy 会自动向 Let's Encrypt 申请受信任证书。
+#
+# ───────────────────────────────────────────────────────────────
+
+{
+	# 关闭自动 HTTP->HTTPS 跳转的额外站点，避免裸 IP 场景下的冗余监听。
+	auto_https disable_redirects
+}
+
+# 用 IP 直接对外提供 HTTPS（自签证书）。如改用域名，替换此处主机名并删除 tls internal。
+https://85.137.247.69 {
+	# 自签证书：Caddy 内部 CA 为该 IP 生成证书。换成域名时请删除本行。
+	tls internal
+
+	# 反代到后端容器；Caddy 默认自动处理 WebSocket 升级（Socket.IO 无需额外配置）。
+	reverse_proxy app:10588
+
+	# 放宽上传体积，与后端 express.json/urlencoded 的 100mb 上限保持一致。
+	request_body {
+		max_size 100MB
+	}
+}
