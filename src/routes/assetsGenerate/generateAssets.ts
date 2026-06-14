@@ -43,7 +43,16 @@ const assetTypeConfig: Record<AssetType, AssetTypeConfig> = {
 
 // ─── 构建生成提示词 ──────────────────────────────────────────
 
-function buildPrompt(cfg: AssetTypeConfig, artStyle: string, name: string, prompt: string): string {
+function buildPrompt(cfg: AssetTypeConfig, artStyle: string, name: string, prompt: string, hasReference = false): string {
+  const referenceGuide = hasReference
+    ? `
+
+    **图生图参考图说明（重要）：**
+    - 已提供一张真实宠物参考图，请以该宠物为原型进行创作。
+    - 必须保留参考图中宠物的品种、毛色、花纹、五官特征等可识别外观。
+    - 在保留上述特征的基础上，将其转换为拟人化直立、穿着服装、符合画风风格的角色形象。
+    - 不要照搬参考图的姿态/背景，仅参考其外观特征。`
+    : "";
   return `
     请根据以下参数生成${cfg.promptTitle}：
 
@@ -53,6 +62,7 @@ function buildPrompt(cfg: AssetTypeConfig, artStyle: string, name: string, promp
     **${cfg.label}设定：**
     - 名称:${name},
     - 提示词:${prompt},
+${referenceGuide}
 
     请严格按照系统规范生成${cfg.promptEnd}。
   `;
@@ -93,7 +103,7 @@ export default router.post("/", validateFields(requestSchema), async (req, res) 
 
   // 3. 准备生成参数
   const imagePath = `/${projectId}/${cfg.dir}/${uuidv4()}.jpg`;
-  const userPrompt = buildPrompt(cfg, project.artStyle!, name, prompt);
+  const userPrompt = buildPrompt(cfg, project.artStyle!, name, prompt, !!base64);
   const describe = `生成${cfg.label}图，名称：${name}，提示词：${prompt}`;
   const relatedObjects = { id, projectId, type: cfg.label };
 
