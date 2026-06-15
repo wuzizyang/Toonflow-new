@@ -14,6 +14,43 @@ metaData: director_skills
 
 ---
 
+## 多图合成镜头的融合协调规范（消除违和感）
+
+> 分镜图通常由「角色参考图 + 场景参考图 + 道具参考图」多张合成。若不主动要求融合，结果常常**像把各元素贴在一起**：角色偏 CG 玩具渲染、场景是实拍、光照各打各的、比例透视对不上、人物悬浮没落地。生成镜头提示词时**必须显式声明以下融合约束**。
+
+### 一、统一质感（首要）
+
+- 全画面**统一为同一种照片级写实质感**：角色、场景、道具都要"像在同一台相机、同一现场拍下来的"
+- 角色须延续真实毛发与真实兽态质感，**不可呈现塑料/玩具/CG摆件感**；与写实场景同档真实度
+- 提示词声明：`统一照片级写实质感，所有元素如同一现场实拍，one coherent photorealistic shot, unified rendering, consistent realism across character/scene/props`
+
+### 二、统一光照与阴影
+
+- 全画面共用**同一光源方向、色温与强度**；角色受光必须与场景光照一致（如黄金时刻暖光从右侧来，角色也从右侧受光）
+- 角色与道具必须有**与地面/家具一致的接触阴影（contact shadow）与落地投影**，确保"踩实"在场景里、不悬浮
+- 提示词声明：`统一光源方向与色温，角色受光与环境一致，真实接触阴影与落地投影，consistent lighting direction and color temperature, grounded contact shadows, matched ambient light`
+
+### 三、统一比例与透视
+
+- 角色、道具尺寸须**符合真实物理尺度**与场景透视（小兽尺度的角色 vs 街角/家具/蛋糕盒的合理大小关系），避免道具过大、角色过小/过大
+- 角色站位须落在场景地面合理位置，**视平线与场景一致**
+- 提示词声明：`比例与透视和场景一致，符合真实尺度，角色稳稳站在地面，correct scale and perspective, consistent horizon line, characters firmly on the ground plane`
+
+### 四、统一色调与空气感
+
+- 全画面做**统一色彩分级（color grading）**与统一白平衡，让角色融入场景色调，避免角色发色温、场景发冷的撕裂感
+- 共享同一空气透视/景深，主体清晰、远景自然柔化
+- 提示词声明：`统一色彩分级与白平衡，统一空气透视与景深，unified color grading, single white balance, cohesive atmosphere`
+
+### 五、服饰与既有资产继承
+
+- 角色服饰、道具外观一律**继承各自参考图**，镜头提示词不重新描述服装/鞋袜/配饰（见「美学禁止项」），只描述动作、表情、站位、镜头、光影
+- 多角色同框时，逐一锚定各自参考图，禁止串味（A 的花色长到 B 身上）
+
+> ✅ **一句话原则**：镜头提示词要把多张参考图"焊"成一张照片——同一光、同一色、同一尺度、同一真实度，角色落地、服饰沿用参考图。
+
+---
+
 ## 情绪 → 面容/眼神词映射
 
 > 宠物拟人角色的情绪表达兼用「五官表情」与「种属特征动态」（耳朵/尾巴/胡须）。
@@ -95,6 +132,14 @@ metaData: director_skills
 
 温暖治愈氛围，真实拟人反差，陪伴式情感，以假乱真
 
+**多图融合锚定（含角色/场景/道具多张参考图时必选）：**
+
+模式A（中文）：
+统一照片级写实质感，所有元素如同一现场实拍，统一光源方向与色温，角色受光与环境一致，真实接触阴影与落地投影，比例透视与场景一致符合真实尺度，角色稳稳站在地面，统一色彩分级与白平衡，画面浑然一体无拼贴感
+
+模式B（英文）：
+one coherent photorealistic shot, unified rendering and realism across character/scene/props, consistent lighting direction and color temperature, character lit by the same light as the environment, grounded contact shadows, correct scale and perspective matching the scene, consistent horizon line, unified color grading and white balance, seamless composite, no pasted-on look
+
 **画质锁定词（所有输出必须包含，置于风格收尾之后）：**
 
 模式A（中文）——默认：
@@ -114,7 +159,7 @@ photorealistic, hyperrealistic 3D render, ultra-detailed fur, individual fur str
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, no horror, no distorted anthropomorph, no neon colors
 
 ---
 
@@ -176,7 +221,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, ultra-detailed realistic fur, individual fur strands, subsurface scattering, hyperrealistic 3D render, cozy golden-hour window light, cinematic lighting, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, no horror, no distorted anthropomorph, no neon colors
 </negative>
 ```
 

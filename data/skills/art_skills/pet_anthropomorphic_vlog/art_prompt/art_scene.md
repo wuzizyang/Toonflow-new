@@ -7,7 +7,7 @@
 1. **空间叙事** — 场景承载Vlog生活叙事与情绪功能，是有温度的生活空间，不是纯背景板
 2. **生活质感** — 居家/咖啡馆/街头/户外等真实生活场景，充满烟火气与日常细节
 3. **毛绒友好尺度** — 场景物件尺度与拟人宠物角色协调，圆润可爱，温馨亲切
-4. **写实为锚** — 一切画面以照片级写实3D渲染为标准，真实光照、真实材质、自然景深，拒绝卡通/插画/2.5D扁平
+4. **写实为锚（照片实拍优先）** — 场景一切画面以**真实照片质感**为最高标准：追求像一张生活实拍照（真实摄影/单反质感/真实光影/真实材质/自然景深/真实空气感），而非渲染海报或概念图。**杜绝插画、绘画感、概念图、卡通、2.5D扁平、过度CG塑料光泽与梦幻光晕**。宁可像一张随手拍的生活照，也不要像精修渲染图。
 
 ---
 
@@ -105,17 +105,18 @@
 ## 六、提示词模板
 
 ```
-宠物拟人化Vlog场景主视图概念图，
-photorealistic anthropomorphic pet vlog scene，hyperrealistic 3D render，cinematic，
-cinematic lighting，natural realistic colors，realistic materials，photorealistic，
+宠物拟人化Vlog场景主视图，真实生活实拍照风格，
+photorealistic photograph，real-life photo，shot on DSLR，35mm/50mm lens，natural lighting photography，true-to-life，ultra realistic，
+hyperrealistic detail，realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
 empty scene，no characters，no people，no animals，
 {室内/室外}，{场景类型}，{季节+时间}，
 前景：{元素}，中景：{元素}，后景：{元素}，
 {色调描述}，{天候/氛围元素}，
-{材质描述}，自然景深，生活细节，lived-in feel，
-自然写实光照，真实光影，真实材质质感，photorealistic, no cartoon, no illustration,
+{材质描述}，自然景深，真实空气感，生活细节，lived-in feel，
+自然写实光照，真实光影，真实材质质感，
 单画面构图，自然观察视角，构图能代表场景主体并展示前/中/后景层次，
-画面中无任何角色
+画面中无任何角色，
+no illustration, no painting, no concept art, no painterly, no anime, no cartoon, no 2.5D, no CG poster look, no plastic render, no fantasy glow, no oversaturation,
 图中不要有任何文字
 ```
 
@@ -132,8 +133,8 @@ empty scene，no characters，no people，no animals，
 | R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
 | R4 | 构图须能代表场景主体并展示前/中/后景层次 |
 | R5 | 场景图中**严禁出现任何角色** |
-| R6 | 必须指定「照片级写实3D渲染」关键词 |
-| R7 | 必须指定「自然写实光照」 |
+| R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on DSLR / 真实摄影），优先于渲染感 |
+| R7 | 必须指定「自然写实光照」与真实空气感，避免梦幻光晕 |
 | R8 | 材质须为真实质感，自然可信 |
 
 ### 严禁
@@ -146,6 +147,6 @@ empty scene，no characters，no people，no animals，
 | X4 | 植被/天候与季节矛盾 |
 | X5 | 出现任何角色、人形、动物拟人剪影或轮廓 |
 | X6 | 画面被拼接成多视图/网格/分屏布局 |
-| X7 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感 |
-| X8 | 高饱和荧光色/赛博霓虹色 |
+| X7 | 卡通/插画/绘画感/概念图/2.5D扁平/玩具感/CG渲染海报/塑料光泽等非真实照片质感 |
+| X8 | 高饱和荧光色/赛博霓虹色/过曝梦幻光晕/过度精修的非真实感 |
 | X9 | 恐怖/阴森/破败压抑的非治愈氛围（除非剧情需要） |
