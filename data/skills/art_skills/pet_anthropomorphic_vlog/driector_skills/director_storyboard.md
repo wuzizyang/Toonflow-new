@@ -63,7 +63,7 @@ metaData: director_skills
 
 | 场景类型 | 必加约束词 |
 |----------|-----------|
-| 拟人角色 | 保留真实动物全身特征与体态，拟人化直立姿态但保留真实兽态（大头短身、短小四肢、真实前爪），逐根真实毛发，真实解剖结构，照片级写实 |
+| 拟人角色 | 保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足）保留真实兽态（大头短身、短小四肢、真实前爪），逐根真实毛发，真实解剖结构，照片级写实 |
 | 居家空间 | 温馨家具，木质布艺，暖色调，生活细节，柔和窗光 |
 | 咖啡馆 | 木桌椅，暖光吊灯，咖啡器具，惬意氛围 |
 | 户外自然 | 柔和绿植，自然光，清新色调，治愈氛围 |
@@ -77,7 +77,7 @@ metaData: director_skills
 
 **宠物拟人化风格锚定（必选）：**
 
-宠物拟人化，保留真实动物全身特征与体态，拟人化直立姿态但保留真实兽态（大头短身、短小四肢、真实前爪，非人类修长躯干与五指手），照片级写实3D渲染，电影级质感
+宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足，非人类笔直站姿与人腿剪影），保留真实兽态（大头短身、短小四肢、真实前爪），照片级写实3D渲染，电影级质感
 
 **真实毛发质感（所有输出必选）：**
 
@@ -114,7 +114,7 @@ photorealistic, hyperrealistic 3D render, ultra-detailed fur, individual fur str
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, keep real animal body with short stubby limbs and real paws, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
 
 ---
 
@@ -124,8 +124,9 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 
 - ❌ 卡通/插画/黏土/2.5D扁平/玩具感/塑料感等非写实质感
 - ❌ 失去真实动物身体特征的纯人类/人形化躯干角色
-- ❌ 过度拟人：人类化修长躯干/宽肩/修长手臂/灵巧五指人手/挺直军姿（须保留真实兽态：大头短身、短小四肢、真实前爪）
-- ❌ 四足兽形/趴卧爬行姿态（角色须拟人直立）
+- ❌ 过度拟人：人类化修长躯干/宽肩/修长手臂/灵巧五指人手/挺直军姿/垂直脊柱（须为动物自然后腿立起、含背微弓、前爪收胸前、趾行爪足）
+- ❌ 人腿剪影：长裤/长袜遮盖后腿造成人类双腿轮廓（着装以上半身为主、下半身留覆毛兽腿与爪足）
+- ❌ 四足兽形/趴卧爬行姿态（角色须后腿立起的拟人姿态）
 - ❌ 恐怖/怪诞/扭曲/畸形拟人造型
 - ❌ 高饱和荧光色/赛博霓虹色
 - ❌ 画外叠加文字（字幕、水印、标题卡、旁白叠字等 UI 层文字，画面必须为纯视觉画面）
@@ -147,7 +148,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 ### 示例输出A（模式A · Seedream）
 
 [Prompt]
-宠物拟人化，保留真实动物全身特征与体态，拟人化直立姿态，照片级写实3D渲染，电影级质感，中景构图，拟人角色半身入镜，逐根真实毛发，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，黄金时刻暖光，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，以假乱真，照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照。
+宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足），照片级写实3D渲染，电影级质感，中景构图，拟人角色半身入镜，逐根真实毛发，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，黄金时刻暖光，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，以假乱真，照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照。
 Based on the reference image of 角色A, maintain consistent: animal head features, fur color, costume. Generate a new scene: anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching softly. Keep character appearance identical to reference.
 
 ### 示例输出B（模式B · Nanobanana）
@@ -158,20 +159,20 @@ You are an anthropomorphic pet vlog storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, ultra-detailed realistic fur, real animal body in upright bipedal posture with short stubby limbs and real paws (not human arms/hands), large head small rounded body, hyperrealistic 3D render
+Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, ultra-detailed realistic fur, real animal reared up on hind legs (not human standing), hunched rounded back, short stubby limbs with real paws and digitigrade feet, large head small rounded body, upper-body garment with bare furry hind legs, hyperrealistic 3D render
 </character_reference>
 <continuity_rules>
 - Same fur color, animal head features, costume across ALL shots
 - Same environment, color palette, warm lighting
 - Only framing, angle, action, expression may change
-- Keep real animal head and full-body features in bipedal upright posture; do NOT turn into a human/humanoid body or a four-legged animal
+- Keep real animal head and full-body features in a natural reared-up-on-hind-legs posture (hunched back, forepaws to chest, digitigrade feet); do NOT turn into a human/humanoid body, a stiff human stand, or a four-legged animal
 - Do NOT introduce new characters not in reference images
 </continuity_rules>
 <shot>
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, ultra-detailed realistic fur, individual fur strands, subsurface scattering, hyperrealistic 3D render, cozy golden-hour window light, cinematic lighting, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, keep real animal body with short stubby limbs and real paws, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
 </negative>
 ```
 

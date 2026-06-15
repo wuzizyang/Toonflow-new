@@ -5,9 +5,41 @@
 ## 一、基础形象原则
 
 1. **种属即灵魂** — 真实动物种属特征（耳形/口鼻/胡须/真实毛发/尾巴）是角色唯一锚点，跨视图必须高度统一
-2. **行为拟人、身体保真** — 角色保留完整真实动物身体（头部 + 真实动物体态 + 四肢 + 全身毛发 + 尾巴），仅以拟人化直立姿态站立；拟人只体现在直立、穿戴与人类行为。**身体必须读作"一只真猫/真狗站起来了"，而非"穿衣服的人形猫"**——保留真实动物的身形比例、短小四肢、爪部结构与自然兽态，禁止人类化的修长躯干、宽肩、灵巧五指人手与挺直军姿；基础着装由角色设定（种属/性格/身份/场景）决定其常规着装，后续特定服化为叠加层
+2. **行为拟人、身体保真** — 角色保留完整真实动物身体（头部 + 真实动物体态 + 四肢 + 全身毛发 + 尾巴），仅以"动物自然后腿立起"的姿态（含背微弓、前爪收胸前、趾行爪足）短暂立起；拟人只体现在立起姿态、上身穿戴与人类行为。**身体必须读作"一只真猫/真狗用后腿站了起来"，而非"穿衣服站直的人形猫"**——保留真实动物的身形比例、短小四肢、爪部结构与自然兽态，禁止人类化的修长躯干、宽肩、灵巧五指人手、挺直军姿、垂直脊柱与人腿剪影；基础着装由角色设定（种属/性格/身份/场景）决定其常规着装，后续特定服化为叠加层
 3. **四视图一致** — 种属/毛色/体型/服装跨视图高度统一
 4. **照片级写实** — 照片级写实3D渲染质感（photorealistic 3D render），逐根真实毛发、皮毛层次、次表面散射光泽、真实解剖结构，绝非卡通/插画/黏土
+
+---
+
+## 一·补、形态锁定工作流（稳住兽态的关键）
+
+> 照片级写实 + 后腿立起 + 穿衣这个组合，文生图模型天然会向"人形"收敛，**仅靠提示词约束难以每次稳定**。因此本风格采用"先定基准、再以图生图扩散"的工作流，用一张满意的基准图把兽态锁死，后续所有产出都以它为参考。
+
+### 工作流三步
+
+| 步骤 | 做法 | 目的 |
+|---|---|---|
+| **S1 选种** | 用第八节文生图模板批量出图，**只挑形态最"兽"的一张**作为基准图：后腿立起含背微弓、大头短身、短小四肢、真实前爪与趾行爪足、下半身覆毛兽腿无人腿剪影 | 先拿到一张"对的"形态，不追求一次到位 |
+| **S2 固化** | 把选中的基准图设为该角色的**形态参考图（character reference）**，并据它定稿四视图基础形象图 | 把兽态固化成可复用的视觉锚点 |
+| **S3 扩散** | 后续衍生（服化/分镜/视频首帧）一律 **img2img / 参考图模式**，以基准图为形态底，仅改服饰、动作、场景、镜头 | 让每次产出都继承已锁定的兽态 |
+
+### 选基准图的验收清单（S1 必须逐项过）
+
+- [ ] **后腿立起、含背微弓**，不是垂直脊柱的人类立正
+- [ ] **大头短身、圆润肚腩**，不是人类瘦长躯干
+- [ ] **前肢是短小真实前爪**收于胸前，不是修长人臂垂两侧
+- [ ] **下半身是覆毛兽腿 + 趾行爪足**，没有长裤包出的人腿剪影
+- [ ] **手是真实爪 + 肉垫**，不是灵巧五指人手
+- [ ] 头部种属特征（耳形/口鼻/胡须）真实清晰
+
+> 任一项不满足就回到 S1 重抽，**不要**在已偏人形的图上做衍生——偏差会被参考图一路放大。
+
+### 提示词配合（img2img / 参考图阶段）
+
+- 必须声明 **"以基准图为形态参考，保持兽态与体型轮廓不变，仅改 {服饰/动作/场景}"**
+- 中文：`以角色基准图为形态参考，保持后腿立起兽态、大头短身、短小四肢、真实前爪与趾行爪足不变，仅改{变量}`
+- 英文：`use the reference image as body/pose anchor, keep reared-up animal posture, large head small body, short stubby limbs, real paws and digitigrade feet unchanged, only change {variable}`
+- 参考强度（如有）建议偏高（形态权重 0.6-0.8 区间起调），确保兽态轮廓被强约束
 
 ---
 
@@ -41,20 +73,21 @@
 
 ---
 
-## 四、体型约束
+## 四、体型与姿态约束
 
-> 拟人化直立站姿，但身体必须读作"一只真动物站起来了"——完整保留真实动物的身形、四肢比例与爪部结构，避免人类化的修长躯干、宽肩、灵巧五指人手与挺直军姿。直立只是姿态，兽态才是本体。
+> **关键**：默认姿态是"一只真动物用后腿立起来"（如猫狗讨食、猫鼬/土拨鼠直立观望），而**不是**人类式的笔直站立。脊柱含背微弓、重心压在后腿与臀部、前爪自然收于胸前——直立只是动物本能的立起，不是人体站姿。兽态是本体，直立只是瞬间动作。
 
 | 项目 | 约束 | 提示词 |
 |---|---|---|
-| 身高 | 由角色设定指定，默认 150-180cm 仅用于画面尺度，身形比例仍严格按真实动物 | {身高}cm tall、anthropomorphic standing |
-| 体态比例 | 真实动物体态：相对大头、短颈、圆润躯干、短小四肢，保留种属自然身形，**禁止人类瘦长比例与宽肩** | natural realistic animal body proportion、large head small rounded body、short stubby limbs、true-to-species build |
-| 姿态 | 拟人化双足直立，但保留动物自然兽态——略松弛、自然弯曲的站姿，**非人类挺直军姿**；禁止四足爬行 | bipedal upright with natural relaxed animal stance、not stiff human posture |
-| 四肢 | 真实动物四肢：短小、覆毛、保留种属关节结构；前肢即真实前爪，**非修长人类手臂** | short furry animal limbs、real animal forelimbs、no human arms |
-| 肩颈 | 圆润柔和、绒毛覆盖、真实动物肩背结构，**无人类宽肩与锁骨** | rounded furry shoulders、animal build、no human broad shoulders |
-| 手部 | 真实动物前爪 + 肉垫，可用双爪笨拙地捧/夹住物品，保留爪垫与短趾，**非灵巧五指人手** | realistic paws with pads、clumsy two-paw grasp、not human five-finger hands |
+| 身高 | 默认 60-90cm 的"小兽"尺度（站立约同幼童/小型犬体量），仅用于画面尺度，身形比例严格按真实动物 | {身高}cm tall、small animal scale |
+| 体态比例 | 真实动物体态：相对大头、短颈、圆润短身躯、短小四肢、饱满肚腩，保留种属自然身形，**禁止人类瘦长比例与宽肩** | natural realistic animal body proportion、large head、short rounded body、chubby belly、short stubby limbs |
+| 脊柱/重心 | **含背微弓、非垂直**，重心压在后腿与臀部，呈动物自然立起的姿态曲线 | slightly hunched rounded back、not vertical spine、weight on haunches |
+| 姿态 | **动物自然后腿立起**（reared up on hind legs），前爪收于胸前或轻搭身侧，**非人类挺直立正**；不强求笔直，可微蹲、微弓 | reared up on hind legs like a real animal、forepaws to chest、not stiff human stance |
+| 后肢/脚 | **趾行足（脚尖着地）+ 真实动物后腿**，短而覆毛，**非人类跖行的平足长腿** | digitigrade hind legs、furry animal legs、real paw feet、not human legs |
+| 前肢/手 | 真实动物前爪 + 肉垫，短小覆毛，可双爪笨拙捧/夹物，保留爪垫短趾，**非修长人臂与灵巧五指人手** | short furry forelimbs、real paws with pads、clumsy two-paw grasp、not human arms/hands |
+| 肩颈 | 圆润柔和、绒毛覆盖、真实动物肩背，**无人类宽肩与锁骨** | rounded furry shoulders、animal build、no human broad shoulders |
 | 尾巴 | 保留种属尾巴、自然垂落或微翘，可随情绪摆动 | {种属}尾巴、fluffy tail |
-| 体态 | 真实动物身形拟人化直立，圆润蓬松、全身覆毛，保留动物本能体态细节 | real animal body、fluffy full-body fur、natural animal posture |
+| 体态 | 真实动物身形短暂立起，圆润蓬松、全身覆毛，保留动物本能体态细节 | real animal body reared up、fluffy full-body fur、natural animal posture |
 
 ---
 
@@ -74,25 +107,28 @@
 ## 六、基础服装约束
 
 > 基础服装由角色设定（种属/身份/性格/场景）决定其最自然的常规着装，作为该角色「日常默认态」；正式服饰/特殊衍生在服化衍生环节叠加。**禁止暴露/性化打底**。
+>
+> **去人化原则（重要）**：以**上半身着装为主**（T恤/卫衣/背心/围裙/小马甲等），**下半身默认保留动物自然覆毛后腿与爪足、不穿长裤**——长裤会包出人类双腿剪影，是"像人"的主因之一。如需下装，仅用短裤/短裙等不遮盖兽腿轮廓的款式，且必须露出趾行足与真实爪足。
 
 ### 着装选择原则
 
-| 角色身份 | 默认着装方向 |
+| 角色身份 | 默认着装方向（上装为主，下半身留兽腿） |
 |---|---|
-| 居家/休闲 | 卫衣/T恤+休闲裤、家居服 |
-| 上班族 | 衬衫/针织衫+休闲西装 |
-| 学生 | 校园风休闲装、连帽衫 |
-| 运动/活泼 | 运动套装、卫衣短裤 |
-| 文艺/优雅 | 针织衫、背带裤、小裙装 |
-| 角色设定未明确 | 简洁日常休闲装 |
+| 居家/休闲 | 卫衣/T恤/小背心，下半身自然覆毛兽腿 |
+| 上班族 | 衬衫/针织衫/小马甲，下半身自然兽腿 |
+| 学生 | 校园风上衣/连帽衫，下半身自然兽腿 |
+| 运动/活泼 | 运动上衣/背心，必要时配短裤但露出兽腿与爪足 |
+| 文艺/优雅 | 针织衫/小披肩/围裙，下半身自然兽腿 |
+| 角色设定未明确 | 简洁上装 + 自然覆毛兽腿 |
 
 ### 着装统一规则
 
 - 服装风格须与毛绒治愈Vlog美学一致（柔和色调、自然布料质感、温馨随性）
 - 颜色中低饱和，便于后续衍生叠加
+- **以上半身着装为主，下半身默认保留动物自然覆毛后腿与爪足**；禁止长裤/长袜等遮盖兽腿、制造人类双腿剪影的款式
 - 服装需为动物身躯量身适配，预留尾巴位置，自然贴合绒毛
 - 四视图服装款式完全一致
-- 基础服装是「日常默认态」，焦点仍在种属特征与可爱体态
+- 基础服装是「日常默认态」，焦点仍在种属特征与可爱兽态体型
 - 严禁暴露/性化打底
 
 ---
@@ -104,7 +140,7 @@
 | 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
 |---|---|---|---|---|---|
 | 左一 | 头部特写 | 正面平视 | 头顶至肩部 | 完整展示动物头部、耳朵、五官、真实毛发，不裁切 | head closeup、face detail、ears complete、no crop |
-| 左二 | 正视图 | 正面 0° | 全身立像 | 面对镜头、双臂自然、从头顶到脚底完整展示，含尾巴 | front view、full body head to toe、tail visible |
+| 左二 | 正视图 | 正面 0° | 全身立像 | 后腿立起、前爪收于胸前、从头顶到爪足完整展示，含尾巴 | front view、reared up on hind legs、forepaws to chest、full body head to toe、tail visible |
 | 右二 | 侧视图 | 右侧 90° | 全身立像 | 纯侧面轮廓清晰、尾巴与口鼻轮廓清晰、完整展示 | side view、profile、full body、tail visible |
 | 右一 | 后视图 | 后方 180° | 全身立像 | 后脑/背部/尾巴/脚部清晰、完整展示 | back view、rear view、full body、tail visible |
 
@@ -114,7 +150,7 @@
 |---|---|
 | 布局 | 同一画面从左至右并排四视图 |
 | 背景 | 纯净中性灰 #E8E8E8 |
-| 站姿 | 拟人直立、双脚平行微分、双臂自然下垂或微展 |
+| 站姿 | 动物自然后腿立起、含背微弓、趾行足踏地、前爪收于胸前或轻搭身侧，**非人类双脚平行立正** |
 | 全身展示 | 全身立像必须从头顶到脚底完整入画，尾巴完整，严禁裁切头顶或脚部 |
 | 特写展示 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖，真实毛发、口鼻、下巴均需完整 |
 | 表情 | 中性微表情，符合角色气质 |
@@ -132,13 +168,14 @@ photorealistic anthropomorphic pet character，hyperrealistic 3D render，cinema
 realistic detailed fur，individual fur strands，subsurface scattering，natural fur grooming，
 {种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质}，真实有神的眼睛，realistic eyes，
 {毛色}真实毛发，realistic fur color，natural coat，
-{身高描述，如：165cm tall、anthropomorphic standing}，真实动物体态比例（相对大头、短颈、圆润躯干、短小四肢），natural realistic animal body proportion，large head small rounded body，short stubby furry limbs，true-to-species build，拟人化直立站姿但保留自然兽态，bipedal upright with natural relaxed animal stance，real animal forelimbs not human arms，no human broad shoulders，
+{身高描述，如：75cm tall、small animal scale}，真实动物体态比例（相对大头、短颈、圆润短身、饱满肚腩、短小四肢），natural realistic animal body proportion，large head short rounded body，chubby belly，short stubby limbs，
+**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，not vertical human spine，前爪收于胸前，forepaws held to chest，趾行足真实爪足，digitigrade hind legs with real paw feet，**非人类挺直站姿/非修长人臂/非五指人手/非人腿**，not human stance, not human arms, not human hands, not human legs，
 保留{种属}尾巴，realistic furry tail，真实动物前爪与肉垫（非人类五指手），realistic paws with pads not human hands，
-{角色身份对应的常规着装，如：卫衣休闲裤/针织衫/校园风}，自然布料质感，真实面料褶皱，为动物身躯适配预留尾巴位，
+{角色身份对应的上半身着装，如：卫衣/T恤/小马甲/围裙}，上装为主，自然布料质感，真实面料褶皱，为动物身躯适配预留尾巴位，**下半身保留动物自然覆毛后腿与爪足、不穿长裤**，upper-body garment only，bare furry animal hind legs and paws，no trousers covering legs，
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
 头部特写完整展示耳朵到肩部，不裁切耳尖，ears and face complete，
-全身立像从头顶到脚底完整展示，full body head to toe，尾巴完整，不裁切头顶和脚部，
-拟人自然站立，纯净中性灰背景，自然写实柔和光，真实毛发细节清晰，
+全身立像从头顶到爪足完整展示，full body head to paw feet，尾巴完整，不裁切头顶和脚部，
+动物自然后腿立起、含背微弓，纯净中性灰背景，自然写实柔和光，真实毛发细节清晰，
 photorealistic, hyper-detailed, no cartoon, no illustration, no claymation,
 四视图一致性，真实毛发质感统一，
 图中不要有任何文字
@@ -153,13 +190,13 @@ photorealistic, hyper-detailed, no cartoon, no illustration, no claymation,
 | 编号 | 规则 |
 |---|---|
 | R1 | 必须保留完整真实动物头部特征（耳形/口鼻/胡须/真实毛发） |
-| R2 | 必须为「真实动物身体（真实动物体态 + 四肢 + 全身毛发）+ 拟人化直立站姿」，禁止人形化躯干，禁止四足兽形 |
-| R3 | 必须根据角色设定声明合适的常规着装作为基础服装；禁止暴露/性化打底 |
+| R2 | 必须为「真实动物身体（真实兽态 + 短小覆毛四肢 + 真实爪足）+ 动物自然后腿立起姿态」，禁止人形化躯干，禁止人类挺直站姿，禁止四足爬行 |
+| R3 | 着装以**上半身为主**（上衣/背心/围裙），**下半身默认保留动物覆毛后腿与爪足、不穿长裤**；禁止暴露/性化打底 |
 | R4 | 必须保留种属尾巴并在各视图中体现 |
 | R5 | 必须指定「纯净中性灰背景」 |
 | R6 | 必须指定「四视图一致性」 |
 | R7 | 全身立像必须从头顶到脚底完整展示，尾巴完整，严禁裁切 |
-| R8 | 必须指定角色身高约束画面尺度，并声明真实动物体态比例（默认150-180cm、真实动物自然身形，禁止人类瘦长比例） |
+| R8 | 必须指定角色身高约束画面尺度，并声明真实动物体态比例（默认 60-90cm 小兽尺度、真实动物自然身形，禁止人类瘦长比例） |
 | R9 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖 |
 | R10 | 必须指定「照片级写实3D渲染 + 逐根真实毛发 + 次表面散射」质感锚定词 |
 
@@ -170,7 +207,8 @@ photorealistic, hyper-detailed, no cartoon, no illustration, no claymation,
 | X1 | 暴露/性化打底；与角色设定明显不符的着装 |
 | X2 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感（cartoon, illustration, claymation, toy-like） |
 | X3 | 失去真实动物身体特征变成纯人类/人形化躯干 |
-| X3b | **过度拟人**：人类化修长躯干/宽肩锁骨/修长手臂/灵巧五指人手/挺直军姿等，身体必须保留真实兽态（大头短身、短小覆毛四肢、真实前爪） |
+| X3b | **过度拟人**：人类化修长躯干/宽肩锁骨/修长手臂/灵巧五指人手/挺直军姿/垂直脊柱等，身体必须保留真实兽态（大头短身、含背微弓、短小覆毛四肢、真实前爪） |
+| X3c | **人腿剪影**：长裤/长袜遮盖后腿造成人类双腿轮廓；跖行平足长腿。下半身须为动物覆毛后腿 + 趾行爪足 |
 | X4 | 四足兽形姿态/趴卧爬行姿态 |
 | X5 | 恐怖/怪诞/扭曲/畸形拟人造型 |
 | X6 | 全身立像裁切头顶、耳尖或脚底 |
