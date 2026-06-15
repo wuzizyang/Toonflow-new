@@ -48,10 +48,11 @@ function buildPrompt(cfg: AssetTypeConfig, artStyle: string, name: string, promp
     ? `
 
     **图生图参考图说明（重要）：**
-    - 已提供一张真实宠物参考图，请以该宠物为原型进行创作。
-    - 必须保留参考图中宠物的品种、毛色、花纹、五官特征等可识别外观。
-    - 在保留上述特征的基础上，将其转换为拟人化直立、穿着服装、符合画风风格的角色形象。
-    - 不要照搬参考图的姿态/背景，仅参考其外观特征。`
+    - 已提供参考图片，请以参考图为原型进行创作。
+    - 必须保留参考图中主体的品种、毛色、花纹、五官特征等可识别外观。
+    - 在保留上述特征的基础上，将其转换为符合画风风格的角色形象。
+    - 不要照搬参考图的姿态/背景，仅参考其外观特征。
+    - 如有多张参考图，请综合所有参考图的特征进行创作。`
     : "";
   return `
     请根据以下参数生成${cfg.promptTitle}：
@@ -79,10 +80,19 @@ const requestSchema = {
   name: z.string(),
   prompt: z.string(),
   base64: z.string().optional().nullable(),
+  base64List: z.array(z.string()).optional().nullable(),
 };
 
 export default router.post("/", validateFields(requestSchema), async (req, res) => {
-  const { projectId, model, resolution, id, type, name, prompt, base64 } = req.body;
+  const { projectId, model, resolution, id, type, name, prompt, base64, base64List } = req.body;
+
+  // 兼容旧的单张 base64 和新的多张 base64List
+  const referenceImages: string[] = [];
+  if (base64List && base64List.length > 0) {
+    referenceImages.push(...base64List);
+  } else if (base64) {
+    referenceImages.push(base64);
+  }
 
   // 1. 查询项目 & 获取类型配置
   const project = await u.db("o_project").where("id", projectId).select("artStyle", "type", "intro").first();
@@ -103,7 +113,7 @@ export default router.post("/", validateFields(requestSchema), async (req, res) 
 
   // 3. 准备生成参数
   const imagePath = `/${projectId}/${cfg.dir}/${uuidv4()}.jpg`;
-  const userPrompt = buildPrompt(cfg, project.artStyle!, name, prompt, !!base64);
+  const userPrompt = buildPrompt(cfg, project.artStyle!, name, prompt, referenceImages.length > 0);
   const describe = `生成${cfg.label}图，名称：${name}，提示词：${prompt}`;
   const relatedObjects = { id, projectId, type: cfg.label };
 
@@ -112,7 +122,7 @@ export default router.post("/", validateFields(requestSchema), async (req, res) 
     await aiImage.run(
       {
         prompt: userPrompt,
-        referenceList: base64 ? [{ type: "image", base64 }] : [],
+        referenceList: referenceImages.map((img) => ({ type: "image" as const, base64: img })),
         size: resolution,
         aspectRatio: "16:9",
       },
