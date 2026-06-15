@@ -63,7 +63,7 @@ metaData: director_skills
 
 | 场景类型 | 必加约束词 |
 |----------|-----------|
-| 拟人角色 | 保留真实动物全身特征与体态，拟人化直立姿态，逐根真实毛发，真实解剖结构，照片级写实 |
+| 拟人角色 | 保留真实动物全身特征与体态，拟人化直立姿态但保留真实兽态（大头短身、短小四肢、真实前爪），逐根真实毛发，真实解剖结构，照片级写实 |
 | 居家空间 | 温馨家具，木质布艺，暖色调，生活细节，柔和窗光 |
 | 咖啡馆 | 木桌椅，暖光吊灯，咖啡器具，惬意氛围 |
 | 户外自然 | 柔和绿植，自然光，清新色调，治愈氛围 |
@@ -77,7 +77,7 @@ metaData: director_skills
 
 **宠物拟人化风格锚定（必选）：**
 
-宠物拟人化，保留真实动物全身特征与体态，拟人化直立姿态，照片级写实3D渲染，电影级质感
+宠物拟人化，保留真实动物全身特征与体态，拟人化直立姿态但保留真实兽态（大头短身、短小四肢、真实前爪，非人类修长躯干与五指手），照片级写实3D渲染，电影级质感
 
 **真实毛发质感（所有输出必选）：**
 
@@ -114,7 +114,7 @@ photorealistic, hyperrealistic 3D render, ultra-detailed fur, individual fur str
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, keep real animal body, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, keep real animal body with short stubby limbs and real paws, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
 
 ---
 
@@ -124,6 +124,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 
 - ❌ 卡通/插画/黏土/2.5D扁平/玩具感/塑料感等非写实质感
 - ❌ 失去真实动物身体特征的纯人类/人形化躯干角色
+- ❌ 过度拟人：人类化修长躯干/宽肩/修长手臂/灵巧五指人手/挺直军姿（须保留真实兽态：大头短身、短小四肢、真实前爪）
 - ❌ 四足兽形/趴卧爬行姿态（角色须拟人直立）
 - ❌ 恐怖/怪诞/扭曲/畸形拟人造型
 - ❌ 高饱和荧光色/赛博霓虹色
@@ -157,7 +158,7 @@ You are an anthropomorphic pet vlog storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, ultra-detailed realistic fur, real animal body in upright bipedal posture, hyperrealistic 3D render
+Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, ultra-detailed realistic fur, real animal body in upright bipedal posture with short stubby limbs and real paws (not human arms/hands), large head small rounded body, hyperrealistic 3D render
 </character_reference>
 <continuity_rules>
 - Same fur color, animal head features, costume across ALL shots
@@ -170,7 +171,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, ultra-detailed realistic fur, individual fur strands, subsurface scattering, hyperrealistic 3D render, cozy golden-hour window light, cinematic lighting, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, keep real animal body, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, keep real animal body with short stubby limbs and real paws, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
 </negative>
 ```
 

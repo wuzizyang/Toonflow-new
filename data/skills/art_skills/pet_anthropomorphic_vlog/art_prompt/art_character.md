@@ -5,7 +5,7 @@
 ## 一、基础形象原则
 
 1. **种属即灵魂** — 真实动物种属特征（耳形/口鼻/胡须/真实毛发/尾巴）是角色唯一锚点，跨视图必须高度统一
-2. **行为拟人** — 角色保留完整真实动物身体（头部 + 真实动物体态 + 四肢 + 全身毛发 + 尾巴），仅以拟人化直立姿态站立；拟人只体现在直立姿态、穿戴与人类行为，身体本体不可改造成人形躯干；基础着装由角色设定（种属/性格/身份/场景）决定其常规着装，后续特定服化为叠加层
+2. **行为拟人、身体保真** — 角色保留完整真实动物身体（头部 + 真实动物体态 + 四肢 + 全身毛发 + 尾巴），仅以拟人化直立姿态站立；拟人只体现在直立、穿戴与人类行为。**身体必须读作"一只真猫/真狗站起来了"，而非"穿衣服的人形猫"**——保留真实动物的身形比例、短小四肢、爪部结构与自然兽态，禁止人类化的修长躯干、宽肩、灵巧五指人手与挺直军姿；基础着装由角色设定（种属/性格/身份/场景）决定其常规着装，后续特定服化为叠加层
 3. **四视图一致** — 种属/毛色/体型/服装跨视图高度统一
 4. **照片级写实** — 照片级写实3D渲染质感（photorealistic 3D render），逐根真实毛发、皮毛层次、次表面散射光泽、真实解剖结构，绝非卡通/插画/黏土
 
@@ -43,17 +43,18 @@
 
 ## 四、体型约束
 
-> 拟人化双足直立站姿，但完整保留真实动物身体——真实动物体态、真实四肢与全身毛发，非人形躯干。
+> 拟人化直立站姿，但身体必须读作"一只真动物站起来了"——完整保留真实动物的身形、四肢比例与爪部结构，避免人类化的修长躯干、宽肩、灵巧五指人手与挺直军姿。直立只是姿态，兽态才是本体。
 
 | 项目 | 约束 | 提示词 |
 |---|---|---|
-| 身高 | 由角色设定指定，默认范围 150-180cm（拟人直立时的画面尺度） | {身高}cm tall、anthropomorphic standing |
-| 体态比例 | 真实动物体态比例，保留种属自然身形与四肢结构，禁止人类瘦长躯干 | natural realistic animal body proportion、true-to-species body |
-| 姿态 | 拟人化双足直立站姿，身体为真实动物体态，禁止四足兽形 | bipedal upright posture、realistic animal body、upright stance |
-| 肩颈 | 柔和圆润、绒毛覆盖、真实动物肩背结构 | 圆润肩颈、furry shoulders、realistic animal build |
-| 手部 | 真实动物前爪/肉垫，拟人化可握物 | 真实爪手、paw hands、肉垫手掌 |
-| 尾巴 | 保留种属尾巴、自然垂落或微翘 | {种属}尾巴、fluffy tail |
-| 体态 | 真实动物站姿拟人化直立、放松亲切，全身覆毛 | 真实动物体态、拟人直立站姿、full-body fur |
+| 身高 | 由角色设定指定，默认 150-180cm 仅用于画面尺度，身形比例仍严格按真实动物 | {身高}cm tall、anthropomorphic standing |
+| 体态比例 | 真实动物体态：相对大头、短颈、圆润躯干、短小四肢，保留种属自然身形，**禁止人类瘦长比例与宽肩** | natural realistic animal body proportion、large head small rounded body、short stubby limbs、true-to-species build |
+| 姿态 | 拟人化双足直立，但保留动物自然兽态——略松弛、自然弯曲的站姿，**非人类挺直军姿**；禁止四足爬行 | bipedal upright with natural relaxed animal stance、not stiff human posture |
+| 四肢 | 真实动物四肢：短小、覆毛、保留种属关节结构；前肢即真实前爪，**非修长人类手臂** | short furry animal limbs、real animal forelimbs、no human arms |
+| 肩颈 | 圆润柔和、绒毛覆盖、真实动物肩背结构，**无人类宽肩与锁骨** | rounded furry shoulders、animal build、no human broad shoulders |
+| 手部 | 真实动物前爪 + 肉垫，可用双爪笨拙地捧/夹住物品，保留爪垫与短趾，**非灵巧五指人手** | realistic paws with pads、clumsy two-paw grasp、not human five-finger hands |
+| 尾巴 | 保留种属尾巴、自然垂落或微翘，可随情绪摆动 | {种属}尾巴、fluffy tail |
+| 体态 | 真实动物身形拟人化直立，圆润蓬松、全身覆毛，保留动物本能体态细节 | real animal body、fluffy full-body fur、natural animal posture |
 
 ---
 
@@ -131,8 +132,8 @@ photorealistic anthropomorphic pet character，hyperrealistic 3D render，cinema
 realistic detailed fur，individual fur strands，subsurface scattering，natural fur grooming，
 {种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质}，真实有神的眼睛，realistic eyes，
 {毛色}真实毛发，realistic fur color，natural coat，
-{身高描述，如：165cm tall、anthropomorphic standing}，真实动物体态比例，natural realistic animal body proportion，true-to-species body，拟人化直立站姿，bipedal upright posture，realistic animal body，
-保留{种属}尾巴，realistic furry tail，拟人爪手肉垫，realistic paw hands，
+{身高描述，如：165cm tall、anthropomorphic standing}，真实动物体态比例（相对大头、短颈、圆润躯干、短小四肢），natural realistic animal body proportion，large head small rounded body，short stubby furry limbs，true-to-species build，拟人化直立站姿但保留自然兽态，bipedal upright with natural relaxed animal stance，real animal forelimbs not human arms，no human broad shoulders，
+保留{种属}尾巴，realistic furry tail，真实动物前爪与肉垫（非人类五指手），realistic paws with pads not human hands，
 {角色身份对应的常规着装，如：卫衣休闲裤/针织衫/校园风}，自然布料质感，真实面料褶皱，为动物身躯适配预留尾巴位，
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
 头部特写完整展示耳朵到肩部，不裁切耳尖，ears and face complete，
@@ -169,6 +170,7 @@ photorealistic, hyper-detailed, no cartoon, no illustration, no claymation,
 | X1 | 暴露/性化打底；与角色设定明显不符的着装 |
 | X2 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感（cartoon, illustration, claymation, toy-like） |
 | X3 | 失去真实动物身体特征变成纯人类/人形化躯干 |
+| X3b | **过度拟人**：人类化修长躯干/宽肩锁骨/修长手臂/灵巧五指人手/挺直军姿等，身体必须保留真实兽态（大头短身、短小覆毛四肢、真实前爪） |
 | X4 | 四足兽形姿态/趴卧爬行姿态 |
 | X5 | 恐怖/怪诞/扭曲/畸形拟人造型 |
 | X6 | 全身立像裁切头顶、耳尖或脚底 |
