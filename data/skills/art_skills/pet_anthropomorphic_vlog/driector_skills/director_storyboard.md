@@ -63,7 +63,7 @@ metaData: director_skills
 
 | 场景类型 | 必加约束词 |
 |----------|-----------|
-| 拟人角色 | 保留真实动物头部特征，拟人直立身躯，逐根真实毛发，真实解剖结构，照片级写实 |
+| 拟人角色 | 保留真实动物全身特征与体态，拟人化直立姿态，逐根真实毛发，真实解剖结构，照片级写实 |
 | 居家空间 | 温馨家具，木质布艺，暖色调，生活细节，柔和窗光 |
 | 咖啡馆 | 木桌椅，暖光吊灯，咖啡器具，惬意氛围 |
 | 户外自然 | 柔和绿植，自然光，清新色调，治愈氛围 |
@@ -77,7 +77,7 @@ metaData: director_skills
 
 **宠物拟人化风格锚定（必选）：**
 
-宠物拟人化，保留真实动物头部特征，拟人直立身躯，照片级写实3D渲染，电影级质感
+宠物拟人化，保留真实动物全身特征与体态，拟人化直立姿态，照片级写实3D渲染，电影级质感
 
 **真实毛发质感（所有输出必选）：**
 
@@ -114,7 +114,7 @@ photorealistic, hyperrealistic 3D render, ultra-detailed fur, individual fur str
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, keep real animal body, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
 
 ---
 
@@ -123,7 +123,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 以下词汇/风格不得出现于输出提示词中：
 
 - ❌ 卡通/插画/黏土/2.5D扁平/玩具感/塑料感等非写实质感
-- ❌ 失去动物头部特征的纯人类角色
+- ❌ 失去真实动物身体特征的纯人类/人形化躯干角色
 - ❌ 四足兽形/趴卧爬行姿态（角色须拟人直立）
 - ❌ 恐怖/怪诞/扭曲/畸形拟人造型
 - ❌ 高饱和荧光色/赛博霓虹色
@@ -146,7 +146,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 ### 示例输出A（模式A · Seedream）
 
 [Prompt]
-宠物拟人化，保留真实动物头部特征，拟人直立身躯，照片级写实3D渲染，电影级质感，中景构图，拟人角色半身入镜，逐根真实毛发，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，黄金时刻暖光，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，以假乱真，照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照。
+宠物拟人化，保留真实动物全身特征与体态，拟人化直立姿态，照片级写实3D渲染，电影级质感，中景构图，拟人角色半身入镜，逐根真实毛发，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，黄金时刻暖光，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，以假乱真，照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照。
 Based on the reference image of 角色A, maintain consistent: animal head features, fur color, costume. Generate a new scene: anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching softly. Keep character appearance identical to reference.
 
 ### 示例输出B（模式B · Nanobanana）
@@ -157,20 +157,20 @@ You are an anthropomorphic pet vlog storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head features kept, ultra-detailed realistic fur, upright human-like body, hyperrealistic 3D render
+Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, ultra-detailed realistic fur, real animal body in upright bipedal posture, hyperrealistic 3D render
 </character_reference>
 <continuity_rules>
 - Same fur color, animal head features, costume across ALL shots
 - Same environment, color palette, warm lighting
 - Only framing, angle, action, expression may change
-- Keep animal head features and bipedal upright form; do NOT turn into a human or a four-legged animal
+- Keep real animal head and full-body features in bipedal upright posture; do NOT turn into a human/humanoid body or a four-legged animal
 - Do NOT introduce new characters not in reference images
 </continuity_rules>
 <shot>
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, ultra-detailed realistic fur, individual fur strands, subsurface scattering, hyperrealistic 3D render, cozy golden-hour window light, cinematic lighting, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, no human-only face without animal features, no humanoid human body, keep real animal body, no four-legged beast pose, no horror, no distorted anthropomorph, no neon colors
 </negative>
 ```
 

@@ -239,7 +239,7 @@ realistic detailed fur，individual fur strands，subsurface scattering，
 | 编号 | 严禁 |
 |---|---|
 | X1 | 叠加后种属特征改变或轮廓偏移 |
-| X2 | 失去动物头部特征变成纯人类 |
+| X2 | 失去真实动物身体特征变成纯人类/人形化躯干 |
 | X3 | 面部状态/服饰风格互相冲突 |
 | X4 | 复杂场景背景（必须纯灰底） |
 | X5 | 四视图间服化造型不一致 |
