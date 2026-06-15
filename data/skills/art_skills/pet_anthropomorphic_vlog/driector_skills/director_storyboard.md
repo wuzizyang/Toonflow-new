@@ -129,9 +129,12 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 - ❌ 四足兽形/趴卧爬行姿态（角色须后腿立起的拟人姿态）
 - ❌ 恐怖/怪诞/扭曲/畸形拟人造型
 - ❌ 高饱和荧光色/赛博霓虹色
+- ❌ **角色入镜时重新描述/新增服饰**：当画面带有角色参考图时，服饰一律继承参考图，提示词中**不得**再写"穿着白T恤/卡其裤/赤脚"等任何服装、鞋袜、配饰描述（避免与参考图冲突、避免冒出长裤等被禁款式）
 - ❌ 画外叠加文字（字幕、水印、标题卡、旁白叠字等 UI 层文字，画面必须为纯视觉画面）
 
 > 💡 **例外**：故事世界内的道具文字（招牌、菜单、路牌、书籍等场景中自然存在的文字）**不属于禁止范围**。当分镜画面描述中包含此类内容时，应如实描写其存在并要求文字清晰。
+
+> 👕 **服饰继承原则**：分镜/场景图中的角色服饰由角色参考图（基础形象/服化衍生资产）决定。生成镜头提示词时**只描述动作、表情、镜头、场景、光影**，服饰交由参考图保持一致——只需声明"服饰与参考图一致 / keep costume identical to reference"，不展开任何具体服装描述。需要换装时应回到服化衍生环节产出新的角色资产，而非在镜头提示词里临时改写。
 
 ---
 
@@ -163,6 +166,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 </character_reference>
 <continuity_rules>
 - Same fur color, animal head features, costume across ALL shots
+- Inherit costume from the character reference image; do NOT re-describe or add any clothing/footwear in the shot prompt
 - Same environment, color palette, warm lighting
 - Only framing, angle, action, expression may change
 - Keep real animal head and full-body features in a natural reared-up-on-hind-legs posture (hunched back, forepaws to chest, digitigrade feet); do NOT turn into a human/humanoid body, a stiff human stand, or a four-legged animal
