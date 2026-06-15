@@ -47,7 +47,16 @@ metaData: director_skills
 - 角色服饰、道具外观一律**继承各自参考图**，镜头提示词不重新描述服装/鞋袜/配饰（见「美学禁止项」），只描述动作、表情、站位、镜头、光影
 - 多角色同框时，逐一锚定各自参考图，禁止串味（A 的花色长到 B 身上）
 
-> ✅ **一句话原则**：镜头提示词要把多张参考图"焊"成一张照片——同一光、同一色、同一尺度、同一真实度，角色落地、服饰沿用参考图。
+### 六、角色数量与去重（防止同一角色出现多次）
+
+> 角色参考图常是**四视图/多视角设定图**，模型容易把"同一角色的多个视角"误读成"多个角色"，于是在一个画面里把同一角色画两遍（双胞胎/分身）。必须主动约束数量。
+
+- **显式声明每个角色的数量**：镜头提示词中点明"画面中只有 1 只{角色名}"，多角色镜头则逐一写明各自数量（如"呼呼 1 只、小花 1 只"）
+- **声明参考图性质**：当参考图为多视角设定图时，必须说明"参考图为同一角色的多视角，仅代表一个角色，不要复制成多个"
+- **提示词声明**：`画面中{角色名}只出现一次，全画面仅一只{角色名}，禁止重复/分身/双胞胎`
+- 英文：`exactly one {character}, single instance only, the reference sheet shows ONE character from multiple angles, do NOT duplicate or clone the character, no twins`
+
+> ✅ **一句话原则**：镜头提示词要把多张参考图"焊"成一张照片——同一光、同一色、同一尺度、同一真实度，角色落地、服饰沿用参考图、**每个角色只出现规定的次数**。
 
 ---
 
@@ -159,7 +168,7 @@ photorealistic, real-life photo, shot on DSLR, photorealistic photography, true-
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
 
 ---
 
@@ -197,7 +206,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 
 [Prompt]
 宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足），照片级写实·真实摄影（实拍质感），电影级光照，中景构图，拟人角色半身入镜，逐根真实毛发，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，黄金时刻暖光，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，以假乱真，照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照。
-Based on the reference image of 角色A, maintain consistent: animal head features, fur color, costume. Generate a new scene: anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching softly. Keep character appearance identical to reference.
+Based on the reference image of 角色A, maintain consistent: animal head features, fur color, costume. The reference is one character shown from multiple angles — render exactly ONE 角色A, do not duplicate or clone. Generate a new scene: anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching softly. Keep character appearance identical to reference.
 
 ### 示例输出B（模式B · Nanobanana）
 
@@ -216,12 +225,13 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 - Only framing, angle, action, expression may change
 - Keep real animal head and full-body features in a natural reared-up-on-hind-legs posture (hunched back, forepaws to chest, digitigrade feet); do NOT turn into a human/humanoid body, a stiff human stand, or a four-legged animal
 - Do NOT introduce new characters not in reference images
+- Exactly one instance of each character; the reference sheet shows ONE character from multiple angles — do NOT duplicate, clone, or mirror the character into the frame
 </continuity_rules>
 <shot>
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, ultra-detailed realistic fur, individual fur strands, subsurface scattering, real-life photo, shot on DSLR, photorealistic photography, true-to-life, cozy golden-hour window light, cinematic lighting, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no trousers covering legs, no human legs silhouette, keep real animal reared-up posture with hunched back, short stubby limbs, real paws and digitigrade feet, no four-legged beast pose, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
 </negative>
 ```
 
