@@ -322,6 +322,8 @@ async function createSubAgent(parentCtx: AgentContext) {
 
   const productionSkills = await useProductionSkills(projectInfo?.artStyle!, projectInfo?.directorManual!);
 
+  const storyName = projectInfo?.directorManual ?? "";
+
   //分镜面板写入
   const run_sub_agent_storyboard_panel = tool({
     description: "运行执行subAgent来完成分镜面板写入相关任务",
@@ -353,7 +355,7 @@ async function createSubAgent(parentCtx: AgentContext) {
     description: "运行执行subAgent来完成分镜表构建相关任务",
     inputSchema: jsonSchema<{ prompt: string }>(promptInput),
     execute: async ({ prompt }) => {
-      const skill = path.join(u.getPath("skills"), "production_execution_storyboard_table.md");
+      const skill = resolveAgentSkill(storyName, "production_execution_storyboard_table.md");
       const systemPrompt = await fs.promises.readFile(skill, "utf-8");
 
       const addPrompt = [
@@ -401,7 +403,7 @@ async function createSubAgent(parentCtx: AgentContext) {
     description: "运行监督层subAgent执行独立任务，完成后返回结果",
     inputSchema: jsonSchema<{ prompt: string }>(promptInput),
     execute: async ({ prompt }) => {
-      const skill = path.join(u.getPath("skills"), "production_agent_supervision.md");
+      const skill = resolveAgentSkill(storyName, "production_agent_supervision.md");
       const systemPrompt = await fs.promises.readFile(skill, "utf-8");
       return runAgent({
         key: "productionAgent:supervisionAgent",
@@ -562,6 +564,22 @@ function validateStructuredOutput(
     };
   }
   return { ok: true };
+}
+
+/**
+ * 解析 Agent 技能文件路径：若题材包内存在覆盖版（story_skills/{storyName}/agent_skills/{fileName}），
+ * 则优先使用题材覆盖版；否则回退到通用版（skills/{fileName}）。
+ */
+function resolveAgentSkill(storyName: string, fileName: string): string {
+  if (storyName) {
+    try {
+      const override = u.getPath(["skills", "story_skills", storyName, "agent_skills", fileName]);
+      if (fs.existsSync(override)) return override;
+    } catch {
+      // 路径逃逸等异常时回退到通用版
+    }
+  }
+  return u.getPath(["skills", fileName]);
 }
 
 /**
