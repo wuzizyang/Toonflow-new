@@ -92,7 +92,7 @@
 
 ```
 宠物拟人化Vlog道具设定图，
-photorealistic prop，hyperrealistic 3D render，cinematic，
+photorealistic prop，real-life product photo，shot on DSLR，photorealistic photography，cinematic lighting，
 realistic materials，photorealistic texture，cinematic lighting，
 {道具类型}，{材质描述}，{装饰描述}，{状态描述}，
 纯道具静物展示，道具独立陈列，无角色持有，无角色佩戴，

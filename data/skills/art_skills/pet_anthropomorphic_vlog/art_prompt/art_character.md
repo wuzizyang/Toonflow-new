@@ -7,7 +7,7 @@
 1. **种属即灵魂** — 真实动物种属特征（耳形/口鼻/胡须/真实毛发/尾巴）是角色唯一锚点，跨视图必须高度统一
 2. **行为拟人、身体保真** — 角色保留完整真实动物身体（头部 + 真实动物体态 + 四肢 + 全身毛发 + 尾巴），仅以"动物自然后腿立起"的姿态（含背微弓、前爪收胸前、趾行爪足）短暂立起；拟人只体现在立起姿态、上身穿戴与人类行为。**身体必须读作"一只真猫/真狗用后腿站了起来"，而非"穿衣服站直的人形猫"**——保留真实动物的身形比例、短小四肢、爪部结构与自然兽态，禁止人类化的修长躯干、宽肩、灵巧五指人手、挺直军姿、垂直脊柱与人腿剪影；基础着装由角色设定（种属/性格/身份/场景）决定其常规着装，后续特定服化为叠加层
 3. **四视图一致** — 种属/毛色/体型/服装跨视图高度统一
-4. **照片级写实** — 照片级写实3D渲染质感（photorealistic 3D render），逐根真实毛发、皮毛层次、次表面散射光泽、真实解剖结构，绝非卡通/插画/黏土
+4. **照片级写实（真实摄影）** — 照片级写实·真实照片实拍质感（photorealistic photograph, shot on camera, real-life photo），逐根真实毛发、皮毛层次、次表面散射光泽、真实解剖结构，**像真实相机拍下，绝非CG/3D渲染/卡通/插画/黏土**
 
 ---
 
@@ -53,7 +53,7 @@
 |---|---|
 | 种属特征 | 由角色设定确定（猫/狗/兔/仓鼠/狐狸等），必须保留对应耳形、口鼻、胡须、真实毛发纹理 |
 | 五官 | 由种属与性格自然推导，真实有神的眼睛（真实瞳孔/虹膜/湿润高光），真实鼻头与胡须，不预设固定脸型 |
-| 风格底色 | 照片级写实3D渲染、真实毛发、自然光照、次表面散射、电影级质感（photorealistic, hyperrealistic, cinematic） |
+| 风格底色 | 照片级写实·真实摄影、真实毛发、自然光照、次表面散射、电影级质感（photorealistic photograph, true-to-life, shot on DSLR, cinematic） |
 | 气质 | 必须从角色设定提炼整体气质关键词（萌趣/慵懒/活泼/优雅），通过真实神态体现，并写入提示词 |
 | 表情 | 中性微表情，符合角色气质，亲切自然且真实可信 |
 
@@ -164,7 +164,7 @@
 
 ```
 {种属}拟人角色四视图设定图，
-photorealistic anthropomorphic pet character，hyperrealistic 3D render，cinematic，octane render quality，
+photorealistic anthropomorphic pet character，real-life photo，shot on DSLR，photorealistic photography，true-to-life，cinematic lighting，
 realistic detailed fur，individual fur strands，subsurface scattering，natural fur grooming，
 {种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质}，真实有神的眼睛，realistic eyes，
 {毛色}真实毛发，realistic fur color，natural coat，
@@ -198,7 +198,7 @@ photorealistic, hyper-detailed, no cartoon, no illustration, no claymation,
 | R7 | 全身立像必须从头顶到脚底完整展示，尾巴完整，严禁裁切 |
 | R8 | 必须指定角色身高约束画面尺度，并声明真实动物体态比例（默认 60-90cm 小兽尺度、真实动物自然身形，禁止人类瘦长比例） |
 | R9 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖 |
-| R10 | 必须指定「照片级写实3D渲染 + 逐根真实毛发 + 次表面散射」质感锚定词 |
+| R10 | 必须指定「照片级写实·真实摄影（real-life photo / shot on DSLR）+ 逐根真实毛发 + 次表面散射」质感锚定词 |
 
 ### 严禁
 
