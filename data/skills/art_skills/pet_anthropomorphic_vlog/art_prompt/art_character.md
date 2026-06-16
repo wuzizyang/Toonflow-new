@@ -177,9 +177,9 @@ realistic detailed fur，individual fur strands，natural translucent glow，nat
 {种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润无辜大眼，呆萌天真神态，innocent adorable dopey expression，big round innocent eyes，真实有神的眼睛，realistic eyes，
 {毛色}真实毛发，realistic fur color，natural coat，
 {身高描述，如：75cm tall、small animal scale}，真实动物体态比例（相对大头、短颈、圆润短身、饱满肚腩、短小四肢），natural realistic animal body proportion，large head short rounded body，chubby belly，short stubby limbs，
-**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，not vertical human spine，前爪收于胸前，forepaws held to chest，趾行足真实爪足，animal-style hind legs with real paw feet，**非人类挺直站姿/非修长人臂/非五指人手/非人腿**，not human stance, not human arms, not human hands, not human legs，
-保留{种属}尾巴，realistic furry tail，真实动物前爪与肉垫（非人类五指手），realistic paws with pads not human hands，
-{角色身份对应的宠物服饰，如：宠物卫衣/宠物背心/宠物围嘴/项圈领结}，宠物专用服饰非人类成衣，pet clothing not human garment，上装/披挂为主，自然布料质感，为动物身躯适配预留尾巴与四肢位，**下半身保留动物自然覆毛后腿与爪足、不穿人类长裤**，fur-covered animal hind legs and paws，pet-style lower body，
+**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，前爪收于胸前，forepaws held to chest，趾行足真实爪足，animal-style hind legs with real paw feet，**保持真实动物体态**，keep authentic animal body shape，
+保留{种属}尾巴，realistic furry tail，真实动物前爪（非人类五指手），realistic animal paws，
+{角色身份对应的宠物服饰，如：宠物卫衣/宠物背心/宠物围嘴/项圈领结}，宠物专用服饰非人类成衣，pet clothing，上装/披挂为主，自然布料质感，为动物身躯适配预留尾巴与四肢位，**下半身保留动物自然覆毛后腿与爪足**，natural animal lower body with fluffy legs，pet-style lower body，
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
 头部特写完整展示耳朵到肩部，不裁切耳尖，ears and face complete，
 全身立像从头顶到爪足完整展示，full body head to paw feet，尾巴完整，不裁切头顶和脚部，
