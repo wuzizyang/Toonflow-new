@@ -25,7 +25,8 @@
 ### 二、锁场景与构图
 
 - 背景环境、家具陈设、光照方向**全程一致**，镜头移动时场景应是连贯的同一空间，不偷换
-- 提示词声明：`背景与光照全程一致，同一空间连贯，consistent background and lighting, same location throughout, stable environment`
+- **锁真实兽体尺度**：角色全程保持真实小动物体型，与画面中人/座椅/车厢/家具/餐具等参照物的大小关系符合真实世界逻辑，**全程明显小于身旁的人、不在片段中被放大到人类尺寸**
+- 提示词声明：`背景与光照全程一致，同一空间连贯，角色全程保持真实小动物体型、与人/座椅/参照物大小关系符合真实世界逻辑、明显小于身旁的人、不放大到人类尺寸，consistent background and lighting, same location throughout, stable environment, pet keeps true real-life animal size throughout, clearly much smaller than nearby humans, scale vs reference objects stays physically correct, never scaled up to human size`
 
 ### 三、锁写实风格
 
@@ -52,7 +53,7 @@
 ### 防漂移负向词
 
 **模式B（英文，置于负向区）：**
-`morphing, warping, shape-shifting, identity drift, inconsistent character, changing fur color, changing face, flickering, jittering, unstable body shape, inconsistent limbs, changing proportions, duplicated character, background changing, scene morphing, style shift, CG drift, humanoid transformation, bipedal walking, switching posture mid-clip, exaggerated motion, fast erratic camera`
+`morphing, warping, shape-shifting, identity drift, inconsistent character, changing fur color, changing face, flickering, jittering, unstable body shape, inconsistent limbs, changing proportions, changing body scale, oversized pet, giant cat, human-sized animal, pet as large as a human, pet same height as people, duplicated character, background changing, scene morphing, style shift, CG drift, humanoid transformation, bipedal walking, switching posture mid-clip, exaggerated motion, fast erratic camera`
 
 **模式A（中文，写入正向约束以替代负向）：**
 `全程角色与场景稳定不漂移，无变形无渐变无闪烁，动作轻缓自然，镜头平稳`
