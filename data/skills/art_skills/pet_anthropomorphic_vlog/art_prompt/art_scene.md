@@ -7,7 +7,7 @@
 1. **空间叙事** — 场景承载Vlog生活叙事与情绪功能，是有温度的生活空间，不是纯背景板
 2. **生活质感** — 居家/咖啡馆/街头/户外等真实生活场景，充满烟火气与日常细节
 3. **毛绒友好尺度** — 场景物件尺度与拟人宠物角色协调，圆润可爱，温馨亲切
-4. **写实为锚（照片实拍优先·拒绝效果图）** — 场景一切画面以**真实手机/相机随手拍下的生活照**为最高标准：有自然光的不均匀、有使用痕迹的家具、有生活杂物的真实空间、有轻微灰尘与自然老化。**绝不能像"室内设计渲染效果图/样板间/3D效果图"——那种光照过于均匀完美、材质过新无使用痕迹、地面反光过于干净的"CG感"是本风格大忌**。要的是"有人（有宠物）真的住在这里"的温暖真实生活感，不是"准备拍广告的完美空间"。
+4. **写实为锚（照片实拍优先·拒绝效果图）** — 场景一切画面以**真实手机/相机随手拍下的生活照**为最高标准：有自然光的不均匀、有生活杂物的真实空间。**绝不能像"室内设计渲染效果图/样板间/3D效果图"——那种光照过于均匀完美、地面反光过于干净的"CG感"是本风格大忌**。要的是"有人（有宠物）真的住在这里"的温暖真实生活感，不是"准备拍广告的完美空间"。
 
 ---
 
@@ -107,17 +107,17 @@
 ```
 宠物拟人化Vlog场景主视图，真实生活实拍照风格，
 photorealistic photograph，real-life photo，shot on iPhone，smartphone snapshot，natural lighting photography，true-to-life，ultra realistic，
-real lived-in space，imperfect natural lighting，slight dust particles in light，visible wear on furniture，personal belongings scattered naturally，not a showroom，not interior design render，not 3D visualization，
+real lived-in space，imperfect natural lighting，personal belongings scattered naturally，not a showroom，not interior design render，not 3D visualization，
 realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
 empty scene，no characters，no people，no animals，
 {室内/室外}，{场景类型}，{季节+时间}，
 前景：{元素}，中景：{元素}，后景：{元素}，
 {色调描述}，{天候/氛围元素}，
 {材质描述}，自然景深，真实空气感，生活杂物细节，lived-in feel，
-自然写实光照（非均匀柔光箱打光），真实光影（窗光有方向感、有光斑、有阴影区），真实材质质感（有使用痕迹、轻微磨损、自然老化），
+自然写实光照（非均匀柔光箱打光），真实光影（窗光有方向感、有光斑、有阴影区），真实材质质感，
 单画面构图，自然观察视角，构图能代表场景主体并展示前/中/后景层次，
 画面中无任何角色，
-no illustration, no painting, no concept art, no painterly, no anime, no cartoon, no 2.5D, no interior design render, no 3D visualization, no showroom, no CG poster look, no plastic render, no fantasy glow, no oversaturation, no perfectly clean surfaces,
+no illustration, no painting, no concept art, no painterly, no anime, no cartoon, no 2.5D, no interior design render, no 3D visualization, no showroom, no CG poster look, no plastic render, no fantasy glow, no oversaturation,
 图中不要有任何文字
 ```
 
@@ -134,7 +134,7 @@ no illustration, no painting, no concept art, no painterly, no anime, no cartoon
 | R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
 | R4 | 构图须能代表场景主体并展示前/中/后景层次 |
 | R5 | 场景图中**严禁出现任何角色** |
-| R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on iPhone / casual smartphone snapshot / 真实摄影）+ 「有人真的住在这里的生活感」（lived-in, imperfect, natural wear），**拒绝样板间/效果图感** |
+| R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on iPhone / casual smartphone snapshot / 真实摄影）+ 「有人真的住在这里的生活感」（lived-in, imperfect），**拒绝样板间/效果图感** |
 | R7 | 必须指定「自然写实光照」（有方向感、有光斑、有阴影区的真实光，非均匀柔光箱打光）与真实空气感 |
 | R8 | 材质须为真实质感，自然可信 |
 
@@ -149,5 +149,5 @@ no illustration, no painting, no concept art, no painterly, no anime, no cartoon
 | X5 | 出现任何角色、人形、动物拟人剪影或轮廓 |
 | X6 | 画面被拼接成多视图/网格/分屏布局 |
 | X7 | 卡通/插画/绘画感/概念图/2.5D扁平/玩具感/**室内设计效果图/3D渲染效果图/样板间感**/CG渲染海报/塑料光泽等非真实照片质感 |
-| X8 | 高饱和荧光色/赛博霓虹色/过曝梦幻光晕/过度精修/**光照过于均匀完美无阴影区/材质过新无使用痕迹/地面反光过于干净的"效果图感"** |
+| X8 | 高饱和荧光色/赛博霓虹色/过曝梦幻光晕/过度精修/**光照过于均匀完美无阴影区/地面反光过于干净的"效果图感"** |
 | X9 | 恐怖/阴森/破败压抑的非治愈氛围（除非剧情需要） |
