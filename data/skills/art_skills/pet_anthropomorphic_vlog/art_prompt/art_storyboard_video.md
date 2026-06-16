@@ -52,7 +52,7 @@
 ### 防漂移负向词
 
 **模式B（英文，置于负向区）：**
-`morphing, warping, shape-shifting, identity drift, inconsistent character, changing fur color, changing face, flickering, jittering, melting, deformed limbs, extra limbs, duplicated character, background changing, scene morphing, style shift, CG drift, humanoid transformation, bipedal walking, switching posture mid-clip, exaggerated motion, fast erratic camera, distorted proportions`
+`morphing, warping, shape-shifting, identity drift, inconsistent character, changing fur color, changing face, flickering, jittering, unstable body shape, inconsistent limbs, changing proportions, duplicated character, background changing, scene morphing, style shift, CG drift, humanoid transformation, bipedal walking, switching posture mid-clip, exaggerated motion, fast erratic camera`
 
 **模式A（中文，写入正向约束以替代负向）：**
 `全程角色与场景稳定不漂移，无变形无渐变无闪烁，动作轻缓自然，镜头平稳`
