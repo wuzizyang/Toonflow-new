@@ -38,7 +38,7 @@
 
 - 必须声明 **"以基准图为形态参考，保持兽态与体型轮廓不变，仅改 {服饰/动作/场景}"**
 - 中文：`以角色基准图为形态参考，保持后腿立起兽态、大头短身、短小四肢、真实前爪与趾行爪足不变，仅改{变量}`
-- 英文：`use the reference image as body/pose anchor, keep reared-up animal posture, large head small body, short stubby limbs, real paws and digitigrade feet unchanged, only change {variable}`
+- 英文：`use the reference image as body/pose anchor, keep reared-up animal posture, large head small body, short stubby limbs, real paws and animal paw feet unchanged, only change {variable}`
 - 参考强度（如有）建议偏高（形态权重 0.6-0.8 区间起调），确保兽态轮廓被强约束
 
 ---
@@ -69,7 +69,7 @@
 | 质感 | 逐根毛发、真实皮毛层次、蓬松有立体感 | 逐根毛发、detailed individual fur strands、realistic fluffy fur、fur grooming |
 | 光泽 | 真实自然光泽、阳光下毛发微微透光、无塑料无橡胶感 | 真实光泽、natural translucent glow、no plastic, no rubber look |
 | 头部 | 完整真实动物头部、耳朵竖立或垂落、耳内细毛 | 真实动物头部、{耳形}、photorealistic animal head、realistic furry face |
-| 露肤 | 仅手掌/脚掌肉垫等局部，真实肉垫质感，其余被毛覆盖 | 真实肉垫、realistic paw pads、覆毛肢体 |
+| 露肤 | 仅手掌/脚掌肉垫等局部，真实肉垫质感，其余被毛覆盖 | 真实肉垫、realistic animal paws、覆毛肢体 |
 
 ---
 
@@ -88,7 +88,7 @@
 | 脊柱/重心 | **含背微弓、非垂直**，重心压在后腿与臀部，呈动物自然立起的姿态曲线 | slightly hunched rounded back、not vertical spine、weight on haunches |
 | 操作态姿态 | **动物自然后腿坐起/立起**（reared up / sitting up on hind legs）做手部操作，前爪收于胸前或操作物件，**非人类挺直立正**；可微蹲、微弓 | reared up on hind legs、sitting up、forepaws handling objects、not stiff human stance |
 | 行动态姿态 | 走路/移动时**回归自然四足兽态步态**，像真实动物行走，**不直立行走、不人类化迈步** | natural quadruped gait when walking/moving、real animal locomotion、not walking upright |
-| 后肢/脚 | **趾行足（脚尖着地）+ 真实动物后腿**，短而覆毛，**非人类跖行的平足长腿** | digitigrade hind legs、furry animal legs、real paw feet、not human legs |
+| 后肢/脚 | **趾行足（脚尖着地）+ 真实动物后腿**，短而覆毛，**非人类跖行的平足长腿** | animal-style hind legs、furry animal legs、real paw feet、not human legs |
 | 前肢/手 | 真实动物前爪 + 肉垫，短小覆毛，可双爪笨拙捧/夹/操作物件，保留爪垫短趾，**非修长人臂与灵巧五指人手** | short furry forelimbs、real paws with pads、clumsy two-paw grasp、not human arms/hands |
 | 肩颈 | 圆润柔和、绒毛覆盖、真实动物肩背，**无人类宽肩与锁骨** | rounded furry shoulders、animal build、no human broad shoulders |
 | 尾巴 | 保留种属尾巴、自然垂落或微翘，可随情绪摆动 | {种属}尾巴、fluffy tail |
@@ -174,12 +174,12 @@
 {种属}拟人角色四视图设定图，
 photorealistic anthropomorphic pet character，real-life photo，shot on smartphone，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
 realistic detailed fur，individual fur strands，natural translucent glow，natural fur grooming，
-{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润无辜大眼，呆萌天真神态，innocent derpy cute expression，big round innocent eyes，真实有神的眼睛，realistic eyes，
+{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润无辜大眼，呆萌天真神态，innocent adorable dopey expression，big round innocent eyes，真实有神的眼睛，realistic eyes，
 {毛色}真实毛发，realistic fur color，natural coat，
 {身高描述，如：75cm tall、small animal scale}，真实动物体态比例（相对大头、短颈、圆润短身、饱满肚腩、短小四肢），natural realistic animal body proportion，large head short rounded body，chubby belly，short stubby limbs，
-**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，not vertical human spine，前爪收于胸前，forepaws held to chest，趾行足真实爪足，digitigrade hind legs with real paw feet，**非人类挺直站姿/非修长人臂/非五指人手/非人腿**，not human stance, not human arms, not human hands, not human legs，
+**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，not vertical human spine，前爪收于胸前，forepaws held to chest，趾行足真实爪足，animal-style hind legs with real paw feet，**非人类挺直站姿/非修长人臂/非五指人手/非人腿**，not human stance, not human arms, not human hands, not human legs，
 保留{种属}尾巴，realistic furry tail，真实动物前爪与肉垫（非人类五指手），realistic paws with pads not human hands，
-{角色身份对应的宠物服饰，如：宠物卫衣/宠物背心/宠物围嘴/项圈领结}，宠物专用服饰非人类成衣，pet clothing not human garment，上装/披挂为主，自然布料质感，为动物身躯适配预留尾巴与四肢位，**下半身保留动物自然覆毛后腿与爪足、不穿人类长裤**，bare furry animal hind legs and paws，no human trousers，
+{角色身份对应的宠物服饰，如：宠物卫衣/宠物背心/宠物围嘴/项圈领结}，宠物专用服饰非人类成衣，pet clothing not human garment，上装/披挂为主，自然布料质感，为动物身躯适配预留尾巴与四肢位，**下半身保留动物自然覆毛后腿与爪足、不穿人类长裤**，fur-covered animal hind legs and paws，pet-style lower body，
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
 头部特写完整展示耳朵到肩部，不裁切耳尖，ears and face complete，
 全身立像从头顶到爪足完整展示，full body head to paw feet，尾巴完整，不裁切头顶和脚部，
