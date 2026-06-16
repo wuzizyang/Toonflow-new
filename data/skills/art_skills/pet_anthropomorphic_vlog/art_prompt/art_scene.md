@@ -5,13 +5,25 @@
 ## 一、场景美学原则
 
 1. **空间叙事** — 场景承载Vlog生活叙事与情绪功能，是有温度的生活空间，不是纯背景板
-2. **生活质感** — 居家/咖啡馆/街头/户外等真实生活场景，充满烟火气与日常细节
-3. **毛绒友好尺度** — 场景物件尺度与拟人宠物角色协调，圆润可爱，温馨亲切
-4. **写实为锚（照片实拍优先）** — 场景一切画面以**真实照片质感**为最高标准：追求像一张生活实拍照（真实摄影/单反质感/真实光影/真实材质/自然景深/真实空气感），而非渲染海报或概念图。**杜绝插画、绘画感、概念图、卡通、2.5D扁平、过度CG塑料光泽与梦幻光晕**。宁可像一张随手拍的生活照，也不要像精修渲染图。
+2. **贴近生活（最高优先）** — 场景必须是**普通人/宠物真实日常生活的空间**：小户型公寓、普通卧室、小厨房、街边小咖啡馆、社区小公园——而不是高端酒店大堂、商务写字楼、设计师样板间、空旷大空间。**空间要小、要挤、要有烟火气、要有生活杂物、要像宠物真的每天待的地方**
+3. **生活杂物是真实感来源** — 桌上有半杯水、沙发上有卷起的毯子、窗台上有快枯的绿植、地上有猫爬架旁散落的猫毛球——这些"不完美"的日常杂物是"有人住在这里"的铁证，必须主动设计进场景
+4. **写实为锚（照片实拍优先·拒绝效果图）** — 场景一切画面以**真实手机/相机随手拍下的生活照**为最高标准：有自然光的不均匀、有使用痕迹的家具、有生活杂物的真实空间、有轻微灰尘与自然老化。**绝不能像"室内设计渲染效果图/样板间/3D效果图"——那种光照过于均匀完美、材质过新无使用痕迹、地面反光过于干净的"CG感"是本风格大忌**。要的是"有人（有宠物）真的住在这里"的温暖真实生活感，不是"准备拍广告的完美空间"
+5. **毛绒友好尺度** — 场景物件尺度与拟人宠物角色协调（小兽 60-90cm 尺度），家具、桌椅可略矮/圆润，适合小动物使用。
+
+## 二、画风方向（贴近日常生活的朴素感）
+
+> **画风核心**：像用手机随手拍下的一张日常生活照——**不追求电影感、不追求高对比戏剧光、不追求浓郁调色、不追求精致构图**。色彩朴素自然、光线平淡真实、构图随意自然、整体"平平无奇但真实温暖"。
+
+| 维度 | 要的（贴近生活） | 不要的（太精致） |
+|---|---|---|
+| 色彩 | 自然色温、中性偏暖、不加滤镜、不调色 | 浓郁调色/电影色彩分级/高饱和/冷暖强对比 |
+| 光线 | 自然光为主、有正常曝光、有些过曝/暗角也没关系 | 精心打的电影灯光/轮廓光/烟雾光/丁达尔光 |
+| 对比 | 低到中对比、柔和、不强调明暗戏剧感 | 高对比/明暗分割/强阴影的戏剧光 |
+| 构图 | 随意自然、不强求黄金比例、有点歪也真实 | 完美构图/精心摆拍/对称构图/商业摄影构图 |
+| 景深 | 自然景深或全清晰、不刻意浅景深虚化 | 大光圈奶油虚化/bokeh balls/过度虚化突出主体 |
+| 气质 | 朴素、日常、温暖、有烟火气 | 精致、电影感、广告片、杂志大片 |
 
 ---
-
-## 二、季节色调映射
 
 | 季节 | 主色调 | 辅色调 | 提示词 |
 |---|---|---|---|
@@ -106,17 +118,19 @@
 
 ```
 宠物拟人化Vlog场景主视图，真实生活实拍照风格，
-photorealistic photograph，real-life photo，shot on DSLR，35mm/50mm lens，natural lighting photography，true-to-life，ultra realistic，
-hyperrealistic detail，realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
+photorealistic photograph，real-life photo，shot on iPhone/DSLR，35mm/50mm lens，natural lighting photography，true-to-life，ultra realistic，
+casual everyday snapshot aesthetic，plain natural colors without filters or color grading，low-to-medium contrast，soft ambient daylight，no dramatic lighting，no cinematic color grading，no heavy post-processing，
+real lived-in space，imperfect natural lighting，slight dust particles in light，visible wear on furniture，personal belongings scattered naturally，daily clutter (half-empty cup, crumpled blanket, scattered magazines, pet toys on floor)，small cozy space not a large commercial room，not a showroom，not interior design render，not 3D visualization，not a hotel lobby，not a corporate office，
+realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
 empty scene，no characters，no people，no animals，
 {室内/室外}，{场景类型}，{季节+时间}，
 前景：{元素}，中景：{元素}，后景：{元素}，
 {色调描述}，{天候/氛围元素}，
-{材质描述}，自然景深，真实空气感，生活细节，lived-in feel，
-自然写实光照，真实光影，真实材质质感，
+{材质描述}，自然景深，真实空气感，生活杂物细节，lived-in feel，
+自然写实光照（非均匀柔光箱打光），真实光影（窗光有方向感、有光斑、有阴影区），真实材质质感（有使用痕迹、轻微磨损、自然老化），
 单画面构图，自然观察视角，构图能代表场景主体并展示前/中/后景层次，
 画面中无任何角色，
-no illustration, no painting, no concept art, no painterly, no anime, no cartoon, no 2.5D, no CG poster look, no plastic render, no fantasy glow, no oversaturation,
+no illustration, no painting, no concept art, no painterly, no anime, no cartoon, no 2.5D, no interior design render, no 3D visualization, no showroom, no CG poster look, no plastic render, no fantasy glow, no oversaturation, no perfectly clean surfaces, no large empty commercial space, no hotel lobby, no corporate office, no luxury mansion, no cinematic color grading, no dramatic lighting, no film look, no bokeh balls, no magazine photography, no commercial shoot aesthetic,
 图中不要有任何文字
 ```
 
@@ -133,9 +147,10 @@ no illustration, no painting, no concept art, no painterly, no anime, no cartoon
 | R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
 | R4 | 构图须能代表场景主体并展示前/中/后景层次 |
 | R5 | 场景图中**严禁出现任何角色** |
-| R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on DSLR / 真实摄影），优先于渲染感 |
-| R7 | 必须指定「自然写实光照」与真实空气感，避免梦幻光晕 |
-| R8 | 材质须为真实质感，自然可信 |
+| R6 | 必须指定「真实照片实拍质感 + 日常随拍画风」锚定词（casual everyday snapshot / plain natural colors without filters / low contrast / no dramatic lighting），**画风必须朴素日常、不追求电影感/广告片/精致摄影** |
+| R7 | 必须指定「自然写实光照」（有方向感、有光斑、有阴影区的真实光，非均匀柔光箱打光）与真实空气感 |
+| R8 | 材质须为真实质感，自然可信，**有使用痕迹与自然老化（非全新无瑕）** |
+| R9 | 场景必须是**普通日常的小生活空间**（小户型/普通卧室/小厨房/街边小店/社区公园），禁止大空间/商务/豪宅；必须有**生活杂物细节**（半杯水/卷起的毯子/散落的宠物玩具等），让空间读作"有人真的住在这里" |
 
 ### 严禁
 
@@ -147,6 +162,7 @@ no illustration, no painting, no concept art, no painterly, no anime, no cartoon
 | X4 | 植被/天候与季节矛盾 |
 | X5 | 出现任何角色、人形、动物拟人剪影或轮廓 |
 | X6 | 画面被拼接成多视图/网格/分屏布局 |
-| X7 | 卡通/插画/绘画感/概念图/2.5D扁平/玩具感/CG渲染海报/塑料光泽等非真实照片质感 |
-| X8 | 高饱和荧光色/赛博霓虹色/过曝梦幻光晕/过度精修的非真实感 |
+| X7 | 卡通/插画/绘画感/概念图/2.5D扁平/玩具感/**室内设计效果图/3D渲染效果图/样板间感**/CG渲染海报/塑料光泽等非真实照片质感 |
+| X8 | 高饱和荧光色/赛博霓虹色/过曝梦幻光晕/过度精修/**光照过于均匀完美无阴影区/材质过新无使用痕迹/地面反光过于干净的"效果图感"** |
 | X9 | 恐怖/阴森/破败压抑的非治愈氛围（除非剧情需要） |
+| X10 | **脱离日常生活的大空间**：商务写字楼大堂/高端酒店/豪宅/空旷商业空间/设计师样板间。场景必须是普通人/宠物日常的小生活空间 |
