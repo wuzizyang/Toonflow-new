@@ -64,7 +64,7 @@
 
 | 项目 | 约束 | 提示词 |
 |---|---|---|
-| 质感 | 逐根真实毛发、有层次 | 真实毛发、realistic detailed fur |
+| 质感 | 真实毛发清晰自然、有层次 | 真实毛发、realistic detailed fur |
 | 光泽 | 柔和自然光泽 | 柔和光泽、soft sheen |
 | 种属特征 | 保持底模耳形/口鼻/胡须 | 保留种属特征、consistent animal features |
 | 禁止 | 卡通化/插画/塑料感/玩具感 | — |
