@@ -184,7 +184,7 @@ photorealistic, real-life photo, shot on iPhone, casual smartphone snapshot, han
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws and animal paw feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
 
 ---
 
@@ -194,8 +194,8 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 
 - ❌ 卡通/插画/黏土/2.5D扁平/玩具感/塑料感等非写实质感
 - ❌ 失去真实动物身体特征的纯人类/人形化躯干角色
-- ❌ 过度拟人：人类化修长躯干/宽肩/修长手臂/灵巧五指人手/挺直军姿/垂直脊柱（身体须为真实兽态：大头短身、含背微弓、短小四肢、真实前爪）
-- ❌ 人腿剪影与人类成衣：长裤/长袜遮盖后腿造成人类双腿轮廓；人类成衣剪裁（应为宠物专用服饰、上身/披挂为主、下半身留覆毛兽腿与爪足）
+- ❌ 过度拟人：人类化修长躯干/宽肩/修长手臂/灵巧人手/挺直军姿/垂直脊柱（身体须为真实兽态：大头短身、含背微弓、短小四肢、真实前爪）
+- ❌ 人腿剪影：长裤/长袜遮盖后腿造成人类双腿轮廓（应为宠物专用服饰、上身/披挂为主、下半身留覆毛短腿）
 - ❌ **直立行走/人类化迈步走路**：走路、移动、奔跑须为自然四足兽态；后腿立起仅用于"用手的操作行为"（操作态）。注意：四足是移动镜头的正确姿态，不属于错误
 - ❌ 恐怖/怪诞/扭曲/畸形拟人造型
 - ❌ 高饱和荧光色/赛博霓虹色
@@ -232,7 +232,7 @@ You are an anthropomorphic pet vlog storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, realistic detailed fur, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws and animal paw feet), posture follows action (reared up with forepaws for hand-tasks / quadruped when moving), pet clothing with fluffy animal hind legs, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography
+Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, realistic detailed fur, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action (reared up with forepaws for hand-tasks / quadruped when moving), pet clothing, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography
 </character_reference>
 <continuity_rules>
 - Same fur color, animal head features, costume across ALL shots
@@ -247,7 +247,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze looking into the camera, realistic detailed fur, individual fur strands, natural translucent glow, real-life photo, shot on iPhone, casual smartphone snapshot, handheld phone footage, slight handheld shake, first-person vlog selfie POV, subject looking into the camera, photorealistic photography, true-to-life, casual everyday snapshot, cozy window light, natural ambient light, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws and animal paw feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
 </negative>
 ```
 

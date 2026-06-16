@@ -69,7 +69,7 @@
 | 质感 | 逐根毛发、真实皮毛层次、蓬松有立体感 | 逐根毛发、detailed individual fur strands、realistic fluffy fur、fur grooming |
 | 光泽 | 真实自然光泽、阳光下毛发微微透光、无塑料无橡胶感 | 真实光泽、natural translucent glow、no plastic, no rubber look |
 | 头部 | 完整真实动物头部、耳朵竖立或垂落、耳内细毛 | 真实动物头部、{耳形}、photorealistic animal head、realistic furry face |
-| 露肤 | 仅手掌/脚掌肉垫等局部，真实肉垫质感，其余被毛覆盖 | 真实肉垫、realistic animal paws、覆毛肢体 |
+| 露肤 | 仅手掌/脚掌等局部，其余被毛覆盖 | realistic cat paws、覆毛肢体 |
 
 ---
 
@@ -88,8 +88,8 @@
 | 脊柱/重心 | **含背微弓、非垂直**，重心压在后腿与臀部，呈动物自然立起的姿态曲线 | slightly hunched rounded back、natural animal spine curve、weight on haunches |
 | 操作态姿态 | **动物自然后腿坐起/立起**（reared up / sitting up on hind legs）做手部操作，前爪收于胸前或操作物件，**非人类挺直立正**；可微蹲、微弓 | reared up on hind legs、sitting up、forepaws handling objects、authentic animal stance |
 | 行动态姿态 | 走路/移动时**回归自然四足兽态步态**，像真实动物行走，**不直立行走、不人类化迈步** | natural quadruped gait when walking/moving、real animal locomotion、always on all fours when moving |
-| 后肢/脚 | **趾行足（脚尖着地）+ 真实动物后腿**，短而覆毛，**非人类跖行的平足长腿** | animal-style hind legs、furry animal legs、real paw feet |
-| 前肢/手 | 真实动物前爪 + 肉垫，短小覆毛，可双爪笨拙捧/夹/操作物件，保留爪垫短趾，**非修长人臂与灵巧五指人手** | short furry forelimbs、realistic animal paws、clumsy two-paw grasp |
+| 后肢/脚 | **真实动物后腿**，短而覆毛 | short furry legs |
+| 前肢/手 | 真实动物前爪，短小覆毛，可双爪笨拙捧/夹/操作物件 | short furry forelimbs、realistic cat paws、clumsy two-paw grasp |
 | 肩颈 | 圆润柔和、绒毛覆盖、真实动物肩背，**无人类宽肩与锁骨** | rounded furry shoulders、animal build |
 | 尾巴 | 保留种属尾巴、自然垂落或微翘，可随情绪摆动 | {种属}尾巴、fluffy tail |
 | 体态 | 真实动物身形，圆润蓬松、全身覆毛，保留动物本能体态细节 | real animal body、fluffy full-body fur、natural animal posture |
@@ -174,15 +174,15 @@
 {种属}拟人角色四视图设定图，
 photorealistic anthropomorphic pet character，real-life photo，shot on smartphone，handheld phone footage，slight handheld shake，vlog selfie look，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
 realistic detailed fur，individual fur strands，natural translucent glow，natural fur grooming，
-{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润无辜大眼，呆萌天真神态，innocent adorable dopey expression，big round innocent eyes，真实有神的眼睛，realistic eyes，正面与头部视图看向镜头（vlog自拍对视感），front and head views looking into the camera，
+{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润大眼，呆萌天真神态，adorable dopey expression，big round eyes，真实有神的眼睛，realistic eyes，正面与头部视图看向镜头（vlog自拍对视感），front and head views looking into the camera，
 {毛色}真实毛发，realistic fur color，natural coat，
 {身高描述，如：75cm tall、small animal scale}，真实动物体态比例（相对大头、短颈、圆润短身、饱满肚腩、短小四肢），natural realistic animal body proportion，large head short rounded body，chubby belly，short stubby limbs，
-**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，前爪收于胸前，forepaws held to chest，趾行足真实爪足，animal-style hind legs with real paw feet，**保持真实动物体态**，keep authentic animal body shape，
-保留{种属}尾巴，realistic furry tail，真实动物前爪（非人类五指手），realistic animal paws，
-{角色身份对应的宠物服饰，如：宠物卫衣/宠物背心/宠物围嘴/项圈领结}，宠物专用服饰非人类成衣，pet clothing，上装/披挂为主，自然布料质感，为动物身躯适配预留尾巴与四肢位，**下半身保留动物自然覆毛后腿与爪足**，natural animal lower body with fluffy legs，pet-style lower body，
+**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，前爪收于胸前，forepaws held to chest，短小后腿，short legs，**保持真实动物体态**，keep authentic animal body shape，
+保留{种属}尾巴，realistic furry tail，真实动物前爪，realistic cat paws，
+{角色身份对应的宠物服饰，如：宠物卫衣/宠物背心/宠物围嘴/项圈领结}，宠物专用服饰，pet clothing，上装/披挂为主，自然布料质感，为动物身躯与尾巴预留位，下半身为自然覆毛短腿，furry short legs，pet-style lower body，
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
 头部特写完整展示耳朵到肩部，不裁切耳尖，ears and face complete，
-全身立像从头顶到爪足完整展示，full body head to paw feet，尾巴完整，不裁切头顶和脚部，
+全身立像从头顶到脚完整展示，full body head to feet，尾巴完整，不裁切头顶和脚部，
 动物自然后腿立起、含背微弓，纯净中性灰背景，自然写实柔和光，真实毛发细节清晰，
 photorealistic, realistic natural detail, no cartoon, no illustration, no claymation,
 四视图一致性，真实毛发质感统一，
@@ -215,8 +215,8 @@ photorealistic, realistic natural detail, no cartoon, no illustration, no clayma
 | X1 | 着装不得体或覆盖不全；人类成衣（应为宠物专用服饰）；与角色设定明显不符的着装 |
 | X2 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感（cartoon, illustration, claymation, toy-like） |
 | X3 | 失去真实动物身体特征变成纯人类/人形化躯干 |
-| X3b | **过度拟人**：人类化修长躯干/宽肩锁骨/修长手臂/灵巧五指人手/挺直军姿/垂直脊柱等，身体必须保留真实兽态（大头短身、含背微弓、短小覆毛四肢、真实前爪） |
-| X3c | **人腿剪影**：长裤/长袜遮盖后腿造成人类双腿轮廓；跖行平足长腿。下半身须为动物覆毛后腿 + 趾行爪足 |
+| X3b | **过度拟人**：人类化修长躯干/宽肩锁骨/修长手臂/灵巧人手/挺直军姿/垂直脊柱等，身体必须保留真实兽态（大头短身、含背微弓、短小覆毛四肢、真实前爪） |
+| X3c | **人腿剪影**：长裤/长袜遮盖后腿造成人类双腿轮廓。下半身须为动物覆毛短腿 |
 | X4 | **四视图设定图中出现四足趴卧爬行姿态**（设定图须为操作态后腿坐起/立起；四足兽态仅用于分镜的走路/移动镜头，不在设定图体现） |
 | X5 | 恐怖/怪诞/扭曲/畸形拟人造型 |
 | X6 | 全身立像裁切头顶、耳尖或脚底 |
