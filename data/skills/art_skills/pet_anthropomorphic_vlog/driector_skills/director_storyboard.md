@@ -139,7 +139,7 @@ metaData: director_skills
 
 **宠物拟人化风格锚定（必选）：**
 
-宠物拟人化，保留真实动物全身特征与体态，**姿态按本镜动作切换（操作类→后腿坐起/立起+前爪操作；移动类→自然四足兽态、不直立行走）**，保留真实兽态（大头短身、短小四肢、真实前爪、含背微弓），宠物专用服饰，照片级写实·真实摄影（实拍质感，real-life photo），电影级光照
+宠物拟人化，保留真实动物全身特征与体态，**姿态按本镜动作切换（操作类→后腿坐起/立起+前爪操作；移动类→自然四足兽态、不直立行走）**，保留真实兽态（大头短身、短小四肢、真实前爪、含背微弓），宠物专用服饰，照片级写实·真实摄影（日常生活随拍质感，real-life photo），自然日常光照
 
 **真实毛发质感（所有输出必选）：**
 
@@ -168,16 +168,16 @@ one coherent photorealistic shot, unified rendering and realism across character
 **画质锁定词（所有输出必须包含，置于风格收尾之后）：**
 
 模式A（中文）——默认：
-照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照
+照片级写实，日常生活随拍质感，毛发纤毫毕现，色彩自然朴素，画面无杂色无噪点，自然日常光照
 
 模式A（中文）——画内文字场景（画面描述中含招牌/标识等道具文字时）：
-照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照，招牌/标识等道具文字清晰可读
+照片级写实，日常生活随拍质感，毛发纤毫毕现，色彩自然朴素，画面无杂色无噪点，自然日常光照，招牌/标识等道具文字清晰可读
 
 模式B（英文）——默认：
-photorealistic, real-life photo, shot on DSLR, photorealistic photography, true-to-life, ultra-detailed fur, individual fur strands, subsurface scattering, natural realistic colors, cinematic lighting, no noise, no artifacts
+photorealistic, real-life photo, shot on DSLR, photorealistic photography, true-to-life, casual everyday snapshot, natural ambient light, ultra-detailed fur, individual fur strands, subsurface scattering, natural realistic colors, no noise, no artifacts
 
 模式B（英文）——画内文字场景：
-photorealistic, real-life photo, shot on DSLR, photorealistic photography, true-to-life, ultra-detailed fur, individual fur strands, subsurface scattering, natural realistic colors, cinematic lighting, no noise, no artifacts, legible text on signs and props
+photorealistic, real-life photo, shot on DSLR, photorealistic photography, true-to-life, casual everyday snapshot, natural ambient light, ultra-detailed fur, individual fur strands, subsurface scattering, natural realistic colors, no noise, no artifacts, legible text on signs and props
 
 **负向词模板（模式B 必须包含，置于提示词末尾）：**
 
@@ -221,7 +221,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 ### 示例输出A（模式A · Seedream）
 
 [Prompt]
-宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足），照片级写实·真实摄影（实拍质感），电影级光照，中景构图，拟人角色半身入镜，逐根真实毛发，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，黄金时刻暖光，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，以假乱真，照片级写实，超高清画质，毛发纤毫毕现，色彩自然真实，画面无杂色无噪点，电影级光照。
+宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足），照片级写实·真实摄影（日常生活随拍质感），自然日常光照，中景构图，拟人角色半身入镜，逐根真实毛发，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，呆萌可爱，圆润大眼无辜神态，以假乱真，照片级写实，日常生活随拍质感，毛发纤毫毕现，色彩自然朴素，画面无杂色无噪点，自然日常光照。
 Based on the reference image of 角色A, maintain consistent: animal head features, fur color, costume. The reference is one character shown from multiple angles — render exactly ONE 角色A, do not duplicate or clone. Generate a new scene: anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching softly. Keep character appearance identical to reference.
 
 ### 示例输出B（模式B · Nanobanana）
@@ -244,7 +244,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 - Exactly one instance of each character; the reference sheet shows ONE character from multiple angles — do NOT duplicate, clone, or mirror the character into the frame
 </continuity_rules>
 <shot>
-Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, ultra-detailed realistic fur, individual fur strands, subsurface scattering, real-life photo, shot on DSLR, photorealistic photography, true-to-life, cozy golden-hour window light, cinematic lighting, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
+Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, ultra-detailed realistic fur, individual fur strands, subsurface scattering, real-life photo, shot on DSLR, photorealistic photography, true-to-life, casual everyday snapshot, cozy window light, natural ambient light, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
 cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no walking upright on two legs, no human bipedal walking gait, no trousers covering legs, no human legs silhouette, no human garment, keep real animal body with hunched back, short stubby limbs, real paws and digitigrade feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors

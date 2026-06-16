@@ -53,7 +53,7 @@
 |---|---|
 | 种属特征 | 由角色设定确定（猫/狗/兔/仓鼠/狐狸等），必须保留对应耳形、口鼻、胡须、真实毛发纹理 |
 | 五官 | 由种属与性格自然推导，真实有神的眼睛（真实瞳孔/虹膜/湿润高光），真实鼻头与胡须，不预设固定脸型 |
-| 风格底色 | 照片级写实·真实摄影、真实毛发、自然光照、次表面散射、电影级质感（photorealistic photograph, true-to-life, shot on DSLR, cinematic） |
+| 风格底色 | 照片级写实·真实摄影、真实毛发、自然日常光照、次表面散射、日常生活随拍质感（photorealistic photograph, true-to-life, shot on DSLR, casual everyday snapshot, natural ambient light） |
 | 气质 | 必须从角色设定提炼整体气质关键词（萌趣/慵懒/活泼/优雅），**默认偏向"呆萌"基调**——天真无辜、软乎乎、偶有呆愣感，通过真实神态体现，并写入提示词 |
 | 表情 | 中性微表情，符合角色气质，亲切自然且真实可信；**优先呆萌神态**：圆润大眼、无辜眼神、微微歪头、放空发呆、嘴角微张的呆愣，避免精明/锐利/成熟的人类化表情 |
 
@@ -172,7 +172,7 @@
 
 ```
 {种属}拟人角色四视图设定图，
-photorealistic anthropomorphic pet character，real-life photo，shot on DSLR，photorealistic photography，true-to-life，cinematic lighting，
+photorealistic anthropomorphic pet character，real-life photo，shot on DSLR，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
 realistic detailed fur，individual fur strands，subsurface scattering，natural fur grooming，
 {种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润无辜大眼，呆萌天真神态，innocent derpy cute expression，big round innocent eyes，真实有神的眼睛，realistic eyes，
 {毛色}真实毛发，realistic fur color，natural coat，

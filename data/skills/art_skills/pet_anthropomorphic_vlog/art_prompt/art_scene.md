@@ -121,7 +121,7 @@
 photorealistic photograph，real-life photo，shot on iPhone/DSLR，35mm/50mm lens，natural lighting photography，true-to-life，ultra realistic，
 casual everyday snapshot aesthetic，plain natural colors without filters or color grading，low-to-medium contrast，soft ambient daylight，no dramatic lighting，no cinematic color grading，no heavy post-processing，
 real lived-in space，imperfect natural lighting，slight dust particles in light，visible wear on furniture，personal belongings scattered naturally，daily clutter (half-empty cup, crumpled blanket, scattered magazines, pet toys on floor)，small cozy space not a large commercial room，not a showroom，not interior design render，not 3D visualization，not a hotel lobby，not a corporate office，
-realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
+realistic materials，natural realistic colors，natural ambient light，photographic depth of field，
 empty scene，no characters，no people，no animals，
 {室内/室外}，{场景类型}，{季节+时间}，
 前景：{元素}，中景：{元素}，后景：{元素}，

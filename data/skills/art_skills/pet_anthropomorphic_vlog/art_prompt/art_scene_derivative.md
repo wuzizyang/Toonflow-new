@@ -114,7 +114,7 @@
 ```
 宠物拟人化Vlog衍生场景图，基于参考图，真实生活实拍照风格，
 photorealistic photograph，real-life photo，shot on DSLR，natural lighting photography，true-to-life，
-cinematic lighting，natural realistic colors，realistic materials，photorealistic，
+natural ambient light，natural realistic colors，realistic materials，photorealistic，casual everyday snapshot aesthetic，
 empty scene，no characters，no people，no animals，
 保持场景空间结构与家具一致，
 {目标角度（如有）}，{景别视角（如有）}，{时段描述（如有）}，{天候描述（如有）}，

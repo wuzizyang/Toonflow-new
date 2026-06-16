@@ -82,8 +82,8 @@
 
 ```
 基于{道具名}设定图，
-photorealistic prop，real-life product photo，shot on DSLR，photorealistic photography，cinematic lighting，
-realistic materials，photorealistic texture，cinematic lighting，
+photorealistic prop，real-life product photo，shot on DSLR，photorealistic photography，natural ambient light，
+realistic materials，photorealistic texture，soft natural lighting，
 {道具类型}，{材质描述}，
 当前状态：{状态名}，{状态视觉描述}，
 {材质表面变化描述}，

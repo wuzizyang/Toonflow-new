@@ -92,8 +92,8 @@
 
 ```
 宠物拟人化Vlog道具设定图，
-photorealistic prop，real-life product photo，shot on DSLR，photorealistic photography，cinematic lighting，
-realistic materials，photorealistic texture，cinematic lighting，
+photorealistic prop，real-life product photo，shot on DSLR，photorealistic photography，natural ambient light，
+realistic materials，photorealistic texture，soft natural lighting，
 {道具类型}，{材质描述}，{装饰描述}，{状态描述}，
 纯道具静物展示，道具独立陈列，无角色持有，无角色佩戴，
 同一画面四宫格（2×2）：左上正面图+右上侧面图+左下背面图+右下细节特写，
