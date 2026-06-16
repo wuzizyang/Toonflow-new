@@ -82,7 +82,7 @@
 
 ```
 基于{道具名}设定图，
-photorealistic prop，real-life product photo，shot on DSLR，photorealistic photography，natural ambient light，
+photorealistic prop，real-life product photo，shot on iPhone，casual smartphone snapshot，photorealistic photography，natural ambient light，
 realistic materials，photorealistic texture，soft natural lighting，
 {道具类型}，{材质描述}，
 当前状态：{状态名}，{状态视觉描述}，

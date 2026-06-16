@@ -106,7 +106,7 @@
 
 ```
 宠物拟人化Vlog场景主视图，真实生活实拍照风格，
-photorealistic photograph，real-life photo，shot on iPhone/DSLR，35mm/50mm lens，natural lighting photography，true-to-life，ultra realistic，
+photorealistic photograph，real-life photo，shot on iPhone，smartphone snapshot，natural lighting photography，true-to-life，ultra realistic，
 real lived-in space，imperfect natural lighting，slight dust particles in light，visible wear on furniture，personal belongings scattered naturally，not a showroom，not interior design render，not 3D visualization，
 realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
 empty scene，no characters，no people，no animals，
@@ -134,7 +134,7 @@ no illustration, no painting, no concept art, no painterly, no anime, no cartoon
 | R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
 | R4 | 构图须能代表场景主体并展示前/中/后景层次 |
 | R5 | 场景图中**严禁出现任何角色** |
-| R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on iPhone/DSLR / 真实摄影）+ 「有人真的住在这里的生活感」（lived-in, imperfect, natural wear），**拒绝样板间/效果图感** |
+| R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on iPhone / casual smartphone snapshot / 真实摄影）+ 「有人真的住在这里的生活感」（lived-in, imperfect, natural wear），**拒绝样板间/效果图感** |
 | R7 | 必须指定「自然写实光照」（有方向感、有光斑、有阴影区的真实光，非均匀柔光箱打光）与真实空气感 |
 | R8 | 材质须为真实质感，自然可信 |
 

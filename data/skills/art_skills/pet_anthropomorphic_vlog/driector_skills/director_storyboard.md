@@ -143,7 +143,7 @@ metaData: director_skills
 
 **真实毛发质感（所有输出必选）：**
 
-真实毛发清晰自然，皮毛层次，次表面散射，真实光泽
+真实毛发清晰自然，皮毛层次，自然透光感，真实光泽
 
 **生活Vlog质感（所有输出必选）：**
 
@@ -168,16 +168,16 @@ one coherent photorealistic shot, unified rendering and realism across character
 **画质锁定词（所有输出必须包含，置于风格收尾之后）：**
 
 模式A（中文）——默认：
-照片级写实，日常生活随拍质感，毛发清晰自然，色彩自然朴素，画面无杂色无噪点，自然日常光照
+照片级写实，手机随手拍质感，毛发清晰自然，色彩自然朴素不加滤镜，光线平淡真实，自然日常光照
 
 模式A（中文）——画内文字场景（画面描述中含招牌/标识等道具文字时）：
-照片级写实，日常生活随拍质感，毛发清晰自然，色彩自然朴素，画面无杂色无噪点，自然日常光照，招牌/标识等道具文字清晰可读
+照片级写实，手机随手拍质感，毛发清晰自然，色彩自然朴素不加滤镜，光线平淡真实，自然日常光照，招牌/标识等道具文字清晰可读
 
 模式B（英文）——默认：
-photorealistic, real-life photo, shot on DSLR, photorealistic photography, true-to-life, casual everyday snapshot, natural ambient light, realistic detailed fur, individual fur strands, subsurface scattering, natural realistic colors, no noise, no artifacts
+photorealistic, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography, true-to-life, casual everyday snapshot, natural ambient light, realistic detailed fur, individual fur strands, natural translucent glow, natural realistic colors, no noise, no artifacts
 
-模式B（英文）——画内文字场景：
-photorealistic, real-life photo, shot on DSLR, photorealistic photography, true-to-life, casual everyday snapshot, natural ambient light, realistic detailed fur, individual fur strands, subsurface scattering, natural realistic colors, no noise, no artifacts, legible text on signs and props
+模式B（英文）——画内文字场景（画面描述中含招牌/标识等道具文字时）：
+photorealistic, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography, true-to-life, casual everyday snapshot, natural ambient light, realistic detailed fur, individual fur strands, natural translucent glow, natural realistic colors, no noise, no artifacts, legible text on signs and props
 
 **负向词模板（模式B 必须包含，置于提示词末尾）：**
 
@@ -221,7 +221,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 ### 示例输出A（模式A · Seedream）
 
 [Prompt]
-宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足），照片级写实·真实摄影（日常生活随拍质感），自然日常光照，中景构图，拟人角色半身入镜，真实毛发清晰自然，皮毛层次，次表面散射，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，呆萌可爱，圆润大眼无辜神态，自然真实，照片级写实，日常生活随拍质感，毛发清晰自然，色彩自然朴素，画面无杂色无噪点，自然日常光照。
+宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足），照片级写实·真实摄影（手机随手拍质感），自然日常光照，中景构图，拟人角色半身入镜，真实毛发清晰自然，皮毛层次，自然透光感，真实光泽，真实生活Vlog氛围，写实生活感，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，呆萌可爱，圆润大眼无辜神态，自然真实，照片级写实，手机随手拍质感，毛发清晰自然，色彩自然朴素不加滤镜，光线平淡真实，自然日常光照。
 Based on the reference image of 角色A, maintain consistent: animal head features, fur color, costume. The reference is one character shown from multiple angles — render exactly ONE 角色A, do not duplicate or clone. Generate a new scene: anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching softly. Keep character appearance identical to reference.
 
 ### 示例输出B（模式B · Nanobanana）
@@ -232,7 +232,7 @@ You are an anthropomorphic pet vlog storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, realistic detailed fur, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws and digitigrade feet), posture follows action (reared up with forepaws for hand-tasks / quadruped when moving), pet clothing with bare furry hind legs, real-life photo, shot on DSLR, photorealistic photography
+Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, realistic detailed fur, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws and digitigrade feet), posture follows action (reared up with forepaws for hand-tasks / quadruped when moving), pet clothing with bare furry hind legs, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography
 </character_reference>
 <continuity_rules>
 - Same fur color, animal head features, costume across ALL shots
@@ -244,7 +244,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 - Exactly one instance of each character; the reference sheet shows ONE character from multiple angles — do NOT duplicate, clone, or mirror the character into the frame
 </continuity_rules>
 <shot>
-Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, realistic detailed fur, individual fur strands, subsurface scattering, real-life photo, shot on DSLR, photorealistic photography, true-to-life, casual everyday snapshot, cozy window light, natural ambient light, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
+Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, realistic detailed fur, individual fur strands, natural translucent glow, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography, true-to-life, casual everyday snapshot, cozy window light, natural ambient light, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
 cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no walking upright on two legs, no human bipedal walking gait, no trousers covering legs, no human legs silhouette, no human garment, keep real animal body with hunched back, short stubby limbs, real paws and digitigrade feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors

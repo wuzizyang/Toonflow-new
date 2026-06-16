@@ -113,7 +113,7 @@
 
 ```
 宠物拟人化Vlog衍生场景图，基于参考图，真实生活实拍照风格，
-photorealistic photograph，real-life photo，shot on DSLR，natural lighting photography，true-to-life，
+photorealistic photograph，real-life photo，shot on smartphone，natural lighting photography，true-to-life，
 natural ambient light，natural realistic colors，realistic materials，photorealistic，casual everyday snapshot aesthetic，
 empty scene，no characters，no people，no animals，
 保持场景空间结构与家具一致，
@@ -144,7 +144,7 @@ empty scene，no characters，no people，no animals，
 | R5 | 衍生图必须与参考图保持建筑结构/材质/色调一致，仅按指定角度切换视点 |
 | R6 | 场景图中**严禁出现任何角色** |
 | R7 | 根据用户提供的信息自行判断变化维度（角度/景别/时段/天候），未提及维度留空省略 |
-| R8 | 必须指定「照片级写实·真实摄影实拍」关键词（real-life photo / shot on DSLR） |
+| R8 | 必须指定「照片级写实·真实摄影实拍」关键词（real-life photo / shot on smartphone / casual snapshot） |
 | R9 | 必须指定「自然写实光照」 |
 | R10 | 材质须为真实质感，自然可信 |
 

@@ -75,7 +75,7 @@
 
 ---
 
-## 四、材质渲染约束
+## 四、材质质感约束
 
 | 材质 | 渲染要求 | 提示词 |
 |---|---|---|
@@ -92,7 +92,7 @@
 
 ```
 宠物拟人化Vlog道具设定图，
-photorealistic prop，real-life product photo，shot on DSLR，photorealistic photography，natural ambient light，
+photorealistic prop，real-life product photo，shot on iPhone，casual smartphone snapshot，photorealistic photography，natural ambient light，
 realistic materials，photorealistic texture，soft natural lighting，
 {道具类型}，{材质描述}，{装饰描述}，{状态描述}，
 纯道具静物展示，道具独立陈列，无角色持有，无角色佩戴，
