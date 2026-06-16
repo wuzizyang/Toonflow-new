@@ -106,7 +106,7 @@
 
 ```
 宠物拟人化Vlog场景主视图，真实生活实拍照风格，
-photorealistic photograph，real-life photo，shot on iPhone，smartphone snapshot，natural lighting photography，true-to-life，ultra realistic，
+photorealistic photograph，real-life photo，shot on iPhone，smartphone snapshot，handheld phone footage，slight handheld shake，first-person vlog POV，natural lighting photography，true-to-life，ultra realistic，
 real lived-in space，imperfect natural lighting，personal belongings scattered naturally，not a showroom，not interior design render，not 3D visualization，
 realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
 empty scene，no characters，no people，no animals，

@@ -201,7 +201,7 @@
 ```
 以角色基础形象图为底图，img2img叠加服化造型，
 宠物拟人化Vlog{种属}角色四视图设定图，
-photorealistic anthropomorphic pet character，real-life photo，shot on smartphone，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
+photorealistic anthropomorphic pet character，real-life photo，shot on smartphone，handheld phone footage，slight handheld shake，vlog selfie look，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
 realistic detailed fur，individual fur strands，natural translucent glow，
 保持基础形象种属特征与轮廓不变，保留{种属}耳形/口鼻/胡须/毛色，{整体气质}，
 【L1·面部状态】根据用户线索决策：{自然态/精神态/特殊态}；使用 {状态}，圆润大眼有神，{耳朵状态}，{气色描述}，

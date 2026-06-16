@@ -7,7 +7,7 @@
 1. **种属即灵魂** — 真实动物种属特征（耳形/口鼻/胡须/真实毛发/尾巴）是角色唯一锚点，跨视图必须高度统一
 2. **行为拟人、身体保真（情境化）** — 角色保留完整真实动物身体（头部 + 真实动物体态 + 四肢 + 全身毛发 + 尾巴）。**拟人只发生在"需要用手的操作行为"上**（吃饭/做饭/用电脑/冲咖啡/看书/写字等）——此时后腿坐起/立起、前爪像手一样操作；**走路、奔跑、移动等位移行动一律保持自然四足兽态，不直立行走**。穿戴**宠物专用服饰**（非人类成衣）。身体始终读作"一只真猫/真狗"，禁止人类化的修长躯干、宽肩、灵巧五指人手、挺直军姿与人腿剪影；基础着装由角色设定决定，后续特定服化为叠加层
 3. **四视图一致** — 种属/毛色/体型/服装跨视图高度统一
-4. **照片级写实（真实摄影）** — 照片级写实·真实照片实拍质感（photorealistic photograph, shot on smartphone, real-life photo），真实毛发清晰自然、皮毛层次、自然透光感、真实解剖结构，**像手机随手拍下的真实照片，绝非CG/3D渲染/卡通/插画/黏土**
+4. **照片级写实（真实摄影）** — 照片级写实·真实照片实拍质感（photorealistic photograph, shot on smartphone, real-life photo），真实毛发清晰自然、皮毛层次、自然透光感、真实解剖结构，**像 vlog 博主用手机手持随手拍下的真实照片，绝非CG/3D渲染/卡通/插画/黏土**
 
 ---
 
@@ -53,7 +53,7 @@
 |---|---|
 | 种属特征 | 由角色设定确定（猫/狗/兔/仓鼠/狐狸等），必须保留对应耳形、口鼻、胡须、真实毛发纹理 |
 | 五官 | 由种属与性格自然推导，真实有神的眼睛（真实瞳孔/虹膜/湿润高光），真实鼻头与胡须，不预设固定脸型 |
-| 风格底色 | 照片级写实·真实摄影、真实毛发、自然日常光照、自然透光感、日常生活随拍质感（photorealistic photograph, true-to-life, shot on smartphone, casual everyday snapshot, natural ambient light） |
+| 风格底色 | 照片级写实·真实摄影、真实毛发、自然日常光照、自然透光感、手机手持随手拍质感、vlog自拍对镜头感（photorealistic photograph, true-to-life, shot on smartphone, casual everyday snapshot, handheld phone footage, vlog selfie look, natural ambient light） |
 | 气质 | 必须从角色设定提炼整体气质关键词（萌趣/慵懒/活泼/优雅），**默认偏向"呆萌"基调**——天真无辜、软乎乎、偶有呆愣感，通过真实神态体现，并写入提示词 |
 | 表情 | 中性微表情，符合角色气质，亲切自然且真实可信；**优先呆萌神态**：圆润大眼、无辜眼神、微微歪头、放空发呆、嘴角微张的呆愣，避免精明/锐利/成熟的人类化表情 |
 
@@ -172,9 +172,9 @@
 
 ```
 {种属}拟人角色四视图设定图，
-photorealistic anthropomorphic pet character，real-life photo，shot on smartphone，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
+photorealistic anthropomorphic pet character，real-life photo，shot on smartphone，handheld phone footage，slight handheld shake，vlog selfie look，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
 realistic detailed fur，individual fur strands，natural translucent glow，natural fur grooming，
-{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润无辜大眼，呆萌天真神态，innocent adorable dopey expression，big round innocent eyes，真实有神的眼睛，realistic eyes，
+{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润无辜大眼，呆萌天真神态，innocent adorable dopey expression，big round innocent eyes，真实有神的眼睛，realistic eyes，正面与头部视图看向镜头（vlog自拍对视感），front and head views looking into the camera，
 {毛色}真实毛发，realistic fur color，natural coat，
 {身高描述，如：75cm tall、small animal scale}，真实动物体态比例（相对大头、短颈、圆润短身、饱满肚腩、短小四肢），natural realistic animal body proportion，large head short rounded body，chubby belly，short stubby limbs，
 **动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，前爪收于胸前，forepaws held to chest，趾行足真实爪足，animal-style hind legs with real paw feet，**保持真实动物体态**，keep authentic animal body shape，

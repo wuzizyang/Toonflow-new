@@ -113,7 +113,7 @@
 
 ```
 宠物拟人化Vlog衍生场景图，基于参考图，真实生活实拍照风格，
-photorealistic photograph，real-life photo，shot on smartphone，natural lighting photography，true-to-life，
+photorealistic photograph，real-life photo，shot on smartphone，handheld phone footage，slight handheld shake，first-person vlog POV，natural lighting photography，true-to-life，
 natural ambient light，natural realistic colors，realistic materials，photorealistic，casual everyday snapshot aesthetic，
 empty scene，no characters，no people，no animals，
 保持场景空间结构与家具一致，
