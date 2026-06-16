@@ -131,7 +131,7 @@
 
 | 风险词（禁止出现在输出中） | 安全替换表述 |
 |---|---|
-| dwarf / 侏儒 / midget（矮脚猫品种等） | short-legged / 短腿（如 `short-legged Munchkin cat`、矮脚猫） |
+| dwarf / dwarfism / dwarfed / 侏儒 / 侏儒症 / midget（dwarf 词根的任何形式） | short-legged / 短腿 / 矮脚（只描述"腿短"的外观，如 `short-legged Munchkin cat`、矮脚猫；**禁止出现 dwarf 任何词形，也不要点明该遗传/医学特征名称**） |
 | 暴露 / 性化 / 性感 / 内衣 / 裸 / nude / naked / bare / lingerie | 着装得体、完整覆盖躯干（decent outfit, fully covered torso） |
 | 描述下半身时的"无衣/裸露/no pants/bare lower body"式表述 | 只用"覆毛兽腿、自然动物后腿与爪足"（fluffy animal hind legs, natural animal lower body） |
 | 幼 / 年幼 / 孩童 / loli / child（指向未成年的措辞） | 用体型尺度词替代：small animal scale / 小兽尺度（描述尺寸而非年龄） |
@@ -142,6 +142,6 @@
 | 编号 | 规则 |
 |---|---|
 | S1 | 输出提示词中**禁止出现上表左列任何风险词**（中英文均算），必须改用右列安全表述 |
-| S2 | 品种名若自带敏感词（如 dwarf cat），改写为外观描述（short-legged / 矮脚 / 圆脸短身），不照搬品种俗称 |
+| S2 | 品种名若自带敏感词（如 dwarf cat / dwarfism），改写为外观描述（short-legged / 矮脚 / 圆脸短身），不照搬品种俗称；**dwarf 的任何词形（dwarf / dwarfism / dwarfed）一律禁止出现**，只用"腿短/short-legged"表达，不点明遗传特征名称 |
 | S3 | 描述着装与身体时只陈述"穿了什么、覆盖到哪里"，**不描述"没穿什么/裸露"**，避免负面身体表述触发审核 |
 | S4 | 不堆叠"幼态 + 无辜 + 身体暴露"指向，呆萌只通过神态（圆眼、歪头、发呆）体现 |
