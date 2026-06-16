@@ -41,6 +41,15 @@ export default function runCode(code: string, vendor?: Record<string, any>) {
     jsonwebtoken,
     crypto,
     withGlobalLock,
+    // 暴露定时器全局变量给沙盒：vm2 的 VM 默认不注入 Node 的 setTimeout/
+    // setInterval 等，模型/厂商代码若直接调用（如自实现轮询、延时）会抛
+    // `setTimeout is not defined`，进而被记录为视频生成任务的失败原因。
+    setTimeout,
+    clearTimeout,
+    setInterval,
+    clearInterval,
+    setImmediate,
+    queueMicrotask,
   };
   if (vendor !== undefined) {
     sandbox.vendor = vendor;
