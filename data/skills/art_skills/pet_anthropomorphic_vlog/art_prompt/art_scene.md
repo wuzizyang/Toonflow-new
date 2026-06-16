@@ -7,7 +7,7 @@
 1. **空间叙事** — 场景承载Vlog生活叙事与情绪功能，是有温度的生活空间，不是纯背景板
 2. **生活质感** — 居家/咖啡馆/街头/户外等真实生活场景，充满烟火气与日常细节
 3. **毛绒友好尺度** — 场景物件尺度与拟人宠物角色协调，圆润可爱，温馨亲切
-4. **写实为锚（照片实拍优先·拒绝效果图）** — 场景一切画面以**真实手机/相机随手拍下的生活照**为最高标准：有自然光的不均匀、有生活杂物的真实空间。**绝不能像"室内设计渲染效果图/样板间/3D效果图"——那种光照过于均匀完美、地面反光过于干净的"CG感"是本风格大忌**。要的是"有人（有宠物）真的住在这里"的温暖真实生活感，不是"准备拍广告的完美空间"。
+4. **写实为锚（照片级真实·照片实拍优先·拒绝效果图）** — 场景一切画面必须达到**照片级真实**（像真实相机拍下来的照片，而非插画/绘画/渲染/CG），以**真实手机/相机随手拍下的生活照**为最高标准：有自然光的不均匀、有生活杂物的真实空间。**绝不能像"室内设计渲染效果图/样板间/3D效果图"——那种光照过于均匀完美、地面反光过于干净的"CG感"是本风格大忌**。要的是"有人（有宠物）真的住在这里"的温暖真实生活感，不是"准备拍广告的完美空间"。
 
 ---
 
@@ -106,9 +106,9 @@
 
 ```
 宠物拟人化Vlog场景主视图，真实生活实拍照风格，
-photorealistic photograph，real-life photo，shot on iPhone，smartphone snapshot，handheld phone footage，slight handheld shake，first-person vlog POV，natural lighting photography，true-to-life，ultra realistic，
+photorealistic photograph，real-life photo，RAW photo，real photography，unedited casual snapshot，shot on iPhone，smartphone snapshot，handheld phone footage，slight handheld shake，first-person vlog POV，natural lighting photography，true-to-life，photorealism，hyperrealistic，lifelike real-world detail，ultra realistic，
 real lived-in space，imperfect natural lighting，personal belongings scattered naturally，not a showroom，not interior design render，not 3D visualization，
-realistic materials，natural realistic colors，cinematic lighting，photographic depth of field，
+realistic materials，fine realistic surface texture，natural realistic colors，natural realistic lighting，photographic depth of field，
 empty scene，no characters，no people，no animals，
 {室内/室外}，{场景类型}，{季节+时间}，
 前景：{元素}，中景：{元素}，后景：{元素}，
@@ -136,7 +136,7 @@ no illustration, no painting, no concept art, no painterly, no anime, no cartoon
 | R5 | 场景图中**严禁出现任何角色** |
 | R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on iPhone / casual smartphone snapshot / 真实摄影）+ 「有人真的住在这里的生活感」（lived-in, imperfect），**拒绝样板间/效果图感** |
 | R7 | 必须指定「自然写实光照」（有方向感、有光斑、有阴影区的真实光，非均匀柔光箱打光）与真实空气感 |
-| R8 | 材质须为真实质感，自然可信 |
+| R8 | 必须达到照片级真实质感，材质纹理逼真自然可信，整体画面像真实照片而非插画/渲染/CG |
 
 ### 严禁
 
