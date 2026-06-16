@@ -184,7 +184,7 @@ photorealistic, real-life photo, shot on iPhone, casual smartphone snapshot, pho
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no walking upright on two legs, no human bipedal walking gait, no long pants covering legs, no human legs silhouette, no human garment, keep real animal body with hunched back, short stubby limbs, real paws and animal paw feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws and animal paw feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
 
 ---
 
@@ -232,7 +232,7 @@ You are an anthropomorphic pet vlog storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, realistic detailed fur, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws and animal paw feet), posture follows action (reared up with forepaws for hand-tasks / quadruped when moving), pet clothing with fur-covered animal hind legs, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography
+Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head and full-body features kept, realistic detailed fur, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws and animal paw feet), posture follows action (reared up with forepaws for hand-tasks / quadruped when moving), pet clothing with fluffy animal hind legs, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography
 </character_reference>
 <continuity_rules>
 - Same fur color, animal head features, costume across ALL shots
@@ -247,7 +247,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze, realistic detailed fur, individual fur strands, natural translucent glow, real-life photo, shot on iPhone, casual smartphone snapshot, photorealistic photography, true-to-life, casual everyday snapshot, cozy window light, natural ambient light, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, no human-only face without animal features, no humanoid human body, no human torso, no elongated human arms, no human five-finger hands, no broad human shoulders, no vertical human spine, no stiff human standing, no walking upright on two legs, no human bipedal walking gait, no long pants covering legs, no human legs silhouette, no human garment, keep real animal body with hunched back, short stubby limbs, real paws and animal paw feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws and animal paw feet, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
 </negative>
 ```
 

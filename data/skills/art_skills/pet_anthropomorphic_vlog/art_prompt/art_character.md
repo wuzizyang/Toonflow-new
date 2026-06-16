@@ -85,12 +85,12 @@
 |---|---|---|
 | 身高 | 默认 60-90cm 的"小兽"尺度（站立约同幼童/小型犬体量），仅用于画面尺度，身形比例严格按真实动物 | {身高}cm tall、small animal scale |
 | 体态比例 | 真实动物体态：相对大头、短颈、圆润短身躯、短小四肢、饱满肚腩，保留种属自然身形，**禁止人类瘦长比例与宽肩** | natural realistic animal body proportion、large head、short rounded body、chubby belly、short stubby limbs |
-| 脊柱/重心 | **含背微弓、非垂直**，重心压在后腿与臀部，呈动物自然立起的姿态曲线 | slightly hunched rounded back、not vertical spine、weight on haunches |
-| 操作态姿态 | **动物自然后腿坐起/立起**（reared up / sitting up on hind legs）做手部操作，前爪收于胸前或操作物件，**非人类挺直立正**；可微蹲、微弓 | reared up on hind legs、sitting up、forepaws handling objects、not stiff human stance |
-| 行动态姿态 | 走路/移动时**回归自然四足兽态步态**，像真实动物行走，**不直立行走、不人类化迈步** | natural quadruped gait when walking/moving、real animal locomotion、not walking upright |
-| 后肢/脚 | **趾行足（脚尖着地）+ 真实动物后腿**，短而覆毛，**非人类跖行的平足长腿** | animal-style hind legs、furry animal legs、real paw feet、not human legs |
-| 前肢/手 | 真实动物前爪 + 肉垫，短小覆毛，可双爪笨拙捧/夹/操作物件，保留爪垫短趾，**非修长人臂与灵巧五指人手** | short furry forelimbs、real paws with pads、clumsy two-paw grasp、not human arms/hands |
-| 肩颈 | 圆润柔和、绒毛覆盖、真实动物肩背，**无人类宽肩与锁骨** | rounded furry shoulders、animal build、no human broad shoulders |
+| 脊柱/重心 | **含背微弓、非垂直**，重心压在后腿与臀部，呈动物自然立起的姿态曲线 | slightly hunched rounded back、natural animal spine curve、weight on haunches |
+| 操作态姿态 | **动物自然后腿坐起/立起**（reared up / sitting up on hind legs）做手部操作，前爪收于胸前或操作物件，**非人类挺直立正**；可微蹲、微弓 | reared up on hind legs、sitting up、forepaws handling objects、authentic animal stance |
+| 行动态姿态 | 走路/移动时**回归自然四足兽态步态**，像真实动物行走，**不直立行走、不人类化迈步** | natural quadruped gait when walking/moving、real animal locomotion、always on all fours when moving |
+| 后肢/脚 | **趾行足（脚尖着地）+ 真实动物后腿**，短而覆毛，**非人类跖行的平足长腿** | animal-style hind legs、furry animal legs、real paw feet |
+| 前肢/手 | 真实动物前爪 + 肉垫，短小覆毛，可双爪笨拙捧/夹/操作物件，保留爪垫短趾，**非修长人臂与灵巧五指人手** | short furry forelimbs、realistic animal paws、clumsy two-paw grasp |
+| 肩颈 | 圆润柔和、绒毛覆盖、真实动物肩背，**无人类宽肩与锁骨** | rounded furry shoulders、animal build |
 | 尾巴 | 保留种属尾巴、自然垂落或微翘，可随情绪摆动 | {种属}尾巴、fluffy tail |
 | 体态 | 真实动物身形，圆润蓬松、全身覆毛，保留动物本能体态细节 | real animal body、fluffy full-body fur、natural animal posture |
 
