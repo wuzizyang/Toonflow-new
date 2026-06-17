@@ -19,15 +19,15 @@
 
 | 步骤 | 做法 | 目的 |
 |---|---|---|
-| **S1 选种** | 用第八节文生图模板批量出图，**只挑形态最"兽"的一张**作为基准图：后腿立起含背微弓、大头短身、短小四肢、真实前爪与短腿、下半身覆毛兽腿无人腿剪影 | 先拿到一张"对的"形态，不追求一次到位 |
+| **S1 选种** | 用第八节文生图模板批量出图，**只挑形态最"兽"的一张**作为基准图：自然坐姿/站姿的真实宠物、大头短身、短小四肢、真实前爪与短腿、真实兽态无人形化 | 先拿到一张"对的"形态，不追求一次到位 |
 | **S2 固化** | 把选中的基准图设为该角色的**形态参考图（character reference）**，并据它定稿四视图基础形象图 | 把兽态固化成可复用的视觉锚点 |
-| **S3 扩散** | 后续衍生（服化/分镜/视频首帧）一律 **img2img / 参考图模式**，以基准图为形态底，仅改服饰、动作、场景、镜头 | 让每次产出都继承已锁定的兽态 |
+| **S3 扩散** | 后续衍生（服化/分镜/视频首帧）一律 **img2img / 参考图模式**，以基准图为形态底，仅改服饰、动作、场景、镜头；**拟人操作态（后腿立起+前爪操作）与完整服化在此阶段（带场景）叠加** | 让每次产出都继承已锁定的兽态 |
 
 ### 选基准图的验收清单（S1 必须逐项过）
 
-- [ ] **后腿立起、含背微弓**，不是垂直脊柱的人类立正
+- [ ] **自然真实宠物姿态（坐姿/站姿）**，不是立起穿整套人类服装的类人形象
 - [ ] **大头短身、圆润肚腩**，不是人类瘦长躯干
-- [ ] **前肢是短小真实前爪**收于胸前，不是修长人臂垂两侧
+- [ ] **前肢是短小真实前爪**，不是修长人臂
 - [ ] **下半身是覆毛兽腿 + 短腿前爪**，没有长裤包出的人腿剪影
 - [ ] **手是真实前爪**，不是灵巧五指人手
 - [ ] 头部种属特征（耳形/口鼻/胡须）真实清晰
@@ -37,8 +37,8 @@
 ### 提示词配合（img2img / 参考图阶段）
 
 - 必须声明 **"以基准图为形态参考，保持兽态与体型轮廓不变，仅改 {服饰/动作/场景}"**
-- 中文：`以角色基准图为形态参考，保持后腿立起兽态、大头短身、短小四肢、真实前爪与短腿不变，仅改{变量}`
-- 英文：`use the reference image as body/pose anchor, keep reared-up animal posture, large head small body, short stubby limbs, real paws and short legs unchanged, only change {variable}`
+- 中文：`以角色基准图为形态参考，保持真实兽态、大头短身、短小四肢、真实前爪与短腿不变，仅改{变量}`
+- 英文：`use the reference image as body/pose anchor, keep authentic animal body, large head small body, short stubby limbs, real paws and short legs unchanged, only change {variable}`
 - 参考强度（如有）建议偏高（形态权重 0.6-0.8 区间起调），确保兽态轮廓被强约束
 
 ---
@@ -79,7 +79,7 @@
 > - **操作态（拟人）**：做需要用"手"的事（吃饭、做饭、用电脑、冲咖啡、看书、写字、拿杯子等）时，**后腿坐起或立起、用前爪像手一样操作**；含背微弓、重心压后腿、前爪收于胸前，是动物本能式的立起，**不是人类挺直站姿**。
 > - **行动态（兽态）**：走路、奔跑、跳跃、移动、玩耍等位移行动时，**回到自然四足步态**，像真实动物一样行动，**不直立行走**。
 >
-> 兽态是本体，拟人只是"为了用手做事而临时立起"。**四视图基础设定图以「操作态（后腿立起）」为基准呈现角色**；行动态在分镜/动作镜头中按需切换（见 director 技能）。
+> 兽态是本体，拟人只是"为了用手做事而临时立起"。**四视图基础设定图以「自然真实宠物（自然坐姿/站姿、真实兽态）」为基准呈现角色**——基础设定图不做"立起+整套人类式服装"的拟人造型（独立全身写实拟人着装形象易被图像审核打回）；**拟人操作态（后腿坐起/立起+前爪操作）与完整服化在分镜/动作镜头按需呈现**（分镜带场景，可正常过审，见 director 技能）。
 
 | 项目 | 约束 | 提示词 |
 |---|---|---|
@@ -148,7 +148,7 @@
 | 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
 |---|---|---|---|---|---|
 | 左一 | 头部特写 | 正面平视 | 头顶至肩部 | 完整展示动物头部、耳朵、五官、真实毛发，不裁切 | head closeup、face detail、ears complete、no crop |
-| 左二 | 正视图 | 正面 0° | 全身立像 | 后腿立起、前爪收于胸前、从头顶到脚完整展示，含尾巴 | front view、reared up on hind legs、forepaws to chest、full body head to toe、tail visible |
+| 左二 | 正视图 | 正面 0° | 全身立像 | 自然坐姿/站姿、从头顶到脚完整展示，含尾巴 | front view、natural sitting animal pose、full body head to toe、tail visible |
 | 右二 | 侧视图 | 右侧 90° | 全身立像 | 纯侧面轮廓清晰、尾巴与口鼻轮廓清晰、完整展示 | side view、profile、full body、tail visible |
 | 右一 | 后视图 | 后方 180° | 全身立像 | 后脑/背部/尾巴/脚部清晰、完整展示 | back view、rear view、full body、tail visible |
 
@@ -158,7 +158,7 @@
 |---|---|
 | 布局 | 同一画面从左至右并排四视图 |
 | 背景 | 纯净中性灰 #E8E8E8 |
-| 站姿 | 动物自然后腿立起、含背微弓、后腿踏地、前爪收于胸前或轻搭身侧，**非人类双脚平行立正** |
+| 站姿 | 动物自然坐姿/站姿（真实兽态），含背微弓、自然踏地，自然神态，**真实宠物姿态，非拟人立姿** |
 | 全身展示 | 全身立像必须从头顶到脚底完整入画，尾巴完整，严禁裁切头顶或脚部 |
 | 特写展示 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖，真实毛发、口鼻、下巴均需完整 |
 | 表情 | 中性微表情，符合角色气质 |
@@ -171,23 +171,24 @@
 ## 八、提示词模板
 
 ```
-{种属}拟人角色四视图设定图，
-photorealistic anthropomorphic pet character，real-life photo，shot on smartphone，handheld phone footage，slight handheld shake，vlog selfie look，photorealistic photography，true-to-life，natural ambient light，casual everyday snapshot aesthetic，
-realistic detailed fur，individual fur strands，natural translucent glow，natural fur grooming，
-{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质，默认偏呆萌}，圆润大眼，呆萌天真神态，adorable dopey expression，big round eyes，真实有神的眼睛，realistic eyes，正面与头部视图看向镜头（vlog自拍对视感），front and head views looking into the camera，
-{毛色}真实毛发，realistic fur color，natural coat，
-{身高描述，如：75cm tall、small animal scale}，真实动物体态比例（相对大头、短颈、圆润短身、饱满肚腩、短小四肢），natural realistic animal body proportion，large head short rounded body，chubby belly，short stubby limbs，
-**动物自然后腿立起姿态**，reared up on hind legs like a real animal，含背微弓重心压后腿，slightly hunched rounded back，weight on haunches，前爪收于胸前，forepaws held to chest，短小后腿，short legs，**保持真实动物体态**，keep authentic animal body shape，
-保留{种属}尾巴，realistic furry tail，真实动物前爪，realistic cat paws，
-{角色身份对应的宠物服饰，如：宠物卫衣/宠物背心/宠物围嘴/项圈领结}，宠物专用服饰，pet clothing，上装/披挂为主，自然布料质感，为动物身躯与尾巴预留位，下半身为自然覆毛短腿，furry short legs，pet-style lower body，
+{种属}四视图设定图，真实宠物，
+photorealistic pet, real-life photo, shot on smartphone, casual everyday snapshot, natural ambient light,
+realistic detailed fur, individual fur strands, natural translucent glow,
+{种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质}，自然神态，看向镜头，natural expression, looking at the camera,
+{毛色}真实毛发，realistic fur color, natural coat,
+{身高描述，如：small animal scale}，真实动物体态比例（相对大头、短身、短小四肢），natural animal body proportion, large head, short rounded body, short limbs,
+自然动物坐姿，natural sitting animal pose, relaxed natural posture, keep authentic animal body shape,
+保留{种属}尾巴，realistic furry tail,
+{角色身份对应的宠物配饰，如：项圈领结/宠物围嘴/小背心}，宠物专用服饰，pet collar and accessories, 自然布料质感,
 同一画面左至右并排：头部特写+正视图+侧视图+后视图，
-头部特写完整展示耳朵到肩部，不裁切耳尖，ears and face complete，
-全身立像从头顶到脚完整展示，full body head to feet，尾巴完整，不裁切头顶和脚部，
-动物自然后腿立起、含背微弓，纯净中性灰背景，自然写实柔和光，真实毛发细节清晰，
-photorealistic, realistic natural detail, no cartoon, no illustration, no claymation,
-四视图一致性，真实毛发质感统一，
+全身完整展示，full body, 尾巴完整，不裁切,
+纯净中性灰背景，自然写实柔和光，真实毛发细节清晰，
+photorealistic, no cartoon, no illustration,
+四视图一致性，
 图中不要有任何文字
 ```
+
+> **重要（过审）**：基础四视图设定图按**自然真实宠物**呈现（自然坐姿/站姿、真实兽态），不在设定图里堆叠"立起+整套人类式服装"的拟人造型——独立全身的写实拟人着装形象会被图像审核判为"写实类人形象"而打回。**拟人操作态（后腿坐起/立起+前爪操作）与完整服化在分镜阶段以参考图衍生呈现**（分镜带场景，可正常过审）。
 
 ---
 
@@ -198,8 +199,8 @@ photorealistic, realistic natural detail, no cartoon, no illustration, no clayma
 | 编号 | 规则 |
 |---|---|
 | R1 | 必须保留完整真实动物头部特征（耳形/口鼻/胡须/真实毛发） |
-| R2 | 四视图设定图必须为「操作态：真实动物身体（真实兽态 + 短小覆毛四肢 + 真实前爪）+ 后腿坐起/立起姿态」，禁止人形化躯干、禁止人类挺直站姿；（**行动态四足兽态**用于分镜走路/移动镜头，不在设定图中体现） |
-| R3 | 着装为**宠物专用服饰**（宠物卫衣/背心/围嘴/披风/项圈，非人类成衣），上装/披挂为主，**下半身保留动物覆毛后腿与前爪、不穿人类长裤**；着装须得体、完整覆盖躯干 |
+| R2 | 四视图设定图必须为「真实宠物：真实动物身体（真实兽态 + 短小覆毛四肢 + 真实前爪）+ 自然坐姿/站姿」，禁止人形化躯干、禁止"立起 + 整套人类式服装"的拟人造型（独立全身写实拟人着装形象易被图像审核打回）；**拟人操作态（后腿坐起/立起 + 前爪操作）在分镜阶段以参考图衍生呈现** |
+| R3 | 基础设定图着装为**简洁宠物配饰/轻量服饰**（项圈领结/宠物围嘴/小背心等贴合兽体的着装），保持真实宠物观感；**完整人类式服化在分镜阶段以参考图衍生叠加** |
 | R4 | 必须保留种属尾巴并在各视图中体现 |
 | R5 | 必须指定「纯净中性灰背景」 |
 | R6 | 必须指定「四视图一致性」 |
@@ -217,7 +218,7 @@ photorealistic, realistic natural detail, no cartoon, no illustration, no clayma
 | X3 | 失去真实动物身体特征变成纯人类/人形化躯干 |
 | X3b | **过度拟人**：人类化修长躯干/宽肩锁骨/修长手臂/灵巧人手/挺直军姿/垂直脊柱等，身体必须保留真实兽态（大头短身、含背微弓、短小覆毛四肢、真实前爪） |
 | X3c | **人腿剪影**：长裤/长袜遮盖后腿造成人类双腿轮廓。下半身须为动物覆毛短腿 |
-| X4 | **四视图设定图中出现四足趴卧爬行姿态**（设定图须为操作态后腿坐起/立起；四足兽态仅用于分镜的走路/移动镜头，不在设定图体现） |
+| X4 | **四视图设定图中出现"立起 + 整套人类式着装"的写实类人形象**（独立全身写实拟人着装易被图像审核判为类人形象而打回；设定图须为自然真实宠物坐姿/站姿，拟人操作态在分镜阶段呈现） |
 | X5 | 恐怖/怪诞/扭曲/畸形拟人造型 |
 | X6 | 全身立像裁切头顶、耳尖或脚底 |
 | X7 | 头部特写裁切耳尖，必须完整入画 |
