@@ -4,9 +4,9 @@
 
 | 模式 | 风格标签 |
 |------|----------|
-| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving (never walking upright), pet clothing, short furry legs, adorable dopey expression, big round eyes, real-life footage, shot on camera, photorealistic photography, true-to-life, casual everyday snapshot aesthetic, natural ambient light, realistic detailed full-body fur, natural translucent glow, handheld phone footage, slight handheld shake, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood` |
-| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving (never walking upright), pet clothing, short furry legs, adorable dopey expression, big round eyes, real-life footage, shot on camera, photorealistic photography, true-to-life, casual everyday snapshot aesthetic, natural ambient light, realistic detailed full-body fur, natural translucent glow, handheld phone footage, slight handheld shake, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood, shallow depth of field` |
-| **Seedance 2.0（中文）** | `宠物拟人化，真实兽态（大头短身、含背微弓、短小四肢、真实前爪），姿态随动作：用手操作时后腿坐起/立起+前爪操作，走路移动时自然四足兽态（绝不直立行走），宠物专用服饰，下半身覆毛短腿，呆萌可爱、圆润大眼神态，照片级写实真实摄影日常生活随拍质感，自然日常光照，真实毛发清晰自然，自然透光感，手持手机拍摄感，轻微手持晃动，第一人称vlog自拍视角，看向镜头，真实生活Vlog氛围` | | |
+| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, real-life footage, shot on camera, photorealistic photography, true-to-life, casual everyday snapshot aesthetic, natural ambient light, realistic detailed full-body fur, natural translucent glow, handheld phone footage, slight handheld shake, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood` |
+| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, real-life footage, shot on camera, photorealistic photography, true-to-life, casual everyday snapshot aesthetic, natural ambient light, realistic detailed full-body fur, natural translucent glow, handheld phone footage, slight handheld shake, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood, shallow depth of field` |
+| **Seedance 2.0（中文）** | `宠物拟人化，真实兽态（大头短身、含背微弓、短小四肢、真实前爪），姿态随动作：用手操作时后腿坐起/立起+前爪操作，走路移动时自然四足兽态，宠物专用服饰，下半身覆毛短腿，呆萌可爱、圆润大眼神态，照片级写实真实摄影日常生活随拍质感，自然日常光照，真实毛发清晰自然，自然透光感，手持手机拍摄感，轻微手持晃动，第一人称vlog自拍视角，看向镜头，真实生活Vlog氛围` | | |
 
 ---
 
@@ -19,14 +19,14 @@
 - 以**首帧图 / 角色参考图为准**，全程保持同一只角色：毛色、花纹、五官、体型、服饰**自始至终不变**
 - 形态全程保持**真实兽态**，并保持与本镜动作匹配的**同一姿态模式**：操作镜全程后腿坐起/立起操作、移动镜全程自然四足行走；**片段内不得在立起与四足间来回切换、不得变形渐变、不得拉成人形或直立行走**
 - 提示词声明：
-  - 中文：`全程保持与首帧一致的角色外观与兽态，毛色花纹五官体型服饰不变，保持本镜姿态模式不变，不变形不渐变不切换形态，不直立行走`
-  - 英文：`keep the exact same character as the first frame throughout, consistent fur color/markings/face/body/costume, no morphing, no identity drift, stays in the same action-appropriate posture mode the whole clip (no switching between reared-up and quadruped), always stays as animal, never walks upright`
+  - 中文：`全程保持与首帧一致的角色外观与兽态，毛色花纹五官体型服饰不变，保持本镜姿态模式不变，不变形不渐变不切换形态，全程保持真实兽态`
+  - 英文：`keep the exact same character as the first frame throughout, consistent fur color/markings/face/body/costume, no morphing, no identity drift, stays in the same action-appropriate posture mode the whole clip, always stays as a real animal`
 
 ### 二、锁场景与构图
 
 - 背景环境、家具陈设、光照方向**全程一致**，镜头移动时场景应是连贯的同一空间，不偷换
-- **锁真实兽体尺度**：角色全程保持真实小动物体型，与画面中人/座椅/车厢/家具/餐具等参照物的大小关系符合真实世界逻辑，**全程明显小于身旁的人、不在片段中被放大到人类尺寸**
-- 提示词声明：`背景与光照全程一致，同一空间连贯，角色全程保持真实小动物体型、与人/座椅/参照物大小关系符合真实世界逻辑、明显小于身旁的人、不放大到人类尺寸，consistent background and lighting, same location throughout, stable environment, pet keeps true real-life animal size throughout, clearly much smaller than nearby humans, scale vs reference objects stays physically correct, never scaled up to human size`
+- **锁真实兽体尺度**：角色全程保持真实小动物体型，与画面中座椅/车厢/家具/餐具等参照物的大小关系符合真实世界逻辑，**全程保持真实小动物尺度、比例稳定不变**
+- 提示词声明：`背景与光照全程一致，同一空间连贯，角色全程保持真实小动物体型、与座椅/家具/餐具等参照物大小关系符合真实世界逻辑、尺度稳定不变，consistent background and lighting, same location throughout, stable environment, pet keeps true real-life animal size throughout, scale vs surrounding objects stays physically correct, body scale stays stable`
 
 ### 三、锁写实风格
 
@@ -53,7 +53,7 @@
 ### 防漂移负向词
 
 **模式B（英文，置于负向区）：**
-`morphing, warping, shape-shifting, identity drift, inconsistent character, changing fur color, changing face, flickering, jittering, unstable body shape, inconsistent limbs, changing proportions, changing body scale, oversized pet, giant cat, human-sized animal, pet as large as a human, pet same height as people, duplicated character, background changing, scene morphing, style shift, CG drift, humanoid transformation, bipedal walking, switching posture mid-clip, exaggerated motion, fast erratic camera`
+`morphing, warping, shape-shifting, identity drift, inconsistent character, changing fur color, changing face, flickering, jittering, unstable body shape, inconsistent limbs, changing proportions, changing body scale, duplicated character, background changing, scene morphing, style shift, CG drift, switching posture mid-clip, exaggerated motion, fast erratic camera`
 
 **模式A（中文，写入正向约束以替代负向）：**
 `全程角色与场景稳定不漂移，无变形无渐变无闪烁，动作轻缓自然，镜头平稳`

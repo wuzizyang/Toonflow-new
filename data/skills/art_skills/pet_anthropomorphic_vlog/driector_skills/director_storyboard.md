@@ -21,7 +21,7 @@ metaData: director_skills
 | 该镜动作类型 | 姿态 | 提示词方向 |
 |---|---|---|
 | **操作类**（吃饭/做饭/用电脑/冲咖啡/看书/写字/拿物等用"手"的事） | **后腿坐起或立起 + 前爪像手一样操作** | 后腿坐起/立起，前爪操作物件，含背微弓，reared up / sitting up, forepaws handling objects |
-| **位移类**（走路/跑/跳/进出门/移动/玩耍） | **自然四足兽态步态**，不直立行走 | 自然四足行走，real animal on all fours, natural quadruped gait, not walking upright |
+| **位移类**（走路/跑/跳/进出门/移动/玩耍） | **自然四足兽态步态** | 自然四足行走，real animal on all fours, natural quadruped gait |
 | **静止/旁观**（趴卧/坐着发呆/晒太阳） | 自然动物休憩姿态（趴卧/蜷坐均可） | 自然动物坐卧姿态，natural resting animal pose |
 
 - **判断口径**：镜头要表现"在用手做事"→ 立起操作态；要表现"在移动/行走"→ 四足兽态。**走路镜头严禁直立行走/人类化迈步**。
@@ -62,8 +62,8 @@ metaData: director_skills
 
 - **同框参照物校准**：当画面含人、座椅、车厢、车门、桌椅、餐具、手机等参照物时，必须以参照物的真实尺寸反推角色大小——角色**不得**与人齐高、不得占满成人座位、不得让手机/餐具显得像玩具。宁可让角色"看起来很小一只"，也不要放大到人类尺寸
 - **操作态不等于放大**：后腿立起操作时身高略增，但**整体仍是小兽尺度**，立起的猫顶多到成年人膝盖/大腿高度，绝不与人同高
-- 提示词声明（模式A 中文）：`比例与透视和场景一致，符合真实尺度，角色保持真实小动物体型（如真实猫咪大小，约成年人小腿高度），与画面中的人/座椅/车厢等参照物大小关系符合真实世界逻辑，角色明显小于身旁的人，不放大到人类尺寸，角色稳稳站在地面`
-- 提示词声明（模式B 英文）：`correct scale and perspective matching the scene, the pet keeps its TRUE real-life animal size (e.g. a real cat, only about knee-height of an adult), size relationship with people / seats / train car and other reference objects must follow real-world physics, the pet is clearly much smaller than nearby humans, never scaled up to human size, consistent horizon line, characters firmly on the ground plane`
+- 提示词声明（模式A 中文）：`比例与透视和场景一致，符合真实尺度，角色保持真实小动物体型（如真实猫咪大小），与画面中的座椅/车厢/桌椅/餐具等参照物大小关系符合真实世界逻辑，角色尺度稳定不变，角色稳稳站在地面`
+- 提示词声明（模式B 英文）：`correct scale and perspective matching the scene, the pet keeps its TRUE real-life small animal size (e.g. a real cat), size relationship with seats / train car / furniture / props must follow real-world physics, body scale stays physically correct, consistent horizon line, characters firmly on the ground plane`
 
 ### 四、统一色调与空气感
 
@@ -153,7 +153,7 @@ metaData: director_skills
 
 **宠物拟人化风格锚定（必选）：**
 
-宠物拟人化，保留真实动物全身特征与体态，**姿态按本镜动作切换（操作类→后腿坐起/立起+前爪操作；移动类→自然四足兽态、不直立行走）**，保留真实兽态（大头短身、短小四肢、真实前爪、含背微弓），宠物专用服饰，照片级写实·真实摄影（日常生活随拍质感，real-life photo），自然日常光照
+宠物拟人化，保留真实动物全身特征与体态，**姿态按本镜动作切换（操作类→后腿坐起/立起+前爪操作；移动类→自然四足兽态）**，保留真实兽态（大头短身、短小四肢、真实前爪、含背微弓），宠物专用服饰，照片级写实·真实摄影（日常生活随拍质感，real-life photo），自然日常光照
 
 **真实毛发质感（所有输出必选）：**
 
@@ -174,10 +174,10 @@ metaData: director_skills
 **多图融合锚定（含角色/场景/道具多张参考图时必选）：**
 
 模式A（中文）：
-统一照片级写实质感，所有元素如同一现场实拍，统一光源方向与色温，角色受光与环境一致，真实接触阴影与落地投影，比例透视与场景一致符合真实尺度，角色保持真实小动物体型（约成年人小腿高度），与人/座椅/车厢等参照物大小关系符合真实世界逻辑、明显小于身旁的人、不放大到人类尺寸，角色稳稳站在地面，统一色彩分级与白平衡，画面浑然一体无拼贴感
+统一照片级写实质感，所有元素如同一现场实拍，统一光源方向与色温，角色受光与环境一致，真实接触阴影与落地投影，比例透视与场景一致符合真实尺度，角色保持真实小动物体型，与座椅/车厢/家具/餐具等参照物大小关系符合真实世界逻辑、尺度稳定不变，角色稳稳站在地面，统一色彩分级与白平衡，画面浑然一体无拼贴感
 
 模式B（英文）：
-one coherent photorealistic shot, unified rendering and realism across character/scene/props, consistent lighting direction and color temperature, character lit by the same light as the environment, grounded contact shadows, correct scale and perspective matching the scene, the pet keeps its true real-life animal size (only about knee-height of an adult) and is clearly much smaller than nearby humans, size relationship with people / seats / train car follows real-world physics, never scaled up to human size, consistent horizon line, unified color grading and white balance, seamless composite, no pasted-on look
+one coherent photorealistic shot, unified rendering and realism across character/scene/props, consistent lighting direction and color temperature, character lit by the same light as the environment, grounded contact shadows, correct scale and perspective matching the scene, the pet keeps its true real-life small animal size, size relationship with seats / furniture / props follows real-world physics, body scale stays physically correct, consistent horizon line, unified color grading and white balance, seamless composite, no pasted-on look
 
 **画质锁定词（所有输出必须包含，置于风格收尾之后）：**
 
@@ -198,7 +198,7 @@ photorealistic, real-life photo, shot on iPhone, casual smartphone snapshot, han
 > ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
 
 模式B（英文）：
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, oversized pet, giant cat, human-sized animal, pet as large as a human, pet filling an entire human seat, pet same height as people, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, keep real animal body with hunched back, short stubby limbs, real paws, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no neon colors
 
 ---
 
@@ -253,7 +253,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 - Inherit costume from the character reference image; do NOT re-describe or add any clothing/footwear in the shot prompt
 - Same environment, color palette, warm lighting
 - Only framing, angle, action, expression may change
-- Keep real animal head and full-body features; posture follows the action — reared up / sitting up on hind legs with forepaws handling objects for hand-tasks (eating, cooking, using computer), or natural quadruped gait when walking/moving; do NOT turn into a human/humanoid body and do NOT walk upright on two legs
+- Keep real animal head and full-body features; posture follows the action — reared up / sitting up on hind legs with forepaws handling objects for hand-tasks (eating, cooking, using computer), or natural quadruped gait when walking/moving; always stays as a real animal in body shape
 - Do NOT introduce new characters not in reference images
 - Exactly one instance of each character; the reference sheet shows ONE character from multiple angles — do NOT duplicate, clone, or mirror the character into the frame
 </continuity_rules>
@@ -261,7 +261,7 @@ Image [1]: 角色A — photorealistic anthropomorphic cat, realistic animal head
 Medium shot, photorealistic anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching, soft gaze looking into the camera, realistic detailed fur, individual fur strands, natural translucent glow, real-life photo, shot on iPhone, casual smartphone snapshot, handheld phone footage, slight handheld shake, first-person vlog selfie POV, subject looking into the camera, photorealistic photography, true-to-life, casual everyday snapshot, cozy window light, natural ambient light, natural realistic colors, lifestyle vlog mood, no noise, no artifacts.
 </shot>
 <negative>
-cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, humanoid figure, bipedal walking, upright standing, long pants, human garment, keep real animal body with hunched back, short stubby limbs, real paws, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, oversized pet, giant cat, human-sized animal, pet as large as a human, pet filling an entire human seat, pet same height as people, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no horror, no distorted anthropomorph, no neon colors
+cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, flat shading, anime, 3D render look, CGI, octane render, plastic toy figurine, keep real animal body with hunched back, short stubby limbs, real paws, pet clothing, no pasted-on look, no collage, no sticker cutout, no floating characters, no mismatched lighting, no inconsistent scale, duplicate character, cloned character, twins, same character appearing twice, repeated subject, multiple copies of the same character, no neon colors
 </negative>
 ```
 
