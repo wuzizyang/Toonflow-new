@@ -235,7 +235,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 ### 示例输出A（模式A · Seedream）
 
 [Prompt]
-宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、趾行爪足），照片级写实·真实摄影（手机随手拍质感），自然日常光照，中景构图，拟人角色半身入镜，真实毛发清晰自然，皮毛层次，自然透光感，真实光泽，真实生活Vlog氛围，写实生活感，手持手机拍摄感，轻微手持晃动，第一人称vlog自拍视角，角色看向镜头与观众对视互动，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和看向镜头，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，呆萌可爱，圆润大眼无辜神态，自然真实，照片级写实，手机手持随手拍质感，轻微手持晃动，第一人称vlog自拍视角，毛发清晰自然，色彩自然朴素不加滤镜，光线平淡真实，自然日常光照。
+宠物拟人化，保留真实动物全身特征与体态，动物自然后腿立起姿态（含背微弓、前爪收胸前、短腿），照片级写实·真实摄影（手机随手拍质感），自然日常光照，中景构图，拟人角色半身入镜，真实毛发清晰自然，皮毛层次，自然透光感，真实光泽，真实生活Vlog氛围，写实生活感，手持手机拍摄感，轻微手持晃动，第一人称vlog自拍视角，角色看向镜头与观众对视互动，自然景深，生活细节，自然写实光照，柔和环境光，真实阴影，暖色调，拟人橘猫坐在咖啡馆窗边，端起马克杯轻嗅咖啡香，耳朵微动，眼神柔和看向镜头，窗边自然光，温暖治愈氛围，真实拟人反差，陪伴式情感，呆萌可爱，圆润大眼无辜神态，自然真实，照片级写实，手机手持随手拍质感，轻微手持晃动，第一人称vlog自拍视角，毛发清晰自然，色彩自然朴素不加滤镜，光线平淡真实，自然日常光照。
 Based on the reference image of 角色A, maintain consistent: animal head features, fur color, costume. The reference is one character shown from multiple angles — render exactly ONE 角色A, do not duplicate or clone. Generate a new scene: anthropomorphic orange cat sitting by the cafe window, holding a mug and sniffing coffee, ears twitching softly. Keep character appearance identical to reference.
 
 ### 示例输出B（模式B · Nanobanana）
