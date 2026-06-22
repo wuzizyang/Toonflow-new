@@ -31,12 +31,12 @@ metaData: director_skills
 
 ## 镜头视角分层（POV 多样化）
 
-> 现有「第一人称 vlog 自拍 + 直视镜头」保留为互动型镜头，但**不应所有镜头都看镜头**。沉浸式打工、反应镜头、偷拍感等更适合第三人称观察视角——角色专注于手头的事、没注意到镜头，往往是最自然好笑的瞬间。
+> 现有「第一人称 vlog 自拍 + 直视镜头」保留为互动型镜头，但**不应所有镜头都看镜头**。沉浸式打工、反应镜头、低机位观察视角/隐蔽拍摄视角等更适合第三人称观察视角——角色专注于手头的事、不看镜头，往往是最自然好笑的瞬间。
 
 | 视角类型 | 占比建议 | 适用场景 | 提示词方向 |
 |---|---|---|---|
 | 第一人称自拍 | 30-40% | 开场亮相、互动吐槽、结尾收束 | 看向镜头与观众对视，looking at the camera, vlog selfie POV |
-| 第三人称观察 | 40-50% | 沉浸式动作、反应镜头、偷拍感 | 角色未注意到镜头、专注手头的事，candid shot, observational POV, subject unaware of the camera |
+| 第三人称观察 | 40-50% | 沉浸式动作、反应镜头、低机位观察视角 | 角色专注手头的事、不看镜头，observational POV, low camera angle, subject focused on the task, not looking at the camera |
 | 特写/细节 | 10-20% | 前爪操作、食物、道具 | 局部细节特写，不看镜头，close-up detail, not looking at the camera |
 
 ### 视角使用规则

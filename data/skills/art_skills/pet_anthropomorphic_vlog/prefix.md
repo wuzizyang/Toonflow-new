@@ -140,6 +140,7 @@
 | 血腥 / 暴力 / 恐怖 / 畸形 / deformed / gore / blood | 删除或改为中性表述（如有损伤需求改为"轻微做旧痕迹"） |
 | 过度解剖细节：paw feet / toe beans / paw pads / 爪足 / 趾行 / 趾行爪足 / 肉垫 / 脚掌肉垫 | 省略，或仅用 `short legs` / `paws` / 短腿 / 前爪 简述（不堆叠脚掌/肉垫等细节） |
 | "非人类/not human"否定式：not human hands / not human clothing / 非人类成衣 / 非人类五指手 / five-fingered hands | 正面陈述即可：`pet clothing`、`cat paws`、`short legs`；**不要写"not human…/非人类…"的对比否定** |
+| 偷拍 / 偷窥 / sneak photography / candid / subject unaware of camera / voyeurism / voyeuristic / peeping | 改用中性视角词：低机位观察视角 / 隐蔽拍摄视角 / observational POV / low camera angle / not looking at the camera（只描述"机位低、角色不看镜头"，不写"偷拍/未察觉"含义） |
 
 ### 规避规则
 
@@ -154,6 +155,7 @@
 | S7 | **输出务必精简**：聚焦"是什么 + 关键外观 + 姿态 + 着装 + 画质"，去掉冗长的解剖罗列与否定堆砌；提示词过长（堆砌大量解剖/否定词）极易触发审核 |
 | S8 | **真实感关键词严禁堆叠（最高优先级过审约束）**：表示"写实/实拍/真实照片"的同义词，整条提示词里**最多保留 1 个**，统一用 `photorealistic`。**禁止堆叠**下列词：`real-life photo / RAW photo / real photography / unedited / casual snapshot / smartphone snapshot / handheld phone footage / slight handheld shake / shot on iPhone / shot on smartphone / true-to-life / photorealism / hyperrealistic / ultra realistic / lifelike real-world detail / 真实照片实拍 / 手持手机随手拍质感` 等——Agnes 会把"大量伪造真实照片/视频"的措辞判为 `content_policy_violation` 直接拒审。画面质感靠 `photorealistic` + 自然光照/材质/色调描述即可，无需堆同义词 |
 | S8.1 | **`snapshot aesthetic` / `... aesthetic` 组合为已确认的单点触发词（二分定位验证，最高优先级禁用）**：`snapshot` 与 `aesthetic` 同时出现会被 Agnes 判为「伪造随手拍美学」直接拒审（`casual everyday snapshot aesthetic` / `snapshot aesthetic` 均触发 400）。**绝对禁止**输出 `snapshot aesthetic`、`casual everyday snapshot aesthetic`、`candid snapshot aesthetic` 等任何 `snapshot + aesthetic` 措辞，也不要单独用 `... aesthetic` 去描述"实拍/随手拍"风格。需要表达自然实拍感时，只用 `photorealistic` + `natural ambient light` / `natural realistic colors` 等中性正面描述（`shot on smartphone`、`natural ambient light` 单独使用经验证可过审，但仍受 S8「最多 1 个写实同义词」约束） |
+| S9 | **禁止"偷拍/偷窥"类语义**：`偷拍 / 偷窥 / sneak photography / candid / subject unaware of camera / voyeurism / voyeuristic / peeping` 会被 Agnes 判为内容违规直接拒审。需要第三人称观察视角时，只用中性机位词：`低机位观察视角 / 隐蔽拍摄视角 / observational POV / low camera angle / not looking at the camera`，只描述"机位低、角色不看镜头"，不带"偷拍/未察觉"含义 |
 
 ---
 
@@ -213,12 +215,12 @@
 
 ### 6.4 镜头视角分层（POV 多样化）
 
-> 不应所有镜头都「看向镜头」。沉浸式打工、反应镜头、偷拍感更适合第三人称观察视角——角色专注手头的事、没注意到镜头，往往最自然好笑。详细规则见 `director_storyboard.md` 镜头视角分层。
+> 不应所有镜头都「看向镜头」。沉浸式打工、反应镜头、低机位观察视角/隐蔽拍摄视角更适合第三人称观察视角——角色专注手头的事、不看镜头，往往最自然好笑。详细规则见 `director_storyboard.md` 镜头视角分层。
 
 | 视角类型 | 占比建议 | 适用场景 |
 |---|---|---|
 | 第一人称自拍 | 30-40% | 开场亮相、互动吐槽、结尾 |
-| 第三人称观察 | 40-50% | 沉浸式动作、反应镜头、偷拍感 |
+| 第三人称观察 | 40-50% | 沉浸式动作、反应镜头、低机位观察视角 |
 | 特写/细节 | 10-20% | 前爪操作、食物、道具 |
 
 ### 6.5 首帧 / 封面设计原则
