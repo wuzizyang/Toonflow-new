@@ -83,7 +83,7 @@
 
 | 项目 | 约束 | 提示词 |
 |---|---|---|
-| 身高 | 默认 60-90cm 的"小兽"尺度（站立约同幼童/小型犬体量），仅用于画面尺度，身形比例严格按真实动物 | {身高}cm tall、small animal scale |
+| 身高 | **默认真实猫咪尺度**：自然坐卧时肩高约 25–30cm，操作态后腿立起时约 40–50cm；**明显小于人类，约成年人小腿高度**，仅用于画面尺度，身形比例严格按真实动物 | true real-life cat size, shoulder height around 25-30cm, small animal scale, clearly much smaller than a human |
 | 体态比例 | 真实动物体态：相对大头、短颈、圆润短身躯、短小四肢、饱满肚腩，保留种属自然身形，**禁止人类瘦长比例与宽肩** | natural realistic animal body proportion、large head、short rounded body、chubby belly、short stubby limbs |
 | 脊柱/重心 | **含背微弓、非垂直**，重心压在后腿与臀部，呈动物自然立起的姿态曲线 | slightly hunched rounded back、natural animal spine curve、weight on haunches |
 | 操作态姿态 | **动物自然后腿坐起/立起**（reared up / sitting up on hind legs）做手部操作，前爪收于胸前或操作物件，**非人类挺直立正**；可微蹲、微弓 | reared up on hind legs、sitting up、forepaws handling objects、authentic animal stance |
@@ -220,7 +220,7 @@ photorealistic, no cartoon, no illustration,
 | R5 | 必须指定「纯净中性灰背景」 |
 | R6 | 必须指定「四视图一致性」 |
 | R7 | 全身立像必须从头顶到脚底完整展示，尾巴完整，严禁裁切 |
-| R8 | 必须指定角色身高约束画面尺度，并声明真实动物体态比例（默认 60-90cm 小兽尺度、真实动物自然身形，禁止人类瘦长比例） |
+| R8 | 必须指定角色身高约束画面尺度，并声明真实动物体态比例（**默认真实猫咪尺度：坐卧肩高约 25–30cm、操作态立起约 40–50cm，明显小于人类、约成年人小腿高度**、真实动物自然身形，禁止人类瘦长比例与放大到幼童/人类体量） |
 | R9 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖 |
 | R10 | 必须指定「photorealistic（**单个写实词，不堆叠 real-life photo/snapshot 等同义词，见 prefix S8**）+ 真实毛发清晰自然 + 自然透光感」质感锚定词 |
 
