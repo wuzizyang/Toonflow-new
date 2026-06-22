@@ -105,19 +105,19 @@
 ## 六、提示词模板
 
 ```
-宠物拟人化Vlog场景主视图，真实生活实拍照风格，
-photorealistic photograph，real-life photo，RAW photo，real photography，unedited casual snapshot，shot on iPhone，smartphone snapshot，handheld phone footage，slight handheld shake，first-person vlog POV，natural lighting photography，true-to-life，photorealism，hyperrealistic，lifelike real-world detail，ultra realistic，
-real lived-in space，imperfect natural lighting，personal belongings scattered naturally，not a showroom，not interior design render，not 3D visualization，
-realistic materials，fine realistic surface texture，natural realistic colors，natural realistic lighting，photographic depth of field，
+宠物拟人化Vlog场景主视图，
+photorealistic，natural lighting，真实材质质感，
+real lived-in space，personal belongings scattered naturally，not a showroom，
+photographic depth of field，
 empty scene，no characters，no people，no animals，
 {室内/室外}，{场景类型}，{季节+时间}，
 前景：{元素}，中景：{元素}，后景：{元素}，
 {色调描述}，{天候/氛围元素}，
-{材质描述}，自然景深，真实空气感，生活杂物细节，lived-in feel，
-自然写实光照（非均匀柔光箱打光），真实光影（窗光有方向感、有光斑、有阴影区），真实材质质感，
+{材质描述}，自然景深，真实空气感，生活杂物细节，
+自然写实光照（非均匀柔光箱打光），真实光影（窗光有方向感、有光斑、有阴影区），
 单画面构图，自然观察视角，构图能代表场景主体并展示前/中/后景层次，
 画面中无任何角色，
-no illustration, no painting, no concept art, no painterly, no anime, no cartoon, no 2.5D, no interior design render, no 3D visualization, no showroom, no CG poster look, no plastic render, no fantasy glow, no oversaturation,
+no illustration，no cartoon，no 3D render，no showroom，
 图中不要有任何文字
 ```
 
@@ -134,7 +134,7 @@ no illustration, no painting, no concept art, no painterly, no anime, no cartoon
 | R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
 | R4 | 构图须能代表场景主体并展示前/中/后景层次 |
 | R5 | 场景图中**严禁出现任何角色** |
-| R6 | 必须指定「真实照片实拍质感」锚定词（photorealistic photograph / real-life photo / shot on iPhone / casual smartphone snapshot / 真实摄影）+ 「有人真的住在这里的生活感」（lived-in, imperfect），**拒绝样板间/效果图感** |
+| R6 | 必须达到照片级真实质感：**只用单个 `photorealistic`，禁止堆叠 real-life photo / RAW photo / casual snapshot / shot on iPhone 等同义词（见 prefix S8，否则触发审核）** + 「有人真的住在这里的生活感」（lived-in），**拒绝样板间/效果图感** |
 | R7 | 必须指定「自然写实光照」（有方向感、有光斑、有阴影区的真实光，非均匀柔光箱打光）与真实空气感 |
 | R8 | 必须达到照片级真实质感，材质纹理逼真自然可信，整体画面像真实照片而非插画/渲染/CG |
 

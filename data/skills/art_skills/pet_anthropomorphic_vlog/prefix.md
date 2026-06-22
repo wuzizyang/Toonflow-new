@@ -8,11 +8,11 @@
 | 维度 | 定义 |
 |---|---|
 | **一级风格** | 宠物拟人化Vlog（Pet Anthropomorphic Vlog） |
-| **二级风格** | 照片级写实·真实摄影（实拍质感） · 手持手机vlog自拍（轻微手持晃动·角色常看向镜头） · 真实毛发 · 真实动物体态 · 情境化拟人（操作态立起·行动态四足） |
+| **二级风格** | 照片级写实（photorealistic·实拍质感） · 手持手机vlog自拍（角色常看向镜头） · 真实毛发 · 真实动物体态 · 情境化拟人（操作态立起·行动态四足） |
 | **情感基调** | 温暖治愈 · 真实生活 · 呆萌可爱 |
-| **质感锚词** | 真实毛发清晰自然、皮毛细节、自然透光感、手持手机随手拍质感、第一人称vlog自拍视角、角色看向镜头与观众互动、自然朴素色彩 |
+| **质感锚词** | photorealistic（写实质感只用这一个，不要堆叠 real-life photo/RAW photo/snapshot 等同义词）、真实毛发清晰自然、皮毛细节、自然透光感、第一人称vlog自拍视角、角色看向镜头与观众互动、自然朴素色彩 |
 
-> **核心定位**：角色是「真实存在的宠物」过着人类生活——完整保留真实动物的全身毛发质感、真实动物体态、解剖结构与神态，**照片级写实·真实照片实拍质感**（像真实相机拍下，而非CG/3D渲染），而非卡通/黏土/插画。**拟人是情境化的**：只有"需要用手的操作行为"（吃饭/做饭/用电脑/冲咖啡/看书）才拟人——后腿坐起/立起、前爪像手一样操作；**走路、移动等位移行动一律保持自然四足兽态、不直立行走**。穿戴**宠物专用服饰**（宠物卫衣/背心/围嘴/披风/项圈，非人类成衣）。身体始终是真实兽态（相对大头、短身圆润、短小覆毛四肢、真实前爪、含背微弓），下半身保留覆毛短腿、不穿人类长裤，**避免人类化的修长躯干、宽肩、人手、挺直军姿与人腿剪影**。
+> **核心定位**：角色是「真实存在的宠物」过着人类生活——完整保留真实动物的全身毛发质感、真实动物体态、解剖结构与神态，**照片级写实（photorealistic，像真实相机拍下，而非CG/3D渲染）**，而非卡通/黏土/插画。**拟人是情境化的**：只有"需要用手的操作行为"（吃饭/做饭/用电脑/冲咖啡/看书）才拟人——后腿坐起/立起、前爪像手一样操作；**走路、移动等位移行动一律保持自然四足兽态、不直立行走**。穿戴**宠物专用服饰**（宠物卫衣/背心/围嘴/披风/项圈，非人类成衣）。身体始终是真实兽态（相对大头、短身圆润、短小覆毛四肢、真实前爪、含背微弓），下半身保留覆毛短腿、不穿人类长裤，**避免人类化的修长躯干、宽肩、人手、挺直军姿与人腿剪影**。
 
 ---
 
@@ -102,12 +102,12 @@
 
 | 编号 | 规则 |
 |---|---|
-| R1 | 必须包含「宠物拟人化 + 照片级写实真实摄影」风格锚定词（photorealistic photograph, real-life photo, shot on iPhone / casual smartphone snapshot, handheld phone footage, slight handheld shake, true-to-life），**以手机手持随手拍的真实照片实拍质感为准（有手持晃动感、像 vlog 博主随手拍），避免精致商业摄影感与CG/3D渲染塑料感** |
+| R1 | 必须包含「宠物拟人化 + 照片级写实」风格锚定词：**写实质感只用单个 `photorealistic`（严禁堆叠 real-life photo / shot on iPhone / casual snapshot / handheld phone footage / true-to-life 等同义词，见 S8，否则触发审核）**，避免精致商业摄影感与 CG/3D 渲染塑料感 |
 | R2 | 必须声明「保留真实动物全身特征与体态」+ **情境化姿态**：操作行为（吃饭/做饭/用电脑等）用后腿坐起/立起 + 前爪操作；走路/移动用自然四足兽态。身体不可人形化、不可人类笔直站立行走 |
 | R3 | 毛发必须使用「真实毛发清晰自然 + 皮毛细节 + 自然透光感」（realistic individual fur strands, realistic fur grooming, natural translucent glow）；着装为**宠物专用服饰** |
 | R4 | 造型必须使用「真实解剖结构 + 真实比例」，可爱来自神态而非卡通变形 |
 | R4b | **真实兽体尺度**：角色是真实大小的小动物（如真实猫咪约成年人小腿高度），同框出现人/座椅/车厢/家具/餐具等参照物时，角色与参照物的大小关系必须符合真实世界物理尺度——角色明显小于身旁的人、不与人齐高、不占满成人座位、不放大到人类尺寸；操作态后腿立起仅略增高度，整体仍为小兽尺度 |
-| R5 | 氛围必须声明「真实生活Vlog感（手持手机随手拍 + 第一人称vlog自拍视角，角色常看向镜头与观众对视互动）+ 自然写实光照（柔和环境光/真实阴影/景深）」 |
+| R5 | 氛围必须声明「真实生活Vlog感（第一人称vlog自拍视角，角色常看向镜头与观众对视互动）+ 自然写实光照（柔和环境光/真实阴影/景深）」 |
 | R6 | 角色须**优先展现呆萌可爱**：圆润大眼、无辜眼神、微微歪头、放空发呆、笨拙可爱的小动作与种属本能破功的萌点；萌来自真实神态，**不靠卡通变形** |
 
 ### 严禁项（所有技能继承）
@@ -152,3 +152,5 @@
 | S5 | **禁止输出过度解剖细节**：paw feet / toe beans / paw pads / 爪足 / 趾行 / 趾行爪足 / 肉垫 等一律不写，腿脚只用 `short legs` / 短腿、爪只用 `paws` / 前爪 简述或直接省略 |
 | S6 | **禁止"非人类/not human"否定式对比**：`非人类成衣`→直接写 `pet clothing`；`非人类五指手 / not human five-fingered hands`→省略不写；只做正面陈述，不写"not human…"句式 |
 | S7 | **输出务必精简**：聚焦"是什么 + 关键外观 + 姿态 + 着装 + 画质"，去掉冗长的解剖罗列与否定堆砌；提示词过长（堆砌大量解剖/否定词）极易触发审核 |
+| S8 | **真实感关键词严禁堆叠（最高优先级过审约束）**：表示"写实/实拍/真实照片"的同义词，整条提示词里**最多保留 1 个**，统一用 `photorealistic`。**禁止堆叠**下列词：`real-life photo / RAW photo / real photography / unedited / casual snapshot / smartphone snapshot / handheld phone footage / slight handheld shake / shot on iPhone / shot on smartphone / true-to-life / photorealism / hyperrealistic / ultra realistic / lifelike real-world detail / 真实照片实拍 / 手持手机随手拍质感` 等——Agnes 会把"大量伪造真实照片/视频"的措辞判为 `content_policy_violation` 直接拒审。画面质感靠 `photorealistic` + 自然光照/材质/色调描述即可，无需堆同义词 |
+| S8.1 | **`snapshot aesthetic` / `... aesthetic` 组合为已确认的单点触发词（二分定位验证，最高优先级禁用）**：`snapshot` 与 `aesthetic` 同时出现会被 Agnes 判为「伪造随手拍美学」直接拒审（`casual everyday snapshot aesthetic` / `snapshot aesthetic` 均触发 400）。**绝对禁止**输出 `snapshot aesthetic`、`casual everyday snapshot aesthetic`、`candid snapshot aesthetic` 等任何 `snapshot + aesthetic` 措辞，也不要单独用 `... aesthetic` 去描述"实拍/随手拍"风格。需要表达自然实拍感时，只用 `photorealistic` + `natural ambient light` / `natural realistic colors` 等中性正面描述（`shot on smartphone`、`natural ambient light` 单独使用经验证可过审，但仍受 S8「最多 1 个写实同义词」约束） |

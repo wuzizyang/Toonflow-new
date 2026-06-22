@@ -4,9 +4,9 @@
 
 | 模式 | 风格标签 |
 |------|----------|
-| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, real-life footage, shot on camera, photorealistic photography, true-to-life, casual everyday snapshot aesthetic, natural ambient light, realistic detailed full-body fur, natural translucent glow, handheld phone footage, slight handheld shake, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood` |
-| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, real-life footage, shot on camera, photorealistic photography, true-to-life, casual everyday snapshot aesthetic, natural ambient light, realistic detailed full-body fur, natural translucent glow, handheld phone footage, slight handheld shake, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood, shallow depth of field` |
-| **Seedance 2.0（中文）** | `宠物拟人化，真实兽态（大头短身、含背微弓、短小四肢、真实前爪），姿态随动作：用手操作时后腿坐起/立起+前爪操作，走路移动时自然四足兽态，宠物专用服饰，下半身覆毛短腿，呆萌可爱、圆润大眼神态，照片级写实真实摄影日常生活随拍质感，自然日常光照，真实毛发清晰自然，自然透光感，手持手机拍摄感，轻微手持晃动，第一人称vlog自拍视角，看向镜头，真实生活Vlog氛围` | | |
+| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, natural ambient light, realistic detailed full-body fur, natural translucent glow, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood` |
+| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, natural ambient light, realistic detailed full-body fur, natural translucent glow, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood, shallow depth of field` |
+| **Seedance 2.0（中文）** | `宠物拟人化，真实兽态（大头短身、含背微弓、短小四肢、真实前爪），姿态随动作：用手操作时后腿坐起/立起+前爪操作，走路移动时自然四足兽态，宠物专用服饰，下半身覆毛短腿，呆萌可爱、圆润大眼神态，照片级写实，自然日常光照，真实毛发清晰自然，自然透光感，第一人称vlog自拍视角，看向镜头，真实生活Vlog氛围` | | |
 
 ---
 
@@ -30,8 +30,8 @@
 
 ### 三、锁写实风格
 
-- 全程维持真实摄影实拍质感，**不得在片段中滑向 CG/3D 渲染/卡通**
-- 提示词声明：`全程真实摄影实拍质感，photorealistic live-action look throughout, no style shift, no CG drift`
+- 全程维持照片级写实质感，**不得在片段中滑向 CG/3D 渲染/卡通**
+- 提示词声明：`photorealistic throughout, no style shift, no CG drift`
 
 ### 四、控制运动幅度（漂移的根源）
 

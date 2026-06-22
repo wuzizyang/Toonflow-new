@@ -7,7 +7,7 @@
 1. **种属即灵魂** — 真实动物种属特征（耳形/口鼻/胡须/真实毛发/尾巴）是角色唯一锚点，跨视图必须高度统一
 2. **行为拟人、身体保真（情境化）** — 角色保留完整真实动物身体（头部 + 真实动物体态 + 四肢 + 全身毛发 + 尾巴）。**拟人只发生在"需要用手的操作行为"上**（吃饭/做饭/用电脑/冲咖啡/看书/写字等）——此时后腿坐起/立起、前爪像手一样操作；**走路、奔跑、移动等位移行动一律保持自然四足兽态，不直立行走**。穿戴**宠物专用服饰**（非人类成衣）。身体始终读作"一只真猫/真狗"，禁止人类化的修长躯干、宽肩、灵巧五指人手、挺直军姿与人腿剪影；基础着装由角色设定决定，后续特定服化为叠加层
 3. **四视图一致** — 种属/毛色/体型/服装跨视图高度统一
-4. **照片级写实（真实摄影）** — 照片级写实·真实照片实拍质感（photorealistic photograph, shot on smartphone, real-life photo），真实毛发清晰自然、皮毛层次、自然透光感、真实解剖结构，**像 vlog 博主用手机手持随手拍下的真实照片，绝非CG/3D渲染/卡通/插画/黏土**
+4. **照片级写实** — 照片级写实（photorealistic），真实毛发清晰自然、皮毛层次、自然透光感、真实解剖结构，**绝非CG/3D渲染/卡通/插画/黏土**
 
 ---
 
@@ -53,7 +53,7 @@
 |---|---|
 | 种属特征 | 由角色设定确定（猫/狗/兔/仓鼠/狐狸等），必须保留对应耳形、口鼻、胡须、真实毛发纹理 |
 | 五官 | 由种属与性格自然推导，真实有神的眼睛（真实瞳孔/虹膜/湿润高光），真实鼻头与胡须，不预设固定脸型 |
-| 风格底色 | 照片级写实·真实摄影、真实毛发、自然日常光照、自然透光感、手机手持随手拍质感、vlog自拍对镜头感（photorealistic photograph, true-to-life, shot on smartphone, casual everyday snapshot, handheld phone footage, vlog selfie look, natural ambient light） |
+| 风格底色 | 照片级写实、真实毛发、自然日常光照、自然透光感、vlog自拍对镜头感（photorealistic, natural ambient light, vlog selfie look）；**写实词只用单个 `photorealistic`，不堆叠 real-life photo/snapshot/handheld 等同义词** |
 | 气质 | 必须从角色设定提炼整体气质关键词（萌趣/慵懒/活泼/优雅），**默认偏向"呆萌"基调**——天真无辜、软乎乎、偶有呆愣感，通过真实神态体现，并写入提示词 |
 | 表情 | 中性微表情，符合角色气质，亲切自然且真实可信；**优先呆萌神态**：圆润大眼、无辜眼神、微微歪头、放空发呆、嘴角微张的呆愣，避免精明/锐利/成熟的人类化表情 |
 
@@ -172,7 +172,7 @@
 
 ```
 {种属}四视图设定图，真实宠物，
-photorealistic pet, real-life photo, shot on smartphone, casual everyday snapshot, natural ambient light,
+photorealistic, natural lighting,
 realistic detailed fur, individual fur strands, natural translucent glow,
 {种属特征：耳形/口鼻/胡须/真实毛发 - 由角色设定推导}，{整体气质}，自然神态，看向镜头，natural expression, looking at the camera,
 {毛色}真实毛发，realistic fur color, natural coat,
@@ -207,7 +207,7 @@ photorealistic, no cartoon, no illustration,
 | R7 | 全身立像必须从头顶到脚底完整展示，尾巴完整，严禁裁切 |
 | R8 | 必须指定角色身高约束画面尺度，并声明真实动物体态比例（默认 60-90cm 小兽尺度、真实动物自然身形，禁止人类瘦长比例） |
 | R9 | 头部特写必须完整展示耳朵到肩部，严禁裁切耳尖 |
-| R10 | 必须指定「照片级写实·真实摄影（real-life photo / shot on smartphone / casual snapshot）+ 真实毛发清晰自然 + 自然透光感」质感锚定词 |
+| R10 | 必须指定「photorealistic（**单个写实词，不堆叠 real-life photo/snapshot 等同义词，见 prefix S8**）+ 真实毛发清晰自然 + 自然透光感」质感锚定词 |
 
 ### 严禁
 
