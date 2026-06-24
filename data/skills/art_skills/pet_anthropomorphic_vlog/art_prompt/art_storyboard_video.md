@@ -1,12 +1,14 @@
 # 视频提示词 · 视觉风格约束
 
+<!-- SSOT 声明：本文件（art_storyboard_video.md）是「视频风格标签 / 防漂移规范（六节）/ 去AI味·反退化规范（六节）/ 短脚本节奏 F1–F4 / 剪辑节奏 C1–C4 / 运镜分级」视频资产族的**全库唯一规范正文（本族 SSOT）**，依 Error Handling D-0（CONF-D0 维护者确认结论）保留于此、不迁入 prefix.md（迁入会经 GetArtPrompt_Loader 注入到全部 art_prompt 文件、扩大注入范围、违反 Behavioral_Equivalence）。其余文件（如 director_storyboard_table_style.md 防漂移第六节）以同 Rule_ID + 溯源 Cross_Reference 指向此处。文件内对全局光照/色温/S8 的引用统一指向 prefix.md 稳定锚点。 -->
+
 生成视频提示词时，必须注入以下视觉风格标签：
 
 | 模式 | 风格标签 |
 |------|----------|
-| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, bright sufficient exposure with warm 5000K daylight, even soft balanced lighting, cream white and caramel warm palette, crisp visible fur strands and fine surface detail, main character in sharp focus, natural translucent glow, smooth stable motion, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood` |
-| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, bright sufficient exposure with warm 5000K daylight, even soft balanced lighting, cream white and caramel warm palette, crisp visible fur strands and fine surface detail, main character in sharp focus, natural translucent glow, smooth stable motion, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood, shallow depth of field` |
-| **Seedance 2.0（中文）** | `宠物拟人化，真实兽态（大头短身、含背微弓、短小四肢、真实前爪），姿态随动作：用手操作时后腿坐起/立起+前爪操作，走路移动时自然四足兽态，宠物专用服饰，下半身覆毛短腿，呆萌可爱、圆润大眼神态，照片级写实，明亮充足曝光暖白日光5000K，均匀柔和受光左右均衡，奶油白焦糖棕暖色基调，真实毛发丝缕与表面细节清晰、避免涂抹塑料感，主角全程锁焦清晰，自然透光感，运动平滑稳定无跳变，第一人称vlog自拍视角，看向镜头，真实生活Vlog氛围` | | |
+| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, bright sufficient exposure with warm 5000K daylight, even soft balanced lighting, cream white and caramel warm palette, crisp visible fur strands and fine surface detail, main character in sharp focus, locked stable camera with consistent perspective and stable focus, balanced symmetric motion, natural translucent glow, smooth stable motion, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood` |
+| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, bright sufficient exposure with warm 5000K daylight, even soft balanced lighting, cream white and caramel warm palette, crisp visible fur strands and fine surface detail, main character in sharp focus, locked stable camera with consistent perspective and stable focus, balanced symmetric motion, natural translucent glow, smooth stable motion, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood, shallow depth of field` |
+| **Seedance 2.0（中文）** | `宠物拟人化，真实兽态（大头短身、含背微弓、短小四肢、真实前爪），姿态随动作：用手操作时后腿坐起/立起+前爪操作，走路移动时自然四足兽态，宠物专用服饰，下半身覆毛短腿，呆萌可爱、圆润大眼神态，照片级写实，明亮充足曝光暖白日光5000K，均匀柔和受光左右均衡，奶油白焦糖棕暖色基调，真实毛发丝缕与表面细节清晰、避免涂抹塑料感，主角全程锁焦清晰，机位锁定稳定、透视一致、对焦稳定不呼吸、左右运动对称，自然透光感，运动平滑稳定无跳变，第一人称vlog自拍视角，看向镜头，真实生活Vlog氛围` | | |
 
 ---
 
@@ -64,7 +66,7 @@
 
 ## 去 AI 味 / 反退化规范（视频生成专用，优先级与防漂移并列）
 
-> 实测发现：持续运动的 Vlog 视频最易出现 **AI 塑料感** —— 全画面纹理被涂抹成平滑色块、画面中心主体在中段细节崩塌（"融化"）、帧间忽快忽慢有微跳帧。这些不是"漂移"而是**生成退化**，需单独约束。所有正向词仍受 prefix.md S8 / S8.1 约束：**写实同义词最多保留 1 个 `photorealistic`，严禁堆叠 RAW/ultra realistic/真实照片实拍 等**，本节靠"具体材质细节 + 稳定运动 + 充足曝光"提质感，不靠堆真实感同义词。
+> 实测发现：持续运动的 Vlog 视频最易出现 **AI 塑料感** —— 全画面纹理被涂抹成平滑色块、画面中心主体在中段细节崩塌（"融化"）、帧间忽快忽慢有微跳帧。这些不是"漂移"而是**生成退化**，需单独约束。所有正向词仍受 `prefix.md#S8` / `prefix.md#S8.1` 约束：**写实同义词最多保留 1 个 `photorealistic`，严禁堆叠 RAW/ultra realistic/真实照片实拍 等**，本节靠"具体材质细节 + 稳定运动 + 充足曝光"提质感，不靠堆真实感同义词。
 
 ### 一、纹理保真（反涂抹，最高优先级）
 
@@ -96,23 +98,43 @@
 - 提示词声明：
   - 中文：`明亮充足的曝光，画面通透不发暗，高光与暗部均保留细节；暖白日光 5000K 暖调，奶油白+焦糖棕暖色基调，符合温暖治愈氛围；均匀柔和的整体照明，左右明暗均衡，避免单侧强光源造成的明暗失衡；主角受光充足、与背景拉开明暗对比、清晰突出`
   - 英文：`bright sufficient exposure, clear not dark, detail retained in both highlights and shadows; warm 5000K daylight, cream white and caramel brown warm palette, cozy healing mood; even soft overall lighting, balanced left-right brightness, no single-side blown-out or underexposed half; main character well-lit and clearly separated from background with good contrast`
-- 与 prefix.md「色温约束」「曝光与去 AI 味光照」对齐：暖底 4800-5800K、中等饱和、避免蓝灰冷调
+- 与 `prefix.md#色温约束` / `prefix.md#曝光层-L1…-L5`（曝光与去 AI 味光照）对齐：暖底 4800-5800K、中等饱和、避免蓝灰冷调
+  > ⚠️ 本节视频侧『暖白日光 5000K / 中等饱和』与 prefix 区间（4800-5800K / 50-70%）为 PENDING_MAINTAINER 复述（CONF-002/003），**未自动收敛、各处原文保留**，维护者裁定前不改写。
+
+### 五、相机稳定（反幽灵滑行 / 反水下感 / 反焦点呼吸）
+
+- 退化表现：相机像在水下/滑轨上**持续平滑大幅漂移**（"幽灵滑行"，角落位移忽快忽慢 20-40px），而非真实手持的小幅随机微抖；透视灭点与光源方向逐帧偏移（画面"呼吸"）；对焦在清晰↔模糊间来回跳动（焦点呼吸）；画面左侧运动量是右侧的 5-8 倍（左右不对称扭曲，纹理融化/变形集中在一侧）
+- **相机运动二选一，禁止中间态的"平滑漂移"**：
+  - **锁定机位**（约 80% 镜头优先）：相机完全静止固定，无任何位移、无缓慢漂移
+  - **真实手持**（仅 vlog 自拍镜头）：小幅随机微抖（每帧 1-3px 级，偶叠呼吸晃动），**不是**持续平滑的单向滑行
+- 提示词声明：
+  - 中文：`相机机位锁定稳定，固定视角不漂移不滑行；透视、相机角度与光源方向全程一致不偏移；对焦稳定锁定，焦点不来回呼吸、清晰度全程一致；画面左右运动量均衡对称、无单侧扭曲变形`
+  - 英文：`locked stable camera, fixed viewpoint, no drifting or gliding; perspective, camera angle and light direction stay consistent the whole clip; focus locked and stable, no focus breathing, sharpness consistent throughout; left and right side motion balanced and symmetric, no one-sided warping or distortion`
+  - 手持镜头追加：`subtle authentic handheld micro-shake only, not smooth sliding drift`
+
+### 六、机位高度与光照一致（反"机位与脚本矛盾"）
+
+- 退化表现：脚本写"低机位从人群腿间仰拍"，但画面下方比上方亮（亮度上 111 / 下 145），呈平视或微俯拍——光照分布与声明的机位角度矛盾
+- 提示词声明：
+  - 低机位仰拍镜头：`真实低角度仰拍，画面上方（天花板/头顶灯光）更亮、下方（地面/脚部）更暗，光照分布符合仰视视角`／`true low-angle shot looking up, brighter at the top (overhead lights/ceiling), darker at the bottom (floor/feet), lighting consistent with looking-up perspective`
+  - 其他机位同理：**声明的机位高度必须与光照、透视、地平线位置一致**，不可写仰拍却出俯视光照
+- 与 `prefix.md#6.4`（镜头视角分层）对齐：低机位观察视角须真正体现低角度的透视与受光
 
 ### 去 AI 味负向词
 
 **模式B（英文，置于负向区）：**
-`AI look, plastic texture, smeared details, flat smooth patches, melting subject, blurry center, loss of detail mid-clip, texture smearing, waxy skin, over-smoothed, temporal flicker, frame jumps, jitter, stutter, uneven motion, patterned noise, underexposed, too dark, dim, blue-grey cold cast, color cast, blown-out highlights, uneven side lighting, low contrast subject`
+`AI look, plastic texture, smeared details, flat smooth patches, melting subject, blurry center, loss of detail mid-clip, texture smearing, waxy skin, over-smoothed, temporal flicker, frame jumps, jitter, stutter, uneven motion, patterned noise, underexposed, too dark, dim, blue-grey cold cast, color cast, blown-out highlights, uneven side lighting, low contrast subject, floating camera, ghost gliding camera, underwater drifting motion, smooth sliding drift, perspective breathing, warping perspective, shifting vanishing point, focus breathing, focus pumping, racking focus, one-sided motion, asymmetric warping, left-right distortion, camera height mismatch`
 
 **模式A（中文，写入正向约束以替代负向）：**
-`画面通透明亮、纹理清晰真实、主体全程锐利不融化、运动平滑稳定、暖调均匀受光`
+`画面通透明亮、纹理清晰真实、主体全程锐利不融化、运动平滑稳定、暖调均匀受光、机位锁定不漂移、对焦稳定不呼吸、左右运动对称`
 
-> ✅ **一句话原则**：让画面**亮起来、暖起来、清晰起来、稳下来** —— 充足暖光 + 清晰材质细节 + 主体锁焦 + 匀速运动，是去除"AI 塑料感"的四把锁。
+> ✅ **一句话原则**：让画面**亮起来、暖起来、清晰起来、稳下来** —— 充足暖光 + 清晰材质细节 + 主体锁焦 + 匀速运动 + 机位锁定，是去除"AI 塑料感"的几把锁。
 
 ---
 
 ## 短脚本节奏约束（≤25s 适用）
 
-> 短视频平台单梗内容（见 prefix.md 第六节时长分档）节奏更快。短脚本在**完整保留上方防漂移六节规范**的前提下，用更短的单段时长与更快的镜头拼接承载情绪，**不靠镜头内大动作提速**。
+> 短视频平台单梗内容（见 `prefix.md#6.3` 时长分档）节奏更快。短脚本在**完整保留上方防漂移六节规范**的前提下，用更短的单段时长与更快的镜头拼接承载情绪，**不靠镜头内大动作提速**。
 
 ### 节奏结构（四段式）
 
@@ -138,20 +160,24 @@
 
 | 级别 | 方式 | 适用 |
 |---|---|---|
-| 静态 | 完全固定，无任何运动 | 约 80% 镜头 |
-| 微动 | 极缓慢推拉（画面位移极小） | 情绪升温镜头 |
-| 手持感 | 轻微呼吸式晃动（幅度极小） | vlog 自拍镜头 |
-| 禁用 | 快摇、甩镜、旋转、快速变焦 | 所有镜头 |
+| 静态 | 完全固定，无任何运动（绝对锁定，无缓慢漂移） | 约 80% 镜头 |
+| 微动 | 极缓慢推拉（画面位移极小，匀速单向，到位即停） | 情绪升温镜头 |
+| 手持感 | 小幅随机微抖（每帧 1-3px 级，偶叠呼吸晃动）；**是随机微抖，不是持续平滑的单向滑行** | 仅 vlog 自拍镜头 |
+| 禁用 | 快摇、甩镜、旋转、快速变焦、**幽灵滑行/水下漂移（持续平滑大幅位移）、焦点呼吸、透视漂移** | 所有镜头 |
+
+> ⚠️ **运镜二选一**：要么**完全锁定**，要么**真实手持小幅随机微抖**。最忌讳介于两者之间的"平滑大幅漂移"——那正是 AI「水下/幽灵滑行」感的根源（实测角落位移 20-40px、左右不对称）。微动推拉也必须匀速、单向、到位即停，不可全程持续滑行。
 
 ### 剪辑节奏指导
 
-> 短视频魅力在「切」。镜头时长与切换节奏按脚本档位匹配（档位定义见 prefix.md 第六节）。
+> 短视频魅力在「切」。镜头时长与切换节奏按脚本档位匹配（档位定义见 `prefix.md#6.3`）。
 
 | 脚本类型 | 镜头时长 | 镜头数 | 节奏感 |
 |---|---|---|---|
 | 短脚本（15-25s） | 2-4s/镜 | 5-8 镜 | 快切，有卡点 |
 | 中脚本（30-45s） | 3-5s/镜 | 6-10 镜 | 有快有慢 |
 | 长脚本（50-65s） | 4-8s/镜 | 8-12 镜 | 舒缓叙事 |
+
+> ℹ️ 下表剪辑节奏编号 C1–C4 为**本文件限定标识**（`art_storyboard_video.md#C1`…`#C4`），表示「剪辑节奏规则」，**非 prefix 色名**——与全局色彩盘色名 `prefix.md#C1`…`#C10`（奶油白/焦糖棕…）属不同规则族，依文件限定区分、互不指代。
 
 | 编号 | 规则 |
 |---|---|

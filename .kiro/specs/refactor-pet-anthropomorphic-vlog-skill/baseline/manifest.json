@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-06-24T03:14:11.280Z",
+  "description": "重构前（pre-refactor）两条加载路径 Assembled_Prompt 基线快照。art_prompt/* 经 getArtPrompt（prefix 前置）；driector_skills/* 经 readSkill（无 prefix，去 frontmatter）。",
+  "style": "pet_anthropomorphic_vlog",
+  "source": "art_skills",
+  "entries": [
+    {
+      "file": "art_prompt/art_character.md",
+      "loader": "getArtPrompt",
+      "prefixPrepended": true,
+      "length": 19273,
+      "sha256": "ab720cdb1ae8f4f10282edd7f5f1d7609ffb34701a4af09c9749e3b0a236dff2",
+      "snapshotPath": "art_prompt/art_character.assembled.md"
+    },
+    {
+      "file": "art_prompt/art_character_derivative.md",
+      "loader": "getArtPrompt",
+      "prefixPrepended": true,
+      "length": 16790,
+      "sha256": "dedb09f310b391c0853427d95188d3af4a07f8326e208e91795b59846ee1aab8",
+      "snapshotPath": "art_prompt/art_character_derivative.assembled.md"
+    },
+    {
+      "file": "art_prompt/art_prop.md",
+      "loader": "getArtPrompt",
+      "prefixPrepended": true,
+      "length": 12924,
+      "sha256": "3c76e62e5e17219b92bdd7841cf35d89da7ab4f0af0d3d713b780486805bb4c1",
+      "snapshotPath": "art_prompt/art_prop.assembled.md"
+    },
+    {
+      "file": "art_prompt/art_prop_derivative.md",
+      "loader": "getArtPrompt",
+      "prefixPrepended": true,
+      "length": 12784,
+      "sha256": "d84e6ac5a88bcbc58d7d97630ff50b878ed7387e7fb29e991287ba9c2f7ffd19",
+      "snapshotPath": "art_prompt/art_prop_derivative.assembled.md"
+    },
+    {
+      "file": "art_prompt/art_scene.md",
+      "loader": "getArtPrompt",
+      "prefixPrepended": true,
+      "length": 15009,
+      "sha256": "3fe853edd76faf9798c6b92e62253ec6a0c8dc72dcec3a3da0e7ad63514b3957",
+      "snapshotPath": "art_prompt/art_scene.assembled.md"
+    },
+    {
+      "file": "art_prompt/art_scene_derivative.md",
+      "loader": "getArtPrompt",
+      "prefixPrepended": true,
+      "length": 13877,
+      "sha256": "35c342c6326d6f3247b1b1b50406daffab3768cab7de45f898a075993397e0cf",
+      "snapshotPath": "art_prompt/art_scene_derivative.assembled.md"
+    },
+    {
+      "file": "art_prompt/art_storyboard_video.md",
+      "loader": "getArtPrompt",
+      "prefixPrepended": true,
+      "length": 20392,
+      "sha256": "f50af406002c447cb087e69ebfb83ba7306452c519e90c9b75ffb71b24f1c633",
+      "snapshotPath": "art_prompt/art_storyboard_video.assembled.md"
+    },
+    {
+      "file": "driector_skills/director_planning_style.md",
+      "loader": "readSkill",
+      "prefixPrepended": false,
+      "length": 4242,
+      "sha256": "36791fcd0aad825ef23e96e538cf078cf9d1fe2eb3d35ee3157922de51c202f9",
+      "snapshotPath": "driector_skills/director_planning_style.assembled.md"
+    },
+    {
+      "file": "driector_skills/director_storyboard.md",
+      "loader": "readSkill",
+      "prefixPrepended": false,
+      "length": 17454,
+      "sha256": "aa9f65882c026b375c243bcf6488613ca229ae95154602fae387932d5e5ae4c5",
+      "snapshotPath": "driector_skills/director_storyboard.assembled.md"
+    },
+    {
+      "file": "driector_skills/director_storyboard_table_style.md",
+      "loader": "readSkill",
+      "prefixPrepended": false,
+      "length": 2080,
+      "sha256": "744a0baf795de2d5dd7341fd67e301cf499c5dc3f69b792b42b433f0a3f1b785",
+      "snapshotPath": "driector_skills/director_storyboard_table_style.assembled.md"
+    }
+  ]
+}

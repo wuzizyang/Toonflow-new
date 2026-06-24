@@ -5,8 +5,6 @@
 
 ## 一、风格基因
 
-<!-- anchor: 风格基因 ｜ 全局 SSOT 规范来源（经 GetArtPrompt_Loader 前置注入到全部 7 个 art_prompt 文件）；稳定标识 prefix.md#一-风格基因（一级/二级风格·情感基调·质感锚词·核心定位）。本节为风格基因族全库唯一规范正文，其余文件以 Cross_Reference 指向此处、不复制正文。仅接收重构前已对全部 art_prompt 生效的全局规则；资产专属族不迁入（注入范围守恒）。 -->
-
 | 维度 | 定义 |
 |---|---|
 | **一级风格** | 宠物拟人化Vlog（Pet Anthropomorphic Vlog） |
@@ -24,15 +22,11 @@
 
 ### 色彩使用层级
 
-<!-- anchor: 色彩使用层级 ｜ 本节 L1–L3 为「色彩约束强度层级」（硬约束/软约束/例外机制）；稳定标识 prefix.md#色彩使用层级-L1 / #色彩使用层级-L2 / #色彩使用层级-L3。与下文「曝光与去 AI 味光照」L1–L5（prefix.md#曝光层-Ln）属不同规则族，依 D-1 以锚点消歧；两套 L 编号正文逐字符保持不变。 -->
-
 | 层级 | 约束强度 | 说明 |
 |---|---|---|
 | L1 硬约束 | 高 | 仅锁定角色识别核心：毛色、眼睛、动物种属特征的审美方向 |
 | L2 软约束 | 中 | 场景色、服饰色、点缀色优先参考色盘，可按镜头与剧情微调 |
 | L3 例外机制 | 低 | 节日/出游/特殊场景可临时突破局部色彩，但需保留整体毛绒治愈逻辑 |
-
-<!-- anchor: 全局色彩盘 ｜ 全局 SSOT 规范来源；色名稳定标识 prefix.md#C1 … #C10（与 art_storyboard_video.md#C1–#C4 剪辑节奏以文件限定区分）。下方 C1–C10 色值表为全局色彩族全库唯一规范正文，其余文件引用色名/色温、不复制色值表。 -->
 
 | 序号 | 色名 | 色值 | 用途 |
 |---|---|---|---|
@@ -73,8 +67,6 @@
 
 ### 情绪色盘使用规则
 
-<!-- anchor: 情绪色盘使用规则 ｜ 全局 SSOT；稳定标识 prefix.md#E1 … #E5；全库唯一规范正文。 -->
-
 | 编号 | 规则 |
 |---|---|
 | E1 | 每条提示词至少指定 1 个「情绪场景」并绑定主色+辅色组合 |
@@ -84,8 +76,6 @@
 | E5 | 若与剧情冲突，以情绪色盘优先于通用推荐色，但不得突破严禁项 |
 
 ### 色温约束
-
-<!-- anchor: 色温约束 ｜ 全局 SSOT；稳定标识 prefix.md#色温约束（整体色温/毛色色温/对比度/饱和度/曝光/照明均匀度/主体受光）。注：本节 4800-5800K、50-70% 等数值与「曝光层-L3」及 art_storyboard_video / director_planning_style 存在 PENDING_MAINTAINER 复述（CONF-002/003/004），本任务不收敛、不改写、各处原文保留。 -->
 
 | 参数 | 值 | 说明 |
 |---|---|---|
@@ -100,8 +90,6 @@
 > ⚠️ **避免冷调欠曝（实测高频问题）**：地铁/夜晚/室内等冷白灯场景易拍出蓝灰冷调 + 整体偏暗。即便是冷光场景，也应保留暖底基调（暖色铺底、冷色仅作背景点缀，见 E4），并补足曝光，避免画面发灰发暗。
 
 ### 曝光与去 AI 味光照（实拍质感关键）
-
-<!-- anchor: 曝光层 ｜ 本节 L1–L5 为「曝光与去 AI 味光照层级」；稳定标识 prefix.md#曝光层-L1 … #曝光层-L5。与上文「色彩使用层级」L1–L3（prefix.md#色彩使用层级-Ln）属不同规则族，依 D-1 以锚点消歧；两套 L 编号正文逐字符保持不变。 -->
 
 > 这一节解决"画面发暗、偏冷、左右失衡、主体不突出、塑料涂抹感"等退化问题。所有正向词仍受 S8 / S8.1 约束（写实同义词最多 1 个 `photorealistic`），靠"具体光照与材质描述"提质感，不靠堆真实感同义词。
 
@@ -129,8 +117,6 @@
 
 ### 必守规则（所有技能继承）
 
-<!-- anchor: 必守规则 ｜ 全局 SSOT 规范来源（注入到全部 art_prompt）；稳定标识 prefix.md#R1 … #R6、#R4b。与各 art_prompt 文件本地 R 系列（art_character#R1–R10 等）以文件限定区分；本节为全局必守族全库唯一规范正文，art_prompt 文件以 Cross_Reference 指向此处取代重复正文。不下调任何「必须/SHALL」强制级。 -->
-
 | 编号 | 规则 |
 |---|---|
 | R1 | 必须包含「宠物拟人化 + 照片级写实」风格锚定词：**写实质感只用单个 `photorealistic`（严禁堆叠 real-life photo / shot on iPhone / casual snapshot / handheld phone footage / true-to-life 等同义词，见 S8，否则触发审核）**，避免精致商业摄影感与 CG/3D 渲染塑料感 |
@@ -142,8 +128,6 @@
 | R6 | 角色须**优先展现呆萌可爱**：圆润大眼、无辜眼神、微微歪头、放空发呆、笨拙可爱的小动作与种属本能破功的萌点；萌来自真实神态，**不靠卡通变形** |
 
 ### 严禁项（所有技能继承）
-
-<!-- anchor: 严禁项 ｜ 全局 SSOT 规范来源（注入到全部 art_prompt）；稳定标识 prefix.md#X1 … #X8、#X6b、#X6c。与各 art_prompt 本地 X 系列（含 X3b/X3c/X9–X15 等专属严禁）以文件限定区分；本节为全局严禁族全库唯一规范正文。不下调任何「严禁」强制级。 -->
 
 | 编号 | 严禁内容 |
 |---|---|
@@ -161,8 +145,6 @@
 ---
 
 ## 四、敏感词规避（过审约束）
-
-<!-- anchor: 敏感词规避 ｜ 全局 SSOT 规范来源；稳定标识 prefix.md#风险词映射表（逐行保留全部 9 行，风险词↔安全替换对应关系不变）、prefix.md#S1 … #S9、#S8.1。过审约束全库唯一规范正文；art_prompt 由 prefix 注入补回，driector_skills 文件须自包含同源正文（标同 Rule_ID + 溯源，禁止裸引用）。不下调任何「禁止/严禁/最高优先级」强制级。 -->
 
 > 输出提示词时**必须主动规避图像/视频平台文本审核的敏感词**，用下表的安全表述替换。即使是品种、体型、着装等中性描述，只要命中敏感词也会被打回。
 
@@ -196,8 +178,6 @@
 
 ## 五、情绪扩展维度（短视频情绪向）
 
-<!-- anchor: 情绪扩展维度 ｜ 全局 SSOT；稳定标识 prefix.md#M1 … #M4；全库唯一规范正文。 -->
-
 > 现有「温暖治愈」基调保留为长脚本默认；短视频（小红书/抖音）爆款更依赖「短平快锐钩」的情绪冲击。以下维度用于扩展情绪表达，**所有情绪仍通过真实神态体现，不靠卡通变形，并继续遵守 S1-S8.1 敏感词与过审约束**。
 
 | 情绪维度 | 定义 | 适用场景 |
@@ -219,8 +199,6 @@
 ---
 
 ## 六、短视频内容策略层（标题 / 标签 / 时长）
-
-<!-- anchor: 短视频内容策略层 ｜ 全局 SSOT；稳定标识 prefix.md#6.1 … #6.5；全库唯一规范正文。art_prompt（art_storyboard_video）与 driector_skills 以 Cross_Reference「见 prefix.md 第六节 / #6.x」指向此处。 -->
 
 > 本层是「短平快」内容策略，独立于现有制作技术体系之上，用于对齐短视频平台爆款逻辑。技术规范（防漂移、形态锁定、色彩体系、多图融合）保持不变。
 
@@ -276,3 +254,186 @@
 
 **封面公式**：`[角色夸张表情] + [大字标题] + [暖色底]`
 示例：角色瞪眼惊恐 +「周一……」／角色瘫倒摆烂 +「已死，勿扰」／角色得意歪嘴 +「摸鱼成功」
+
+# 视频提示词 · 视觉风格约束
+
+生成视频提示词时，必须注入以下视觉风格标签：
+
+| 模式 | 风格标签 |
+|------|----------|
+| **通用多参模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, bright sufficient exposure with warm 5000K daylight, even soft balanced lighting, cream white and caramel warm palette, crisp visible fur strands and fine surface detail, main character in sharp focus, locked stable camera with consistent perspective and stable focus, balanced symmetric motion, natural translucent glow, smooth stable motion, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood` |
+| **通用首尾帧模式（英文）** | `photorealistic anthropomorphic pet, real animal body (large head small rounded body, hunched back, short stubby limbs, real paws), posture follows action: reared up on hind legs with forepaws handling objects for hand-tasks, natural quadruped gait when walking/moving, pet clothing, short furry legs, adorable dopey expression, big round eyes, bright sufficient exposure with warm 5000K daylight, even soft balanced lighting, cream white and caramel warm palette, crisp visible fur strands and fine surface detail, main character in sharp focus, locked stable camera with consistent perspective and stable focus, balanced symmetric motion, natural translucent glow, smooth stable motion, first-person vlog selfie POV, looking at the camera, lifestyle vlog mood, shallow depth of field` |
+| **Seedance 2.0（中文）** | `宠物拟人化，真实兽态（大头短身、含背微弓、短小四肢、真实前爪），姿态随动作：用手操作时后腿坐起/立起+前爪操作，走路移动时自然四足兽态，宠物专用服饰，下半身覆毛短腿，呆萌可爱、圆润大眼神态，照片级写实，明亮充足曝光暖白日光5000K，均匀柔和受光左右均衡，奶油白焦糖棕暖色基调，真实毛发丝缕与表面细节清晰、避免涂抹塑料感，主角全程锁焦清晰，机位锁定稳定、透视一致、对焦稳定不呼吸、左右运动对称，自然透光感，运动平滑稳定无跳变，第一人称vlog自拍视角，看向镜头，真实生活Vlog氛围` | | |
+
+---
+
+## 防漂移规范（视频内容不跑偏的关键）
+
+> Vlog 视频常见"漂移"：角色在片段中**毛色/五官/兽态渐变、变回四足或人形、背景偷换、写实风格滑向 CG、动作越做越夸张以致畸变**。视频提示词必须主动锁住"身份 / 形态 / 场景 / 风格"，并把运动控制在小幅度、单一动作。
+
+### 一、锁身份与形态（最易漂，优先级最高）
+
+- 以**首帧图 / 角色参考图为准**，全程保持同一只角色：毛色、花纹、五官、体型、服饰**自始至终不变**
+- 形态全程保持**真实兽态**，并保持与本镜动作匹配的**同一姿态模式**：操作镜全程后腿坐起/立起操作、移动镜全程自然四足行走；**片段内不得在立起与四足间来回切换、不得变形渐变、不得拉成人形或直立行走**
+- 提示词声明：
+  - 中文：`全程保持与首帧一致的角色外观与兽态，毛色花纹五官体型服饰不变，保持本镜姿态模式不变，不变形不渐变不切换形态，全程保持真实兽态`
+  - 英文：`keep the exact same character as the first frame throughout, consistent fur color/markings/face/body/costume, no morphing, no identity drift, stays in the same action-appropriate posture mode the whole clip, always stays as a real animal`
+
+### 二、锁场景与构图
+
+- 背景环境、家具陈设、光照方向**全程一致**，镜头移动时场景应是连贯的同一空间，不偷换
+- **锁真实兽体尺度**：角色全程保持真实小动物体型，**明显小于画面中的人、只到坐着的成年人腰部以下、坐在座椅上只占座椅约 1/3 的一角**，与画面中座椅/车厢/家具/餐具等参照物的大小关系符合真实世界逻辑，**全程保持真实小动物尺度、宁小勿大、比例稳定不变**
+- 提示词声明：`背景与光照全程一致，同一空间连贯，角色全程保持真实小动物体型、明显小于身旁的人、坐在座椅上只占座椅约1/3的一角、与座椅/家具/餐具等参照物大小关系符合真实世界逻辑、尺度稳定不变宁小勿大，consistent background and lighting, same location throughout, stable environment, pet keeps true real-life animal size throughout, clearly much smaller than nearby humans, no taller than a seated adult's waist, occupies only about one third of a seat, scale vs surrounding objects stays physically correct, err on the smaller side, body scale stays stable`
+
+### 三、锁写实风格
+
+- 全程维持照片级写实质感，**不得在片段中滑向 CG/3D 渲染/卡通**
+- 提示词声明：`photorealistic throughout, no style shift, no CG drift`
+
+### 四、控制运动幅度（漂移的根源）
+
+- **一个镜头只做一个小动作**（端杯轻嗅 / 翻一页书 / 耳朵微动 / 缓慢转头），避免连续多动作与大幅度肢体运动
+- 运镜：固定或极缓慢推拉/跟随，**禁止快速运镜、甩镜、旋转**，越稳越不容易漂
+- 动作用"轻、缓、自然"修饰，明确动作的起止，避免开放式大动作
+- 种属微表情（耳朵、尾巴、胡须）做小幅自然摆动即可，传情不靠大动作
+- 提示词声明：`单一轻缓动作，肢体小幅自然运动，镜头固定或缓慢，subtle minimal motion, single gentle action, slow steady camera, stable framing`
+
+### 五、首尾帧模式优先（条件允许时）
+
+- 有首尾帧能力的模型，**优先用首帧 + 尾帧锁定起止状态**，让模型只补间中间运动，最大限度抑制漂移
+- 首尾帧应是**同一角色、同一场景、同一服饰**，仅有小幅动作/表情差异，避免首尾差异过大导致中段乱补
+
+### 六、时长与稳定
+
+- 单段时长不宜过长（建议 ≤5s），时长越长身份与场景越易漂；需要更长内容用多段短镜头拼接，每段都以同一参考图锚定
+
+### 防漂移负向词
+
+**模式B（英文，置于负向区）：**
+`morphing, warping, shape-shifting, identity drift, inconsistent character, changing fur color, changing face, flickering, jittering, unstable body shape, inconsistent limbs, changing proportions, changing body scale, oversized pet, human-sized cat, pet as big as a human, giant cat, enlarged animal, pet filling an adult seat, duplicated character, background changing, scene morphing, style shift, CG drift, switching posture mid-clip, exaggerated motion, fast erratic camera`
+
+**模式A（中文，写入正向约束以替代负向）：**
+`全程角色与场景稳定不漂移，无变形无渐变无闪烁，动作轻缓自然，镜头平稳`
+
+> ✅ **一句话原则**：锁住"同一只角色、同一个场景、同一种真实质感"，只让它**轻轻做一个小动作**——锁得越死、动得越少，视频越不漂。
+
+---
+
+## 去 AI 味 / 反退化规范（视频生成专用，优先级与防漂移并列）
+
+> 实测发现：持续运动的 Vlog 视频最易出现 **AI 塑料感** —— 全画面纹理被涂抹成平滑色块、画面中心主体在中段细节崩塌（"融化"）、帧间忽快忽慢有微跳帧。这些不是"漂移"而是**生成退化**，需单独约束。所有正向词仍受 prefix.md S8 / S8.1 约束：**写实同义词最多保留 1 个 `photorealistic`，严禁堆叠 RAW/ultra realistic/真实照片实拍 等**，本节靠"具体材质细节 + 稳定运动 + 充足曝光"提质感，不靠堆真实感同义词。
+
+### 一、纹理保真（反涂抹，最高优先级）
+
+- 退化表现：背景与主体被抹平成无细节的平滑色块，失去毛发丝缕、织物纹理、皮肤/物体表面的微观细节
+- 提示词声明（具体材质，不堆真实感同义词）：
+  - 中文：`清晰可见的真实毛发丝缕、织物纹理与表面微观细节，画面通透有细节层次，避免涂抹平滑、避免塑料感糊面`
+  - 英文：`crisp visible fur strands, fabric weave and fine surface micro-detail, detailed throughout, no smeared flat patches, no plastic smooth blur`
+- 背景即便虚化也应保留自然颗粒与细节质感，不得整片糊成色块
+
+### 二、中心主体锁定（反"融化"）
+
+- 退化表现：画面中心（主角所在位置）在镜头中段细节完全崩塌，主体糊成模糊色块、边缘消失
+- 提示词声明：
+  - 中文：`主角全程位于画面焦点、五官与毛发细节自始至终清晰锐利，中心主体不融化不模糊不糊面，全程保持清晰可辨`
+  - 英文：`main character stays in sharp focus the whole clip, facial features and fur detail crisp from start to end, center subject never melts or blurs, consistently sharp and well-defined`
+- 配合防漂移第四节：主体动作越小，中心越不易融化；优先让主体在画面中**相对静止**，由环境/前景产生运动感
+
+### 三、帧间稳定（反跳帧/闪烁）
+
+- 退化表现：运动忽快忽慢、有微跳帧、中段噪点异常、画面闪烁
+- 提示词声明：
+  - 中文：`运动匀速平滑连贯，帧间稳定无跳变无闪烁，画面噪点均匀干净，无忽快忽慢`
+  - 英文：`smooth even continuous motion, stable between frames, no jitter no flicker no frame jumps, clean even grain throughout`
+- 优先**首尾帧模式**（防漂移第五节）让模型只做匀速补间；运镜越慢越稳，帧间越不易跳变
+
+### 四、曝光与光照（反过暗 / 反冷调 / 反左右失衡）
+
+- 退化表现：整体欠曝偏暗（平均亮度仅 ~110/255）、色调偏蓝灰冷调、左右亮度严重失衡（单侧过曝单侧欠曝）、主体与背景对比不足
+- 提示词声明：
+  - 中文：`明亮充足的曝光，画面通透不发暗，高光与暗部均保留细节；暖白日光 5000K 暖调，奶油白+焦糖棕暖色基调，符合温暖治愈氛围；均匀柔和的整体照明，左右明暗均衡，避免单侧强光源造成的明暗失衡；主角受光充足、与背景拉开明暗对比、清晰突出`
+  - 英文：`bright sufficient exposure, clear not dark, detail retained in both highlights and shadows; warm 5000K daylight, cream white and caramel brown warm palette, cozy healing mood; even soft overall lighting, balanced left-right brightness, no single-side blown-out or underexposed half; main character well-lit and clearly separated from background with good contrast`
+- 与 prefix.md「色温约束」「曝光与去 AI 味光照」对齐：暖底 4800-5800K、中等饱和、避免蓝灰冷调
+
+### 五、相机稳定（反幽灵滑行 / 反水下感 / 反焦点呼吸）
+
+- 退化表现：相机像在水下/滑轨上**持续平滑大幅漂移**（"幽灵滑行"，角落位移忽快忽慢 20-40px），而非真实手持的小幅随机微抖；透视灭点与光源方向逐帧偏移（画面"呼吸"）；对焦在清晰↔模糊间来回跳动（焦点呼吸）；画面左侧运动量是右侧的 5-8 倍（左右不对称扭曲，纹理融化/变形集中在一侧）
+- **相机运动二选一，禁止中间态的"平滑漂移"**：
+  - **锁定机位**（约 80% 镜头优先）：相机完全静止固定，无任何位移、无缓慢漂移
+  - **真实手持**（仅 vlog 自拍镜头）：小幅随机微抖（每帧 1-3px 级，偶叠呼吸晃动），**不是**持续平滑的单向滑行
+- 提示词声明：
+  - 中文：`相机机位锁定稳定，固定视角不漂移不滑行；透视、相机角度与光源方向全程一致不偏移；对焦稳定锁定，焦点不来回呼吸、清晰度全程一致；画面左右运动量均衡对称、无单侧扭曲变形`
+  - 英文：`locked stable camera, fixed viewpoint, no drifting or gliding; perspective, camera angle and light direction stay consistent the whole clip; focus locked and stable, no focus breathing, sharpness consistent throughout; left and right side motion balanced and symmetric, no one-sided warping or distortion`
+  - 手持镜头追加：`subtle authentic handheld micro-shake only, not smooth sliding drift`
+
+### 六、机位高度与光照一致（反"机位与脚本矛盾"）
+
+- 退化表现：脚本写"低机位从人群腿间仰拍"，但画面下方比上方亮（亮度上 111 / 下 145），呈平视或微俯拍——光照分布与声明的机位角度矛盾
+- 提示词声明：
+  - 低机位仰拍镜头：`真实低角度仰拍，画面上方（天花板/头顶灯光）更亮、下方（地面/脚部）更暗，光照分布符合仰视视角`／`true low-angle shot looking up, brighter at the top (overhead lights/ceiling), darker at the bottom (floor/feet), lighting consistent with looking-up perspective`
+  - 其他机位同理：**声明的机位高度必须与光照、透视、地平线位置一致**，不可写仰拍却出俯视光照
+- 与 prefix.md「6.4 镜头视角分层」对齐：低机位观察视角须真正体现低角度的透视与受光
+
+### 去 AI 味负向词
+
+**模式B（英文，置于负向区）：**
+`AI look, plastic texture, smeared details, flat smooth patches, melting subject, blurry center, loss of detail mid-clip, texture smearing, waxy skin, over-smoothed, temporal flicker, frame jumps, jitter, stutter, uneven motion, patterned noise, underexposed, too dark, dim, blue-grey cold cast, color cast, blown-out highlights, uneven side lighting, low contrast subject, floating camera, ghost gliding camera, underwater drifting motion, smooth sliding drift, perspective breathing, warping perspective, shifting vanishing point, focus breathing, focus pumping, racking focus, one-sided motion, asymmetric warping, left-right distortion, camera height mismatch`
+
+**模式A（中文，写入正向约束以替代负向）：**
+`画面通透明亮、纹理清晰真实、主体全程锐利不融化、运动平滑稳定、暖调均匀受光、机位锁定不漂移、对焦稳定不呼吸、左右运动对称`
+
+> ✅ **一句话原则**：让画面**亮起来、暖起来、清晰起来、稳下来** —— 充足暖光 + 清晰材质细节 + 主体锁焦 + 匀速运动 + 机位锁定，是去除"AI 塑料感"的几把锁。
+
+---
+
+## 短脚本节奏约束（≤25s 适用）
+
+> 短视频平台单梗内容（见 prefix.md 第六节时长分档）节奏更快。短脚本在**完整保留上方防漂移六节规范**的前提下，用更短的单段时长与更快的镜头拼接承载情绪，**不靠镜头内大动作提速**。
+
+### 节奏结构（四段式）
+
+| 阶段 | 时长 | 内容 |
+|---|---|---|
+| 建立 | 0-3s | 角色亮相 + 场景一瞥 |
+| 冲突 | 3-8s | 痛点/矛盾出现 |
+| 反转 | 8-13s | 角色反差反应 |
+| 落点 | 13-15s | 情绪落点 + 钩子 |
+
+### 短脚本视频规范
+
+| 编号 | 规则 |
+|---|---|
+| F1 | 短脚本每个镜头 2-4s，3-5 个镜头快速拼接，每段都以同一参考图锚定身份与兽态 |
+| F2 | 单镜头内仍只做一个轻缓小动作（防漂移第四节不变），快节奏由**剪辑切换**实现，而非镜头内连续多动作 |
+| F3 | 发疯吐槽/反转发泄等情绪用真实兽态神态表达（耳朵压平、圆眼瞪大、尾巴炸毛、瘫软），不卡通夸张变形 |
+| F4 | 长脚本（30s 以上）保留现有防漂移规范与单段 ≤5s 建议，不受本节影响 |
+
+### 运镜分级
+
+> 防漂移要求「固定/极缓运镜」，本表细化各档位的适用范围。短视频的张力不在运镜，在**剪辑切换**。
+
+| 级别 | 方式 | 适用 |
+|---|---|---|
+| 静态 | 完全固定，无任何运动（绝对锁定，无缓慢漂移） | 约 80% 镜头 |
+| 微动 | 极缓慢推拉（画面位移极小，匀速单向，到位即停） | 情绪升温镜头 |
+| 手持感 | 小幅随机微抖（每帧 1-3px 级，偶叠呼吸晃动）；**是随机微抖，不是持续平滑的单向滑行** | 仅 vlog 自拍镜头 |
+| 禁用 | 快摇、甩镜、旋转、快速变焦、**幽灵滑行/水下漂移（持续平滑大幅位移）、焦点呼吸、透视漂移** | 所有镜头 |
+
+> ⚠️ **运镜二选一**：要么**完全锁定**，要么**真实手持小幅随机微抖**。最忌讳介于两者之间的"平滑大幅漂移"——那正是 AI「水下/幽灵滑行」感的根源（实测角落位移 20-40px、左右不对称）。微动推拉也必须匀速、单向、到位即停，不可全程持续滑行。
+
+### 剪辑节奏指导
+
+> 短视频魅力在「切」。镜头时长与切换节奏按脚本档位匹配（档位定义见 prefix.md 第六节）。
+
+| 脚本类型 | 镜头时长 | 镜头数 | 节奏感 |
+|---|---|---|---|
+| 短脚本（15-25s） | 2-4s/镜 | 5-8 镜 | 快切，有卡点 |
+| 中脚本（30-45s） | 3-5s/镜 | 6-10 镜 | 有快有慢 |
+| 长脚本（50-65s） | 4-8s/镜 | 8-12 镜 | 舒缓叙事 |
+
+| 编号 | 规则 |
+|---|---|
+| C1 | 情绪突变时用跳切（两镜间无过渡） |
+| C2 | 时间流逝用硬切 + 光影变化暗示，不用淡入淡出/叠化等传统转场 |
+| C3 | 剪辑节奏与情绪同步：发疯向快切卡点，治愈向舒缓硬切 |
+| C4 | 剪辑为后期环节，**不进入视频生成提示词**；生成阶段仍是单镜头单一轻缓动作 |

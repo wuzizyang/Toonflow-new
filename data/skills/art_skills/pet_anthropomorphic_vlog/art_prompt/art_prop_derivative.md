@@ -110,6 +110,8 @@ realistic materials，photorealistic texture，soft natural lighting，
 
 ### 严禁
 
+> 全局反卡通/反塑料/反荧光等「所有技能继承」的严禁项，其规范正文统一定义于 `prefix.md`「三、全局约束规则 / 严禁项」，运行时经 GetArtPrompt_Loader 前置注入本文件，无需在此重复正文。下表 X7/X9 保留编号并以 Cross_Reference 指向该规范定义；X1–X6、X8 为道具衍生专属严禁项（状态可识别性/物理逻辑/无角色独立陈列/状态复杂度），保留正文。
+
 | 编号 | 严禁 |
 |---|---|
 | X1 | 状态变化后道具不可识别 |
@@ -118,6 +120,6 @@ realistic materials，photorealistic texture，soft natural lighting，
 | X4 | 出现任何角色形象，包括全身、半身、局部（爪手、手指、肢体等） |
 | X5 | 道具处于被持有、握持、佩戴、使用中的状态 |
 | X6 | 出现暗示角色存在的元素（如握持痕迹、佩戴视角、使用姿态） |
-| X7 | 卡通/插画/黏土/玩具感等非写实质感 |
+| X7 | 见全局严禁 `prefix.md#X1`（卡通/插画/黏土/玩具感等非写实质感）、`prefix.md#X7`（塑料感/橡胶感/无细节纯色绒毛）——由 prefix 注入，不在本文件重复正文 |
 | X8 | 状态变化过于复杂、风格突变 |
-| X9 | 高饱和荧光色/赛博霓虹色 |
+| X9 | 见全局严禁 `prefix.md#X3`（高饱和荧光色/赛博霓虹色）——由 prefix 注入，不在本文件重复正文 |

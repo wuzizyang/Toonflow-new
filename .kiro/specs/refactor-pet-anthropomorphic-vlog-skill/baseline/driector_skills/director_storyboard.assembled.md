@@ -1,15 +1,4 @@
----
-name: director_storyboard
-description: 导演分镜提示词技法 · 宠物拟人化Vlog（Pet Anthropomorphic Vlog）
-metaData: director_skills
----
-
 # 分镜提示词 · 宠物拟人化Vlog · 风格专属技法
-
-<!-- 自包含声明（加载契约）：本文件经 ReadSkill_Loader 加载，**不前置拼接 prefix.md**，故其生成时实际生效的全部约束（姿态切换、POV 分层、景别优先级、多图融合·真实兽体尺度参照基准/锚定卡/模式A·B、情绪映射、表演维度、固定风格锚定词、负向词模板、美学禁止项、过审与敏感词约束）**必须在本文件内自包含为正文**，可附「同源于 prefix.md#… / art_storyboard_video.md#…」溯源 Cross_Reference，但**绝不退化为裸引用**（裸引用 = 规则在生成时静默丢失，违反需求 4.2/4.4/9.3）。
-  - 本文件专属、文件限定标识：表演节奏 director_storyboard.md#P1–#P4（≠ art_scene.md#P0–#P2 打工场景优先级）；镜头视角 director_storyboard.md#V1–#V4。
-  - 同源溯源锚点：真实兽体尺度→prefix.md#R4b / #X8、art_storyboard_video.md#防漂移规范（二、锁场景与构图）；情境化姿态→prefix.md#R2 / #X6 / #X6b / #X6c；过审敏感词→prefix.md#S1…#S9 / #S8.1；防漂移→art_storyboard_video.md#防漂移规范；视角分层策略→prefix.md#6.4；时长分档→prefix.md#6.3；情绪向→prefix.md#M1…#M4。
-  - 冲突暂缓（CONF-001，PENDING_MAINTAINER）：本文件「真实尺度参照基准（含『膝盖/大腿』）」与 prefix.md#R4b（『小腿』）存在数值/措辞冲突，维护者裁定前**本文件措辞保持不变、不自动收敛**。 -->
 
 ---
 
@@ -20,8 +9,6 @@ metaData: director_skills
 ---
 
 ## 角色姿态：按行为切换（情境化拟人）
-
-<!-- 溯源：本节「情境化姿态切换（操作态后腿立起+前爪操作 / 行动态自然四足兽态）」为分镜阶段的自包含生效正文，同源于 prefix.md#R2（情境化姿态全局必守）+ prefix.md#X6（严禁直立行走/人类化迈步）+ prefix.md#X6b（严禁过度拟人）+ prefix.md#X6c（严禁人腿剪影）。ReadSkill 不注入 prefix，故下表姿态正文须留在本文件内（非裸引用）；同 Rule_ID 标注同源。 -->
 
 > 本题材的拟人是**情境化**的，镜头提示词必须**根据该镜的动作选择姿态**，不可一律写"后腿立起"：
 
@@ -37,8 +24,6 @@ metaData: director_skills
 ---
 
 ## 镜头视角分层（POV 多样化）
-
-<!-- 溯源：本节「镜头视角分层 V1–V4」为本文件专属、文件限定标识 director_storyboard.md#V1…#V4，是 POV 分层策略的详细规范来源（prefix.md#6.4 镜头视角分层以「详细规则见 director_storyboard.md」指向此处）。下表「低机位观察视角/隐蔽拍摄视角 / observational POV, low camera angle, not looking at the camera」为 prefix.md#S9（禁止偷拍/偷窥语义）的安全替换表述自包含落地——只写「机位低、角色不看镜头」，不写「偷拍/未察觉」。V3「防漂移不变」同源于 art_storyboard_video.md#防漂移规范。 -->
 
 > 现有「第一人称 vlog 自拍 + 直视镜头」保留为互动型镜头，但**不应所有镜头都看镜头**。沉浸式打工、反应镜头、低机位观察视角/隐蔽拍摄视角等更适合第三人称观察视角——角色专注于手头的事、不看镜头，往往是最自然好笑的瞬间。
 
@@ -61,8 +46,6 @@ metaData: director_skills
 
 ## 景别优先级（短视频专用）
 
-<!-- 溯源：本节短视频（15-25s）景别优先级为分镜专属正文，其时长档位定义同源于 prefix.md#6.3（时长分档：短脚本 15-25s / 中脚本 30-45s / 长脚本 50-65s）；自包含保留于本文件。 -->
-
 > 现有 5 级景别体系（大全景→特写）继承自电影工业，适合长脚本叙事。**短视频（15-25s）不需要大全景建立空间**——观众没耐心看远景，镜头越近、情绪越强。
 
 | 景别 | 短视频占比 | 使用场景 |
@@ -77,9 +60,6 @@ metaData: director_skills
 ---
 
 ## 多图合成镜头的融合协调规范（消除违和感）
-
-<!-- 溯源：本节「真实兽体尺度参照基准表 / 场景物件尺度锚定卡 / 跨镜头尺度一致性 / 模式A·B 声明」为分镜多图融合阶段生成时实际生效的自包含正文，同源于 prefix.md#R4b（真实兽体尺度全局必守）+ prefix.md#X8（严禁尺度违反真实世界逻辑），并与 art_storyboard_video.md#防漂移规范（二、锁场景与构图 + 负向词）跨阶段同源。ReadSkill 不注入 prefix，尺度锚定卡是出图生效正文，必须留在本文件内（非裸引用）。
-  ⚠️ CONF-001（PENDING_MAINTAINER，需求 3.4/7.5）：本节立起高度参照「约成年人小腿—膝盖高度」「立起的猫顶多到成年人膝盖/大腿高度」与 prefix.md#R4b（「站立成年人小腿高度」）、art_character.md#R8（「约成年人小腿高度」）存在数值/措辞冲突，维护者裁定前**本节措辞逐字保持不变、不自动收敛、不自动选值**。 -->
 
 > 分镜图通常由「角色参考图 + 场景参考图 + 道具参考图」多张合成。若不主动要求融合，结果常常**像把各元素贴在一起**：角色偏 CG 玩具渲染、场景是实拍、光照各打各的、比例透视对不上、人物悬浮没落地。生成镜头提示词时**必须显式声明以下融合约束**。
 
@@ -165,8 +145,6 @@ metaData: director_skills
 
 ## 情绪 → 面容/眼神词映射
 
-<!-- 溯源：本节情绪→面容/眼神映射为分镜专属正文（自包含）；发疯向情绪（吐槽/崩溃/反转/摆烂）须用真实兽态神态表达的约束同源于 prefix.md#M2（发疯吐槽/反转发泄仍用真实兽态神态、不卡通夸张变形）；其引用的过审/严禁约束 S1–S9·S8.1 / X1–X8 的生效正文见本文件「过审与敏感词约束（自包含）」与「美学禁止项」，同源于 prefix.md#S1…#S9 / #S8.1 与 prefix.md#X1…#X8。 -->
-
 > 宠物拟人角色的情绪表达兼用「五官表情」与「种属特征动态」（耳朵/尾巴/胡须）。
 > **呆萌优先**：所有情绪默认带一层"呆萌天真"底色——圆润大眼、无辜眼神、偶尔放空发呆或微微歪头，避免精明锐利的人类化神情。
 
@@ -187,15 +165,13 @@ metaData: director_skills
 | 社恐 / 尴尬 | 缩脖，耳朵贴头 | 眼神躲闪/不敢直视 | 胡须收拢，爪手遮脸 |
 | 摆烂 / 放弃 | 瘫软，仰头望天 | 眼神放空/空洞 | 全身瘫软，尾巴垂地 |
 
-> ⚠️ **发疯向情绪过审提醒**：吐槽/崩溃/反转/摆烂等情绪仍须用**真实兽态神态**表达（耳朵压平、圆眼瞪大、尾巴炸毛、全身瘫软等），**不得卡通夸张变形**，并继续遵守本文件「过审与敏感词约束（自包含）」S1–S9·S8.1（同源 prefix.md#S1…#S9 / #S8.1）与「美学禁止项」X1–X8（同源 prefix.md#X1…#X8）。
+> ⚠️ **发疯向情绪过审提醒**：吐槽/崩溃/反转/摆烂等情绪仍须用**真实兽态神态**表达（耳朵压平、圆眼瞪大、尾巴炸毛、全身瘫软等），**不得卡通夸张变形**，并继续遵守 prefix.md S1-S8.1 与 X1-X8 约束。
 
 ---
 
 ## 角色表演维度（戏剧化表情）
 
-<!-- 溯源：本节「表演维度」与「表演节奏 P1–P4」为本文件专属、文件限定标识 director_storyboard.md#P1…#P4（与 art_scene.md#P0…#P2 打工场景优先级文件限定区分，语义不同）；自包含保留于本文件。发疯向表情须用真实兽态神态表达同源于 prefix.md#M2；P4「防漂移不变」同源于 art_storyboard_video.md#防漂移规范（四、控制运动幅度）；其引用的 S1–S9·S8.1 / X1–X8 生效正文见本文件「过审与敏感词约束（自包含）」与「美学禁止项」，同源 prefix.md#S1…#S9 / #S8.1 / #X1…#X8。 -->
-
-> 「呆萌」保留为治愈日常的底色，但戏剧冲突需要更丰富的表情变化。以下为表演向维度（含身体语言与适用场景），用于发疯吐槽/反转发泄等内容；**所有表情仍用真实兽态神态表达，不卡通夸张变形**，并遵守本文件「过审与敏感词约束（自包含）」S1–S9·S8.1（同源 prefix.md#S1…#S9 / #S8.1）与「美学禁止项」X1–X8（同源 prefix.md#X1…#X8）。
+> 「呆萌」保留为治愈日常的底色，但戏剧冲突需要更丰富的表情变化。以下为表演向维度（含身体语言与适用场景），用于发疯吐槽/反转发泄等内容；**所有表情仍用真实兽态神态表达，不卡通夸张变形**，并遵守 prefix.md S1-S8.1 与 X1-X8。
 
 | 表演类型 | 面容 | 眼神 | 身体 | 适用场景 |
 |---|---|---|---|---|
@@ -289,8 +265,6 @@ metaData: director_skills
 
 ## 固定风格锚定词（所有输出必须包含）
 
-<!-- 溯源：本节固定风格锚定词、多图融合锚定、画质锁定词、负向词模板为分镜出图生成时实际生效的自包含正文。其中：风格锚定「photorealistic（写实质感只用单个词，不堆叠）」同源于 prefix.md#R1 + prefix.md#S8（写实词不堆叠·最高优先级过审）+ prefix.md#S8.1（禁用 snapshot aesthetic）；情境化姿态同源 prefix.md#R2 / #X6；真实毛发同源 prefix.md#R3；真实兽体尺度（模式A·B 体型基准/跨镜头一致）同源 prefix.md#R4b / #X8 与 art_storyboard_video.md#防漂移规范；负向词中的反卡通/反塑料/反荧光/反尺度漂移同源 prefix.md#X1 / #X3 / #X7 / #X8。负向词正文须留在本文件内（ReadSkill 不注入 prefix）。 -->
-
 **宠物拟人化风格锚定（必选）：**
 
 宠物拟人化，保留真实动物全身特征与体态，**姿态按本镜动作切换（操作类→后腿坐起/立起+前爪操作；移动类→自然四足兽态）**，保留真实兽态（大头短身、短小四肢、真实前爪、含背微弓），宠物专用服饰，照片级写实（photorealistic），自然日常光照
@@ -342,45 +316,7 @@ cartoon, illustration, claymation, 2.5D, cel-shaded, toy-like, plastic, rubber, 
 
 ---
 
-## 过审与敏感词约束（本文件自包含 · 同源 prefix.md#S1…#S9 / #S8.1）
-
-<!-- 溯源：本节为分镜提示词生成时实际生效的过审约束自包含正文。因 ReadSkill_Loader 加载本文件时不前置注入 prefix.md，故 S1–S9（含 S8.1）的生效约束正文与风险词→安全替换映射必须留在本文件内可检出（需求 9.3），不得退化为「见 prefix.md S8」式裸引用（需求 4.2/4.4）。各条 Rule_ID 与 prefix.md#S1…#S9 / #S8.1 逐字符同源、语义一致，仅作自包含副本，不计为额外约束（需求 10.3）；强制级（禁止/严禁/最高优先级）逐项保持不变，不下调。 -->
-
-> 输出分镜提示词时**必须主动规避图像/视频平台文本审核的敏感词**，用下表安全表述替换。即使是品种、体型、着装、机位等中性描述，只要命中敏感词也会被打回。
-
-**风险词 → 安全替换映射（禁止出现左列任何词形，必须改用右列表述）：**
-
-| 风险词（禁止出现在输出中） | 安全替换表述 |
-|---|---|
-| dwarf / dwarfism / dwarfed / 侏儒 / midget（dwarf 词根任何词形） | short-legged / 短腿 / 矮脚（只描述「腿短」外观，不点明遗传/医学特征名称） |
-| 暴露 / 性化 / 性感 / 内衣 / 裸 / nude / naked / bare / lingerie | 着装得体、完整覆盖躯干（decent outfit, fully covered torso） |
-| 下半身「无衣/裸露/no pants/bare lower body」式表述 | 只用「覆毛兽腿、自然动物后腿与爪足」（fluffy animal hind legs, natural animal lower body） |
-| 幼 / 年幼 / 孩童 / loli / child（指向未成年的措辞） | 用体型尺度词替代：small animal scale / 小兽尺度（描述尺寸而非年龄） |
-| 血腥 / 暴力 / 恐怖 / 畸形 / deformed / gore / blood | 删除或改为中性表述（如需做旧改为「轻微做旧痕迹」） |
-| 过度解剖细节：paw feet / toe beans / paw pads / 爪足 / 趾行 / 肉垫 / 脚掌肉垫 | 省略，或仅用 `short legs` / `paws` / 短腿 / 前爪 简述 |
-| 「非人类/not human」否定式：not human hands / 非人类成衣 / 非人类五指手 / five-fingered hands | 正面陈述：`pet clothing`、`cat paws`、`short legs`；不写「not human…/非人类…」对比否定 |
-| 偷拍 / 偷窥 / sneak photography / candid / subject unaware of camera / voyeurism / voyeuristic / peeping | 中性视角词：低机位观察视角 / 隐蔽拍摄视角 / observational POV / low camera angle / not looking at the camera（只描述「机位低、角色不看镜头」，不写「偷拍/未察觉」含义） |
-
-**规避规则（与 prefix.md 同 Rule_ID 同源）：**
-
-| 编号 | 规则 |
-|---|---|
-| S1 | 输出提示词中**禁止出现上表左列任何风险词**（中英文均算），必须改用右列安全表述 |
-| S2 | 品种名若自带敏感词（如 dwarf cat），改写为外观描述（short-legged / 矮脚 / 圆脸短身）；**dwarf 任何词形一律禁止出现**，只用「腿短/short-legged」表达，不点明遗传特征名称 |
-| S3 | 描述着装与身体时只陈述「穿了什么、覆盖到哪里」，**不描述「没穿什么/裸露」**，避免负面身体表述触发审核 |
-| S4 | 不堆叠「幼态 + 无辜 + 身体暴露」指向，呆萌只通过神态（圆眼、歪头、发呆）体现 |
-| S5 | **禁止输出过度解剖细节**：paw feet / toe beans / paw pads / 爪足 / 趾行 / 肉垫 等一律不写，腿脚只用 `short legs` / 短腿、爪只用 `paws` / 前爪 简述或省略 |
-| S6 | **禁止「非人类/not human」否定式对比**：`非人类成衣`→直接写 `pet clothing`；`非人类五指手 / not human five-fingered hands`→省略不写；只做正面陈述 |
-| S7 | **输出务必精简**：聚焦「是什么 + 关键外观 + 姿态 + 着装 + 画质」，去掉冗长解剖罗列与否定堆砌；提示词过长极易触发审核 |
-| S8 | **真实感关键词严禁堆叠（最高优先级过审约束）**：表示「写实/实拍/真实照片」的同义词整条提示词**最多保留 1 个**，统一用 `photorealistic`。**禁止堆叠** `real-life photo / RAW photo / real photography / unedited / casual snapshot / smartphone snapshot / handheld phone footage / shot on iPhone / true-to-life / photorealism / hyperrealistic / ultra realistic / 真实照片实拍 / 手持手机随手拍质感` 等——会被判 `content_policy_violation` 直接拒审。画质靠 `photorealistic` + 自然光照/材质/色调描述即可 |
-| S8.1 | **`snapshot aesthetic` / `… aesthetic` 组合为已确认单点触发词（最高优先级禁用）**：`snapshot` 与 `aesthetic` 同时出现会被判「伪造随手拍美学」直接拒审。**绝对禁止**输出 `snapshot aesthetic`、`casual everyday snapshot aesthetic`、`candid snapshot aesthetic` 等任何 `snapshot + aesthetic` 措辞，也不要单独用 `… aesthetic` 描述「实拍/随手拍」风格；需要自然实拍感时只用 `photorealistic` + `natural ambient light` / `natural realistic colors` 等中性正面描述 |
-| S9 | **禁止「偷拍/偷窥」类语义**：`偷拍 / 偷窥 / sneak photography / candid / subject unaware of camera / voyeurism / voyeuristic / peeping` 会被判内容违规直接拒审。第三人称观察视角（见上方「镜头视角分层」）只用中性机位词：`低机位观察视角 / 隐蔽拍摄视角 / observational POV / low camera angle / not looking at the camera`，只描述「机位低、角色不看镜头」，不带「偷拍/未察觉」含义 |
-
----
-
 ## 美学禁止项（生成时严格规避）
-
-<!-- 溯源：本节美学禁止项为分镜出图生效的自包含正文，同源于 prefix.md 全局严禁族——卡通/插画/黏土/塑料感→prefix.md#X1 + #X7；纯人类/人形化躯干→prefix.md#X2；过度拟人（修长躯干/宽肩/人手/军姿/垂直脊柱）→prefix.md#X6b；人腿剪影（长裤/长袜遮后腿）→prefix.md#X6c；直立行走/人类化迈步→prefix.md#X6；恐怖/怪诞/扭曲/畸形拟人→prefix.md#X4；高饱和荧光色/赛博霓虹色→prefix.md#X3。各禁止项与 prefix 同源、强制级不下调；ReadSkill 不注入 prefix，故禁止项正文留在本文件内（非裸引用）。 -->
 
 以下词汇/风格不得出现于输出提示词中：
 

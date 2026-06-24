@@ -143,7 +143,7 @@ empty scene，no characters，no people，no animals，
 | R5 | 衍生图必须与参考图保持建筑结构/材质/色调一致，仅按指定角度切换视点 |
 | R6 | 场景图中**严禁出现任何角色** |
 | R7 | 根据用户提供的信息自行判断变化维度（角度/景别/时段/天候），未提及维度留空省略 |
-| R8 | 必须指定照片级写实质感：**只用单个 `photorealistic`**（见 prefix S8/S8.1，禁止堆叠 real-life photo / casual snapshot 等同义词，**绝对禁止 `snapshot aesthetic` 组合**） |
+| R8 | 必须指定照片级写实质感：**只用单个 `photorealistic`**（见 `prefix.md#S8`/`#S8.1`，禁止堆叠 real-life photo / casual snapshot 等同义词，**绝对禁止 `snapshot aesthetic` 组合**） |
 | R9 | 必须指定「自然写实光照」 |
 | R10 | 材质须为真实质感，自然可信 |
 
@@ -156,6 +156,6 @@ empty scene，no characters，no people，no animals，
 | X3 | 变体间材质/风格突变 |
 | X4 | 出现任何角色、人形、动物拟人剪影或轮廓 |
 | X5 | 画面被拼接成多视图/网格/分屏布局 |
-| X6 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感 |
-| X7 | 高饱和荧光色/赛博霓虹色 |
+| X6 | 卡通/插画/黏土/2.5D扁平/玩具感等非写实质感（全局反写实质感严禁，见 `prefix.md#X1`） |
+| X7 | 高饱和荧光色/赛博霓虹色（全局严禁，见 `prefix.md#X3`） |
 | X8 | 恐怖/阴森/破败压抑的非治愈氛围（除非剧情需要） |

@@ -1,0 +1,87 @@
+{
+  "artifact": "alias-map",
+  "specTask": "9.1",
+  "requirements": ["7.4", "7.6", "5.1"],
+  "status": "FINALIZED",
+  "readOnly": true,
+  "purpose": "重构后定稿的 deprecated_id → canonical(file#id) 别名映射全表，使历史引用/不一致写法/裸编号仍可唯一定位（需求 7.4）。在 alias-map.skeleton.json（Task 1.2）基础上回填 canonicalLocation，并与 inventory.after.json 的承载位置对齐校验。",
+  "generatedFrom": [
+    "alias-map.skeleton.json (Task 1.2 · 骨架)",
+    "inventory.after.json (Task 9.1 · 承载位置回填来源)",
+    "namespace-conflicts.before.md (Task 1.2)",
+    "conflict-register.json (Task 2.1 · CONF-001~004 PENDING)",
+    "12 个重构后技能文件原文（只读核验交叉引用写法）"
+  ],
+  "principle": {
+    "canonicalForm": "canonical 一律文件限定 <文件名>#<Rule_ID 或锚点>，全库唯一可定位（需求 5.1）。",
+    "textPreserved": "局部 Rule_ID 文本逐字符保留（需求 7.2），别名仅作历史/消歧定位，不改动正文。",
+    "noAutoMerge": "命名空间冲突一律文件限定区分、不自动收敛；CONF-001~004 数值/措辞冲突维持 PENDING_MAINTAINER、各处原文保留。",
+    "verified": "本表每个 canonical 已与 inventory.after.json 的 canonicalLocation/承载位置交叉核验存在。"
+  },
+
+  "conclusion": "裸 Rule_ID（R/X/L/C/S/P 等）在 12 文件内不是全库唯一；唯一稳定标识 = <文件名>#<Rule_ID 或锚点>。本表覆盖全部命名空间冲突维度（R/X/L/C/S/P）、既有历史引用写法、以及重构后新增的溯源引用规范化。",
+
+  "namespaceConflictResolution": [
+    { "idText": "R1–R13", "files": ["prefix.md", "art_character.md", "art_character_derivative.md", "art_prop.md", "art_prop_derivative.md", "art_scene.md", "art_scene_derivative.md"], "resolution": "file-qualified；prefix.md#R1–#R6/#R4b 为全局必守 SSOT，各 art_prompt 本地 R 系列为资产专属（文件限定）" },
+    { "idText": "X1–X15 (含 X3b/X3c/X6b/X6c)", "files": ["prefix.md", "art_character.md", "art_character_derivative.md", "art_prop.md", "art_prop_derivative.md", "art_scene.md", "art_scene_derivative.md"], "resolution": "file-qualified；prefix.md#X1–#X8/#X6b/#X6c 为全局严禁 SSOT；art_prompt 本地全局严禁同号者改引用/标注同源（art_prompt-reference），资产专属严禁者保留（asset-ssot）" },
+    { "idText": "L0–L5 / L1–L3 / L1–L5", "files": ["prefix.md", "art_character_derivative.md", "director_planning_style.md"], "resolution": "D-1 已落地：prefix.md 内『色彩使用层级-L1..L3』与『曝光层-L1..L5』锚点消歧；art_character_derivative.md#L0–L5（服装叠加层级）、director_planning_style.md#光线真实感-L1..L3（光线真实感）均文件限定区分；四套 L 编号正文逐字符不变" },
+    { "idText": "C1–C10 / C1–C4", "files": ["prefix.md", "art_storyboard_video.md"], "resolution": "file-qualified：prefix.md#C1..#C10（色名）vs art_storyboard_video.md#C1..#C4（剪辑节奏），文件内已就地标注互不指代" },
+    { "idText": "S1–S9 / S8.1", "files": ["prefix.md", "art_character.md", "art_character_derivative.md", "director_storyboard.md"], "resolution": "file-qualified：prefix.md#S1..#S9/#S8.1（过审 SSOT）；director_storyboard.md#S1..#S9/#S8.1（ReadSkill 自包含同源副本）；art_character#形态锁定工作流-S1..S3 与 art_character_derivative#L1线索-S1..S4 为工作流步骤标签、非过审 S 系列" },
+    { "idText": "P0–P2 / P1–P4", "files": ["art_scene.md", "director_storyboard.md"], "resolution": "file-qualified：art_scene.md#P0..#P2（打工场景优先级）vs director_storyboard.md#P1..#P4（表演节奏）" },
+    { "idText": "E1–E5 / M1–M4 / V1–V4 / B1–B4 / F1–F4 / 6.1–6.5", "files": ["单一文件"], "resolution": "无跨文件冲突；文件限定即唯一（prefix#E/#M/#6.x、director_storyboard#V、director_planning_style#B、art_storyboard_video#F）" }
+  ],
+
+  "aliasMap": {
+    "fromExistingReferences": [
+      { "deprecatedRef": "见 prefix S8（无 .md 后缀）", "sourceLoc": "art_character.md#R10", "canonical": ["prefix.md#S8"], "verified": true },
+      { "deprecatedRef": "见 prefix S8", "sourceLoc": "art_scene.md#R6", "canonical": ["prefix.md#S8"], "verified": true },
+      { "deprecatedRef": "见 prefix S8/S8.1", "sourceLoc": "art_scene_derivative.md#R8", "canonical": ["prefix.md#S8", "prefix.md#S8.1"], "verified": true },
+      { "deprecatedRef": "见 prefix.md 第六节时长分档 / 第六节", "sourceLoc": ["director_storyboard.md#短脚本分镜模板", "art_storyboard_video.md#短脚本节奏结构"], "canonical": ["prefix.md#6.3", "prefix.md#六-短视频内容策略层"], "verified": true },
+      { "deprecatedRef": "档位定义见 prefix.md 第六节", "sourceLoc": ["art_storyboard_video.md#剪辑节奏指导", "director_storyboard.md#景别优先级"], "canonical": ["prefix.md#6.3"], "verified": true },
+      { "deprecatedRef": "色名见 prefix.md 全局色彩盘", "sourceLoc": ["director_planning_style.md#情绪向场景色", "director_storyboard.md#色彩氛围词库", "director_storyboard_table_style.md#二-色彩与氛围"], "canonical": ["prefix.md#二-全局色彩盘", "prefix.md#C1", "prefix.md#C10"], "verified": true },
+      { "deprecatedRef": "详见 art_scene.md R5b", "sourceLoc": "director_planning_style.md#四-生活场景空间元素", "canonical": ["art_scene.md#R5b"], "verified": true },
+      { "deprecatedRef": "见 art_scene.md X7/X8", "sourceLoc": "director_planning_style.md#光线瑕疵美学", "canonical": ["art_scene.md#X7", "art_scene.md#X8"], "verified": true },
+      { "deprecatedRef": "见 director_storyboard 镜头视角分层 / 表演维度", "sourceLoc": ["prefix.md#6.4", "prefix.md#6.5"], "canonical": ["director_storyboard.md#V1", "director_storyboard.md#角色表演维度"], "verified": true, "note": "prefix 第六节反向指向 director 专属详规" },
+      { "deprecatedRef": "见 director_storyboard 美学禁止项", "sourceLoc": "director_planning_style.md#字幕设计规范", "canonical": ["director_storyboard.md#美学禁止项"], "verified": true },
+      { "deprecatedRef": "见 director_storyboard 场景物件尺度锚定卡", "sourceLoc": "director_storyboard_table_style.md#四-动作节奏", "canonical": ["director_storyboard.md#多图融合-三"], "verified": true }
+    ],
+
+    "fromDisambiguation": [
+      { "deprecatedRef": "S8 (裸引用)", "canonical": ["prefix.md#S8"], "note": "全局最高优先级过审约束（写实词不堆叠）" },
+      { "deprecatedRef": "S8.1 (裸引用)", "canonical": ["prefix.md#S8.1"], "note": "snapshot aesthetic 组合禁用" },
+      { "deprecatedRef": "prefix S8 (无 .md)", "canonical": ["prefix.md#S8"], "note": "规范化为文件限定" },
+      { "deprecatedRef": "S1/S2/S3 (art_character 语境)", "canonical": ["art_character.md#形态锁定工作流-S1", "art_character.md#形态锁定工作流-S2", "art_character.md#形态锁定工作流-S3"], "note": "非过审 S 系列：形态锁定工作流步骤" },
+      { "deprecatedRef": "S1–S4 (art_character_derivative 语境)", "canonical": ["art_character_derivative.md#L1线索-S1", "art_character_derivative.md#L1线索-S2", "art_character_derivative.md#L1线索-S3", "art_character_derivative.md#L1线索-S4"], "note": "非过审 S 系列：L1 线索分析步骤" },
+      { "deprecatedRef": "S1–S9/S8.1 (director_storyboard 语境)", "canonical": ["director_storyboard.md#S1", "director_storyboard.md#S9", "director_storyboard.md#S8.1"], "note": "ReadSkill 自包含过审副本，与 prefix.md#S1..#S9/#S8.1 同 Rule_ID 同源（不计额外约束）" },
+      { "deprecatedRef": "L1–L3 (prefix 色彩语境)", "canonical": ["prefix.md#色彩使用层级-L1", "prefix.md#色彩使用层级-L2", "prefix.md#色彩使用层级-L3"], "note": "D-1 消歧锚点：色彩约束强度层级" },
+      { "deprecatedRef": "L1–L5 (prefix 曝光/去AI味光照语境)", "canonical": ["prefix.md#曝光层-L1", "prefix.md#曝光层-L2", "prefix.md#曝光层-L3", "prefix.md#曝光层-L4", "prefix.md#曝光层-L5"], "note": "D-1 消歧锚点：曝光与去AI味光照层级" },
+      { "deprecatedRef": "L1–L3 (director 光线真实感语境)", "canonical": ["director_planning_style.md#光线真实感-L1", "director_planning_style.md#光线真实感-L2", "director_planning_style.md#光线真实感-L3"], "note": "director 专属，文件限定，自包含" },
+      { "deprecatedRef": "L0–L5 (服装叠加语境)", "canonical": ["art_character_derivative.md#L0", "art_character_derivative.md#L1", "art_character_derivative.md#L2", "art_character_derivative.md#L3", "art_character_derivative.md#L4", "art_character_derivative.md#L5"], "note": "服装叠加层级" },
+      { "deprecatedRef": "C1–C4 (剪辑节奏语境)", "canonical": ["art_storyboard_video.md#C1", "art_storyboard_video.md#C2", "art_storyboard_video.md#C3", "art_storyboard_video.md#C4"], "note": "剪辑节奏规则·非 prefix 色名" },
+      { "deprecatedRef": "C1–C10 (色名语境)", "canonical": ["prefix.md#C1", "prefix.md#C10"], "note": "全局色彩盘色名（区间示意 C1..C10）" },
+      { "deprecatedRef": "P0–P2 (场景优先级语境)", "canonical": ["art_scene.md#P0", "art_scene.md#P1", "art_scene.md#P2"], "note": "打工场景优先级" },
+      { "deprecatedRef": "P1–P4 (表演节奏语境)", "canonical": ["director_storyboard.md#P1", "director_storyboard.md#P2", "director_storyboard.md#P3", "director_storyboard.md#P4"], "note": "表演节奏" }
+    ],
+
+    "fromRefactorRelabel": [
+      { "deprecatedRef": "曝光去AI味光照 L1–L5 (原『二、全局色彩盘/曝光与去AI味光照』裸 Ln)", "canonical": ["prefix.md#曝光层-L1", "prefix.md#曝光层-L5"], "note": "Task 4.1 D-1 锚点消歧落地；Rule_ID 文本（L1..L5）逐字符不变，仅锚点限定" },
+      { "deprecatedRef": "色彩使用层级 L1–L3 (原『二、全局色彩盘/色彩使用层级』裸 Ln)", "canonical": ["prefix.md#色彩使用层级-L1", "prefix.md#色彩使用层级-L3"], "note": "Task 4.1 D-1 锚点消歧落地" },
+      { "deprecatedRef": "art_prop X6/X8、art_prop_derivative X7/X9、art_scene_derivative X6/X7 (原本地全局严禁正文)", "canonical": ["prefix.md#X1", "prefix.md#X3", "prefix.md#X4", "prefix.md#X7"], "note": "Task 5.3/5.4/5.6 改为指向 prefix 全局严禁的 Cross_Reference（运行时注入补回）；本地编号保留、正文改引用" },
+      { "deprecatedRef": "art_character_derivative X2/X14/X15 (原本地全局严禁正文)", "canonical": ["prefix.md#X2", "prefix.md#X6b", "prefix.md#X1", "prefix.md#X7", "prefix.md#X4"], "note": "Task 5.2 标注同源引用 prefix 全局严禁" },
+      { "deprecatedRef": "防漂移/去AI味规范 (曾候选迁入 prefix)", "canonical": ["art_storyboard_video.md#防漂移规范", "art_storyboard_video.md#去AI味/反退化规范"], "note": "D-0（CONF-D0 维护者确认）：视频族单一来源 = art_storyboard_video.md，不迁入 prefix（注入范围守恒）；director_storyboard_table_style.md#六/#五 自包含同源" }
+    ],
+
+    "conflictPendingRefs": [
+      { "ruleId": "真实兽体尺度·操作态立起高度", "conflictId": "CONF-001", "status": "PENDING_MAINTAINER", "coexistingSources": ["prefix.md#R4b（站立成年人小腿高度）", "art_character.md#R8（约成年人小腿高度/40-50cm）", "director_storyboard.md#多图融合-三（约小腿—膝盖/立起顶多膝盖大腿）", "director_storyboard_table_style.md#四-动作节奏"], "note": "各处原文保留、未收敛、未自动选值；别名仅作定位，不裁定取值" },
+      { "ruleId": "色温区间复述", "conflictId": "CONF-002", "status": "PENDING_MAINTAINER", "coexistingSources": ["prefix.md#色温约束（4800-5800K）", "prefix.md#曝光层-L3", "director_planning_style.md#一-色调体系", "art_storyboard_video.md#视频风格标签 / #去AI味-四（暖白5000K 单点）"] },
+      { "ruleId": "饱和度区间复述", "conflictId": "CONF-003", "status": "PENDING_MAINTAINER", "coexistingSources": ["prefix.md#色温约束（50-70%）", "director_planning_style.md#一-色调体系", "art_storyboard_video.md#去AI味-四（中等饱和·定性）"] },
+      { "ruleId": "曝光/均匀受光强制级与措辞", "conflictId": "CONF-004", "status": "PENDING_MAINTAINER", "coexistingSources": ["prefix.md#色温约束 / #曝光层-L1..L5", "art_storyboard_video.md#去AI味-四（强制·均匀受光）", "director_planning_style.md#光线真实感-L3 / #光线瑕疵美学（避免均匀完美打光）"] }
+    ]
+  },
+
+  "auditCrossCheck": {
+    "againstInventoryAfter": "本表 fromExistingReferences/fromDisambiguation/fromRefactorRelabel 的每个 canonical 均存在于 inventory.after.json 的 canonicalLocation 或 ssotBearersWithSelfContainedCopies 承载位置中。",
+    "deadLinkTarget": "为 Task 10.6（审计5 交叉引用有效性）提供解析基准：未解析引用数应为 0；本别名表使历史/裸编号引用可解析到唯一存在目标。",
+    "nonAuditSSeriesFlag": "art_character#形态锁定工作流-S1..S3 与 art_character_derivative#L1线索-S1..S4 已显式标注为工作流/L1线索步骤、非过审 S 系列——保障需求 9（过审 S1–S9 零损失）比对不被工作流 S 干扰。"
+  }
+}

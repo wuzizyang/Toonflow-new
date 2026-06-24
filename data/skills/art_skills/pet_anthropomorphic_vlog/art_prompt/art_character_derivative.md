@@ -2,6 +2,18 @@
 
 ---
 
+<!-- anchor: 全局规则引用 ｜ 本文件经 GetArtPrompt_Loader 加载时 prefix.md 总是前置拼接（prefixContent + 正文），故全局「质感/写实/反卡通/反塑料/反人形化」与「敏感词过审」规范正文不在本文件复述，统一以 Cross_Reference 指向 prefix 稳定锚点；运行时由 prefix 注入补回，满足 Behavioral_Equivalence。本文件仅承载衍生资产专属正文（L0–L5 叠加层、面部状态矩阵、L1 线索分析 S1–S4、四视图规范、衍生专属 R1–R13 / X1–X15）。注：本文件 L0–L5（叠加层级）与 S1–S4（L1 工作流步骤）非 prefix 的 L/S 系列，属不同命名空间，以文件限定区分、不转为 prefix 引用。 -->
+
+> **全局规则来源（运行时由 GetArtPrompt_Loader 前置注入 `prefix.md`，本文件不复述其规范正文，统一引用）：**
+> - 照片级写实锚定 + 写实词只用单个 `photorealistic`、严禁堆叠同义词 → 见 `prefix.md#R1`、`prefix.md#S8`、`prefix.md#S8.1`
+> - 真实毛发质感（清晰自然 / 皮毛细节 / 自然透光感）→ 见 `prefix.md#R3`
+> - 反卡通 / 反插画 / 反黏土 / 反塑料感 / 反玩具感 → 见 `prefix.md#X1`、`prefix.md#X7`
+> - 保留真实兽态、反人形化躯干 → 见 `prefix.md#X2`、`prefix.md#X6b`
+> - 反恐怖 / 怪诞 / 扭曲拟人造型 → 见 `prefix.md#X4`
+> - 敏感词规避与安全替换（过审约束）→ 见 `prefix.md#S1`…`prefix.md#S9`
+>
+> 下文第十节的衍生专属 `R1–R13` / `X1–X15` 为本文件局部命名空间（与 prefix 全局 R/X 系列不同义），逐字符保留、文件限定可定位。
+
 ## 一、叠加原则
 
 1. **种属不变** — 叠加后动物头部特征（耳形/口鼻/胡须/毛色）必须与底模完全一致
@@ -62,12 +74,11 @@
 
 ### 通用底毛（所有状态共享）
 
+> 真实毛发质感（清晰自然 / 有层次 / 柔和自然光泽 / `realistic detailed fur`）与反卡通 / 反插画 / 反塑料感 / 反玩具感约束为**全局规范**，见 `prefix.md#R3`、`prefix.md#X1`、`prefix.md#X7`（运行时由 prefix 前置注入），此处不复述。下表仅保留衍生资产专属的**种属一致性**约束：
+
 | 项目 | 约束 | 提示词 |
 |---|---|---|
-| 质感 | 真实毛发清晰自然、有层次 | 真实毛发、realistic detailed fur |
-| 光泽 | 柔和自然光泽 | 柔和光泽、soft sheen |
 | 种属特征 | 保持底模耳形/口鼻/胡须 | 保留种属特征、consistent animal features |
-| 禁止 | 卡通化/插画/塑料感/玩具感 | — |
 
 ---
 
@@ -242,7 +253,7 @@ realistic detailed fur，individual fur strands，natural translucent glow，
 | 编号 | 严禁 |
 |---|---|
 | X1 | 叠加后种属特征改变或轮廓偏移 |
-| X2 | 失去真实动物身体特征变成纯人类/人形化躯干 |
+| X2 | 失去真实动物身体特征变成纯人类/人形化躯干（同源全局约束见 `prefix.md#X2`、`prefix.md#X6b`） |
 | X3 | 面部状态/服饰风格互相冲突 |
 | X4 | 复杂场景背景（必须纯灰底） |
 | X5 | 四视图间服化造型不一致 |
@@ -254,5 +265,5 @@ realistic detailed fur，individual fur strands，natural translucent glow，
 | X11 | 加入表情与姿态联动的叙事性描写 |
 | X12 | 未分析用户线索就直接套用固定状态 |
 | X13 | 四视图设定图中出现四足趴卧爬行姿态（设定图为操作态后腿坐起/立起；四足兽态仅用于分镜走路/移动镜头） |
-| X14 | 卡通/插画/黏土/塑料感/玩具感等非写实质感 |
-| X15 | 恐怖/怪诞/扭曲拟人造型 |
+| X14 | 卡通/插画/黏土/塑料感/玩具感等非写实质感（同源全局约束见 `prefix.md#X1`、`prefix.md#X7`） |
+| X15 | 恐怖/怪诞/扭曲拟人造型（同源全局约束见 `prefix.md#X4`） |
