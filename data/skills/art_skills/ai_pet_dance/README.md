@@ -2,7 +2,7 @@
 
 ## 简介
 
-本技能包为 **AI 宠物跳舞短视频** 类型提供一套完整的美术风格参考，涵盖角色设计、换装衍生、场景设计、视觉风格约束与分镜技法。适用于纯兽态写实3D渲染风格的宠物萌态律动短视频。
+本技能包为 **AI 宠物跳舞短视频** 类型提供一套完整的美术风格参考，涵盖角色设计、换装衍生、场景/道具设计、视觉风格约束与分镜技法。适用于纯兽态写实3D渲染风格的宠物萌态律动短视频。
 
 ## 核心理念
 
@@ -10,6 +10,16 @@
 - **纯兽态** — 角色严格保留全身真实兽态与真实解剖结构，无人形化身体，无卡通化变形
 - **萌态律动** — 舞蹈是"真实宠物在音乐下的萌态反应"，萌态来自真实动物本能而非夸张卡通化
 - **换装系统** — 宠物服饰跨视频更换，每套独立可识别
+- **产物分离** — 角色 / 场景 / 道具三类资产严格分离，**场景图与工具图严禁包含任何角色**（铁律 X12）
+
+## 产物分类
+
+| 产物 | 定义 | 文件 | 是否含角色 |
+|------|------|------|----------|
+| **角色四视图** | 同一角色在四个标准视角（头部特写+正视图+侧视图+后视图）的设定图，作为角色锚定参考图 | [art_character.md](file:///Users/ziyang/PycharmProjects/toonflow/Toonflow-app/data/skills/art_skills/ai_pet_dance/art_prompt/art_character.md) | 含角色（同一只） |
+| **换装衍生图** | 同一角色换装后的衍生图，用于跨视频保持角色一致性 | [art_character_derivative.md](file:///Users/ziyang/PycharmProjects/toonflow/Toonflow-app/data/skills/art_skills/ai_pet_dance/art_prompt/art_character_derivative.md) | 含角色（同一只） |
+| **场景图（scene）** | 纯环境/纯背景/纯舞台 | [art_scene.md](file:///Users/ziyang/PycharmProjects/toonflow/Toonflow-app/data/skills/art_skills/ai_pet_dance/art_prompt/art_scene.md) | **严禁含角色** |
+| **工具图（prop）** | 纯道具/纯物件/单个物品 | [art_scene.md](file:///Users/ziyang/PycharmProjects/toonflow/Toonflow-app/data/skills/art_skills/ai_pet_dance/art_prompt/art_scene.md) | **严禁含角色** |
 
 ## 文件结构
 
@@ -18,9 +28,9 @@ ai_pet_dance/
 ├── prefix.md                            ← 全局美学基础（风格基因/色彩盘/约束规则/敏感词规避）
 ├── README.md                            ← 本文件
 ├── art_prompt/
-│   ├── art_character.md                 ← 角色基础形象提示词规范
+│   ├── art_character.md                 ← 角色四视图提示词规范（含同一只角色四视角模板）
 │   ├── art_character_derivative.md      ← 换装衍生提示词规范
-│   └── art_scene.md                     ← 舞台/背景场景提示词规范
+│   └── art_scene.md                     ← 场景图/工具图提示词规范（均不含角色）
 └── driector_skills/
     ├── director_planning_style.md       ← 视觉风格约束
     ├── director_storyboard.md           ← 表演指导（单镜头连续，不拆分镜）

@@ -1,10 +1,12 @@
 ---
 name: art_character_dance
-description: 角色基础形象 · AI宠物跳舞短视频 — 定义3D渲染纯兽态风格的角色四视图提示词规范。
+description: 角色基础形象 · AI宠物跳舞短视频 — 定义写实3D渲染纯兽态风格的角色**四视图**提示词规范。
 metaData: art_prompt
 ---
 
 # 角色基础形象生成 · AI宠物跳舞短视频约束手册
+
+> **本文件定义的产物是「角色四视图设定图」**：同一角色在四个标准视角下的真实宠物形象（头部特写 + 正视图 + 侧视图 + 后视图），作为角色锚定参考图供后续分镜/视频生成复用。
 
 ---
 
@@ -91,21 +93,75 @@ metaData: art_prompt
 
 ## 六、四视图设定图规范
 
-| 视图 | 要求 |
+> 角色四视图 = 同一角色在四个标准视角下的设定图。**所有视图必须为同一只角色**（避免 AI 误生成"四胞胎/四个角色"），跨视图种属/毛色/体型/服饰完全一致。
+
+### 6.1 四视图定义与布局
+
+| 顺序 | 视图 | 要求 | 占比 |
+|------|------|------|------|
+| 1 | 头部特写 | 真实动物头部骨骼与肌肉特征，写实3D渲染毛发，真实五官比例（非卡通大眼），耳朵/口鼻/胡须清晰 | 约25% |
+| 2 | 正视图 | 真实兽态全身，自然坐姿/站姿，自然头身比1:3-4，展示真实解剖与毛发质感 | 约25% |
+| 3 | 侧视图 | 侧面轮廓，展示真实脊柱曲线与尾巴、短小四肢、自然腹部线条 | 约25% |
+| 4 | 后视图 | 背面，展示尾巴与背部毛发真实层次与密度变化 | 约25% |
+
+### 6.2 布局与一致性
+
+| 项目 | 要求 |
 |------|------|
-| 头部特写 | 真实动物头部骨骼与肌肉特征，写实3D渲染毛发，真实五官比例（非卡通大眼），耳朵/口鼻/胡须清晰 |
-| 正视图 | 真实兽态全身，自然坐姿/站姿，自然头身比1:3-4，展示真实解剖与毛发质感 |
-| 侧视图 | 侧面轮廓，展示真实脊柱曲线与尾巴、短小四肢、自然腹部线条 |
-| 后视图 | 背面，展示尾巴与背部毛发真实层次与密度变化 |
+| 布局 | 同一画面从左至右并排四视图（头部特写 → 正视图 → 侧视图 → 后视图） |
+| 比例 | 四视图高度一致，角色体型/头身比完全相同 |
+| 一致性 | 四视图的种属/毛色/体型/耳形/尾巴/服饰/背景完全一致 |
+| 主体数量 | **画面内只有一只角色**，严禁画出"四只不同的猫"或"四胞胎" |
 
 **背景**：纯色浅灰（#E8E8E8），统一写实3D渲染自然光
 **姿态**：自然宠物姿态（坐姿/站姿），非跳舞姿态——基础设定图锁定角色本体
+**服装**：可穿戴宠物专用基础服饰（如浅灰小卫衣），但需在四视图间保持完全一致
 
 ---
 
 ## 七、提示词模板（文生图 · 基础形象）
 
-### 英文模板
+### 7.0 四视图拼接模板（推荐 · 单图四视角）
+
+> 一次生成一张包含四个视角的设定图：头部特写 + 正视图 + 侧视图 + 后视图，从左至右并排。**显式声明 single character, four views**，避免 AI 生成"四只猫"。
+
+#### 英文
+
+```
+character reference sheet, four views, single character,
+cinematic 3D render, photorealistic animal fur, realistic anatomy, natural lighting,
+a {品种} with {毛色} fur, {瞳色} eyes with realistic iris reflection, {标志性特征},
+realistic animal proportions head-to-body 1:3-4, short stubby limbs, real paws with paw pads, fluffy tail,
+realistic animal skull structure, natural facial fur distribution, moist nose,
+photorealistic fur with natural density variation and layering, individually visible strands, realistic sheen,
+wearing a {宠物服饰描述} fitted for animal body,
+four views from left to right: head close-up, front view, side view, back view,
+same character across all four views, identical fur color, identical body proportion,
+natural sitting pose, resting animal posture in all four views,
+soft natural studio lighting, clean light gray background #E8E8E8,
+natural curious expression
+```
+
+#### 中文
+
+```
+角色参考图，四视图，同一只角色，
+写实3D渲染，真实动物毛发质感，真实解剖结构，自然光影，
+一只{品种}，{毛色}毛发，{瞳色}眼睛有真实虹膜反光，{标志性特征}，
+自然动物比例头身比1:3-4，短小四肢，真实前爪与肉垫，蓬松尾巴，
+真实动物头骨结构，面部毛发自然分布，湿润鼻头，
+写实毛发有自然密度变化与层次，逐根可见，自然光泽，
+穿着{宠物服饰描述}，贴合动物身形，
+四视图从左至右：头部特写、正视图、侧视图、后视图，
+四视图为同一只角色，毛色与体型完全一致，
+自然坐姿/站姿，四视图姿态一致，
+柔和自然摄影棚光，干净浅灰背景#E8E8E8，
+自然好奇表情
+```
+
+### 7.1 单视角模板（备选 · 单独生成每张）
+
+#### 英文模板
 
 ```
 cinematic 3D render, photorealistic animal fur, realistic anatomy, natural lighting,
