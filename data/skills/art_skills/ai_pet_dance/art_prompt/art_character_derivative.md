@@ -37,26 +37,26 @@ metaData: art_prompt
 ```
 {保持角色基础形象不变的锚定词},
 use the reference image as body/pose anchor,
-keep authentic animal body, large head small body, short stubby limbs, real paws and short legs unchanged,
+keep authentic realistic animal body, natural animal proportions, realistic skeletal structure, short stubby limbs, real paws and short legs unchanged, photorealistic fur texture,
 only change outfit to {宠物服饰描述},
-3D render, Pixar quality, CG animation, cute proportions,
+cinematic 3D render, photorealistic animal fur, realistic anatomy, natural lighting,
 pet clothing fitted for animal body, preserving tail and limb positions,
 {舞蹈动作/姿势描述},
 {背景/舞台描述},
-soft 3D lighting, adorable expression
+soft natural lighting, natural curious expression
 ```
 
 ### 中文模板
 
 ```
 {保持角色基础形象不变的锚定词}，
-以角色基准图为形态参考，保持真实兽态、大头短身、短小四肢、真实前爪与短腿不变，
+以角色基准图为形态参考，保持真实兽态、真实动物解剖、自然头身比1:3-4、短小四肢、真实前爪与短腿不变，写实毛发质感，
 仅更换宠物服饰为{服饰描述}，
-3D渲染，Pixar品质，CG动画，可爱化比例，
+写实3D渲染，真实动物毛发质感，真实解剖结构，自然光影，
 宠物专用服饰，贴合动物身形，保留尾巴与四肢位置，
 角色正在{舞蹈动作/姿势}，
 {背景/舞台描述}，
-柔和3D光照，呆萌表情
+柔和自然光，自然好奇表情
 ```
 
 ---
@@ -66,10 +66,11 @@ soft 3D lighting, adorable expression
 | 锚定项 | 英文 | 中文 |
 |--------|------|------|
 | 品种 | {品种} with {毛色} fur | {品种}，{毛色}毛发 |
-| 瞳色 | {瞳色} eyes | {瞳色}眼睛 |
+| 瞳色 | {瞳色} eyes with realistic iris reflection | {瞳色}眼睛有真实虹膜反光 |
 | 标志性特征 | {标志性配饰/特征} | {标志性配饰/特征} |
-| 体型 | large head small body, cute proportions | 大头短身，可爱比例 |
-| 兽态 | authentic animal body, short stubby limbs, real paws | 真实兽态，短小四肢，真实前爪 |
+| 体型 | natural animal proportions head-to-body 1:3-4, realistic anatomy | 自然动物比例头身比1:3-4，真实解剖 |
+| 兽态 | authentic realistic animal body, realistic skeletal structure, short stubby limbs, real paws | 真实兽态，真实骨骼结构，短小四肢，真实前爪 |
+| 毛发 | photorealistic fur with natural density variation | 写实毛发有自然密度变化 |
 
 ---
 
@@ -77,9 +78,10 @@ soft 3D lighting, adorable expression
 
 ### 换装一致性检查
 - [ ] 角色毛色未因换装而改变
-- [ ] 角色面部五官比例未漂移
+- [ ] 角色面部五官比例未漂移（保持真实动物解剖，无卡通化）
 - [ ] 标志性配饰（如有）始终保留
 - [ ] 服饰贴合动物身形，无穿模
 - [ ] 服饰色彩与背景形成对比但不冲突
 - [ ] 尾巴位置合理（从服饰预留孔穿出）
 - [ ] 四肢保持短小真实前爪，未因服饰而变形
+- [ ] 写实3D渲染质感保持，无Pixar卡通化漂移

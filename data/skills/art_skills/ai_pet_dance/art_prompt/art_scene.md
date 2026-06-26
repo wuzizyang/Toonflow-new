@@ -11,7 +11,7 @@ metaData: art_prompt
 ## 一、场景设计原则
 
 1. **简洁突出角色** — 背景服务于角色，不抢视觉焦点。角色是画面绝对主角
-2. **3D渲染一致性** — 场景也是3D渲染质感，与角色风格统一
+2. **写实3D渲染一致性** — 场景也是写实3D渲染质感，与角色风格统一，非Pixar卡通
 3. **色彩对比** — 背景色与角色毛色/服饰色形成对比，让角色清晰突出
 4. **场景匹配内容类型** — 不同子类型用不同场景基调
 
@@ -36,35 +36,35 @@ metaData: art_prompt
 
 ```
 clean gradient background, soft {色名} to {色名} gradient,
-3D rendered studio lighting, soft shadows,
+cinematic 3D render natural studio lighting, soft realistic shadows,
 minimal background, character in center
 ```
 
 ### 摄影棚舞台（默认·通用）
 
 ```
-3D rendered studio stage, warm soft lighting from above,
-clean polished floor with subtle reflections,
-soft bokeh background, warm color palette,
-3D Pixar quality environment
+cinematic 3D rendered studio stage, warm soft natural lighting from above,
+clean polished floor with subtle realistic reflections,
+soft bokeh background, warm natural color palette,
+photorealistic 3D environment, realistic light scattering
 ```
 
 ### 居家场景
 
 ```
-3D rendered cozy apartment interior, warm wooden furniture,
-soft warm sunlight through window, potted plants,
-warm cream and caramel color palette,
-3D Pixar quality, cute and cozy atmosphere
+cinematic 3D rendered cozy apartment interior, warm wooden furniture with realistic texture,
+soft warm natural sunlight through window, potted plants with real foliage,
+warm cream and caramel natural color palette,
+photorealistic 3D environment, cozy realistic atmosphere
 ```
 
 ### 户外花园
 
 ```
-3D rendered garden scene, green grass and blooming flowers,
-soft natural sunlight, gentle breeze,
-fresh mint and sage green color palette,
-3D Pixar quality, peaceful and healing atmosphere
+cinematic 3D rendered garden scene, green grass and blooming flowers with realistic botany,
+soft natural sunlight, gentle breeze with moving foliage,
+fresh mint and sage green natural color palette,
+photorealistic 3D environment, peaceful realistic atmosphere
 ```
 
 ---
@@ -82,8 +82,8 @@ fresh mint and sage green color palette,
 
 ## 五、场景质量检查
 
-- [ ] 场景为3D渲染质感，与角色风格统一
+- [ ] 场景为写实3D渲染质感，与角色风格统一，无Pixar卡通化
 - [ ] 背景色与角色毛色/服饰色有足够对比
 - [ ] 场景不抢角色视觉焦点
-- [ ] 光影方向一致（无矛盾光源）
-- [ ] 无照片级写实元素混入3D渲染场景
+- [ ] 光影方向一致（无矛盾光源），自然光感
+- [ ] 无卡通化元素混入写实3D渲染场景

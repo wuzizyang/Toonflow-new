@@ -1,38 +1,42 @@
 ---
 name: director_storyboard_dance
-description: 分镜技法 · AI宠物跳舞短视频 — 定义3D渲染纯兽态风格的单镜头分镜技法与运镜规范。
+description: 表演指导 · AI宠物跳舞短视频 — 定义写实3D渲染纯兽态风格的单镜头表演节奏与运镜规范。
 metaData: director_skills
 ---
 
-# 分镜技法 · AI宠物跳舞短视频 · 技法参考
+# 表演指导 · AI宠物跳舞短视频 · 技法参考
 
 ---
 
-## 一、单镜头分镜核心
+## 一、单镜头核心
 
-> 本类型不使用传统多镜头分镜表。单镜头短视频的"分镜"是**表演节奏规划**——在单一连续画面内规划角色动作的时间线。
+> 本类型为**单镜头（single shot）一镜到底**，不拆分镜、不剪切、不转场。整条视频是一段连续画面，表演在单一连续镜头内自然流转。
 
-### 四阶段表演结构
+### 表演节奏参考（非强制分段）
 
-| 阶段 | 时间占比 | 内容 | 景别 |
-|------|---------|------|------|
-| 建立期 | 前15-20% | 角色静坐/轻动，建立形象和场景 | 中景 |
-| 发展期 | 中间50-60% | 萌态律动递进，动作从小到大 | 中景→近景 |
-| 高潮期 | 后15-20% | 最萌动作/定格pose | 近景/特写 |
-| 收束期 | 最后5-10% | 渐缓/凝固 | 拉回中景或保持近景 |
+整条视频的萌态律动建议有起伏感，但**不需要按秒拆分时间段**，自然过渡即可：
+
+- **开场**：角色静坐/轻动，建立形象与场景
+- **递进**：萌态律动逐渐展开，动作从小到大
+- **高潮**：最萌动作/定格pose瞬间
+- **收束**：渐缓/凝固，回归安静
+
+> 以上仅为创作思路参考，实际生成时用一段连续的提示词描述整条视频的动作流转，不要拆成独立镜头。
 
 ---
 
-## 二、运镜微调（单镜头内）
+## 二、运镜规范
 
 | 运镜 | 说明 | 适用 |
 |------|------|------|
-| 固定 | 画面不动，角色在画面中心表演 | 默认方案，最稳 |
+| 固定 | 画面不动，角色在画面中心表演 | 默认方案，最稳，推荐 |
 | 缓推 | 从全景缓慢推到近景 | 递进段，强调表情 |
 | 缓拉 | 从近景缓慢拉到中景 | 收束段，展示全貌 |
-| 轻微摇移 | 极小幅度的水平/垂直微移 | 增加画面动感 |
 
-**铁律**：运镜微调幅度≤10%画面，避免影响AI生成稳定性
+**铁律**：
+- 运镜微调幅度≤10%画面，避免影响AI生成稳定性
+- 单镜头内运镜变化不超过1次（如固定→缓推，或缓推→固定），避免频繁切换
+- 推荐默认用「固定镜头」最稳定
 
 ---
 
@@ -43,7 +47,6 @@ metaData: director_skills
 | 中心构图 | 角色在画面正中 | 默认，最常见 |
 | 三分法 | 角色偏左/偏右，留出呼吸空间 | 有背景元素时 |
 | 低角度仰拍 | 镜头低于角色，显得更萌更可爱 | 强化萌感 |
-| 俯拍 | 镜头高于角色，俯视萌态 | 趴卧/蜷缩姿态 |
 
 ---
 
@@ -51,41 +54,46 @@ metaData: director_skills
 
 - **中景是默认主力** — 角色在画面中心，半身入镜，既能交代动作又能展示服饰
 - **近景强调表情** — 推近到头部+上半身，展示耳朵/眼睛/胡须的萌态微表情
-- **特写用于高潮** — 仅在最萌动作瞬间使用（定格pose/歪头），停留2-3秒
-- **全景用于建立** — 开场1-2秒展示角色+场景全貌
+- **全景用于建立** — 开场展示角色+场景全貌
+
+> 单镜头内景别尽量保持一致，如需变化只做缓慢推拉，不跳跃切换。
 
 ---
 
 ## 五、视频生成提示词结构
 
-### 提示词分层结构
+### 提示词分层结构（单段连续描述）
 
 ```
-[风格锚定] + [角色描述] + [服饰] + [动作/姿态] + [场景/背景] + [光影] + [运镜] + [情绪/表情]
+[风格锚定] + [角色描述] + [服饰] + [连续动作流转] + [场景/背景] + [光影] + [运镜] + [情绪/表情]
 ```
+
+> **关键**：动作描述用一段连续的自然语言描述整条视频的萌态律动流转，不要拆成"0-3s做什么、3-6s做什么"的分镜句式。
 
 ### 英文模板示例
 
 ```
-3D render, Pixar quality, CG animation, cute proportions,
-a {品种} with {毛色} fur, {瞳色} eyes, large head small body, short stubby limbs, real paws, fluffy tail,
+cinematic 3D render, photorealistic animal fur, realistic anatomy, natural lighting,
+a {品种} with {毛色} fur, {瞳色} eyes with realistic iris reflection, natural animal proportions head-to-body 1:3-4, short stubby limbs, real paws with paw pads, fluffy tail,
+realistic animal skull structure, natural facial fur distribution, moist nose,
 wearing a {宠物服饰描述},
-{sitting up on hind legs, forepaws waving to the beat, head bobbing},
+{连续动作描述：如 the cat starts sitting quietly with ears twitching, then naturally starts bobbing its head to the beat, forepaws begin waving as rhythm builds, body swaying side to side, tail wagging, finally slowing down to a peaceful resting pose},
 {场景描述},
-soft studio lighting,
+soft natural studio lighting,
 camera fixed, medium shot,
-adorable innocent expression, ears perked up
+natural curious expression throughout
 ```
 
 ### 中文模板示例
 
 ```
-3D渲染，Pixar品质，CG动画，可爱化比例，
-一只{品种}，{毛色}毛发，{瞳色}眼睛，大头短身，短小四肢，真实前爪，蓬松尾巴，
+写实3D渲染，真实动物毛发质感，真实解剖结构，自然光影，
+一只{品种}，{毛色}毛发，{瞳色}眼睛有真实虹膜反光，自然动物比例头身比1:3-4，短小四肢，真实前爪与肉垫，蓬松尾巴，
+真实动物头骨结构，面部毛发自然分布，湿润鼻头，
 穿着{宠物服饰描述}，
-{后腿坐起，前爪随节拍摆动，脑袋左右晃}，
+{连续动作描述：如 猫咪安静坐着耳朵微动，随后自然地随节拍晃动脑袋，前爪开始随节奏摆动，身体左右摇摆，尾巴摆动，最后动作渐缓回到安静的坐姿},
 {场景描述}，
-柔和摄影棚光，
+柔和自然摄影棚光，
 镜头固定，中景，
-呆萌无辜表情，耳朵竖起
+全程自然好奇表情
 ```
